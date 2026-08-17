@@ -3,294 +3,524 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- وسوم محركات البحث (SEO) -->
-    <meta name="description" content="مطعم البيك الشامي يقدم لكم أشهى وألذ المأكولات الشامية والوجبات السريعة. استمتع بطعم الشام الأصلي والبهارات الفريدة. أطيب من هيك ما في غير عند البيك!">
-    <meta name="keywords" content="مطعم البيك الشامي, وجبات سورية, أكل شامي, شاورما, بروستد, وجبات عائلية, مطاعم الإسكندرية, Albaik ElShami, أكل سوري في الإسكندرية, توصيل وجبات">
-    <meta name="author" content="البيك الشامي">
-    <link rel="canonical" href="https://mydigital-id.github.io/Albaik-ElShami/">
-    
-    <!-- وسوم التواصل الاجتماعي (Open Graph) -->
-    <meta property="og:title" content="مطعم البيك الشامي - طعم الشام الأصلي">
-    <meta property="og:description" content="أشهى الوجبات الشامية في الإسكندرية. اطلب الآن!">
-    <meta property="og:url" content="https://mydigital-id.github.io/Albaik-ElShami/">
-    <meta property="og:type" content="website">
-
     <title data-i18n="pageTitle">مطعم البيك الشامي</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="مطعم البيك الشامي - أطيب وجبات الشاورما والمأكولات الشامية والعروض العائلية في الإسكندرية. اطلب الآن مباشرة عبر الواتساب!">
+    <meta name="keywords" content="مطعم البيك الشامي, شاورما, وجبات عائلية, السيوف, الإسكندرية, أكل سوري, دجاج مقرمش">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mydigital-id.github.io/Albaik-ElShami/">
+    <meta property="og:title" content="مطعم البيك الشامي - الطعم السوري الأصلي">
+    <meta property="og:description" content="أطيب من هيك.. ما في غير عند البيك! تصفح المنيو واطلب عبر الواتساب مباشرة.">
+    <meta property="og:image" content="https://mydigital-id.github.io/Albaik-ElShami/assets/images/Albaik-logo.png">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="bg-overlay"></div>
-    <!-- تأثير ماتريكس تساقط قطع الدجاج والدقة الشامية -->
+    <!-- خلفية الكانفاس (الماتريكس والمؤثرات) -->
     <canvas id="matrix-canvas"></canvas>
 
-    <!-- أزرار الترويسة: زر المنيو وزر تحويل اللغة -->
+    <!-- أزرار القائمة الجانبية واللغة -->
     <div class="header-controls">
-        <button class="lang-toggle-btn" id="langToggleBtn">EN</button>
-        <button class="menu-toggle-btn" id="menuToggleBtn">
-            <i class="fas fa-bars"></i>
-        </button>
+        <button id="menuToggleBtn" class="menu-toggle-btn"><i class="fas fa-bars"></i></button>
+        <button id="langToggleBtn" class="lang-toggle-btn">EN</button>
     </div>
 
-    <!-- القائمة الجانبية (Sidebar) -->
-    <aside class="sidebar" id="sidebar">
-        <button class="close-sidebar-btn" id="closeSidebarBtn">&times;</button>
+    <!-- القائمة الجانبية Sidebar -->
+    <aside id="sidebar" class="sidebar">
+        <button id="closeSidebarBtn" class="close-sidebar-btn">&times;</button>
         <div class="sidebar-content">
-            
             <div class="about-section">
                 <h3 data-i18n="aboutTitle">عن البيك الشامي</h3>
-                <p data-i18n="aboutText">مرحباً بكم في مطعم <strong>البيك الشامي</strong>! نقدم لكم أشهى وألذ المأكولات الشامية والوجبات السريعة المحضرة بأعلى معايير الجودة والنظافة، باستخدام أفضل المكونات والبهارات الأصلية لننقل لكم طعم الشام الحقيقي في كل وجبة.</p>
+                <p data-i18n="aboutText">
+                    مرحباً بكم في مطعم البيك الشامي! نقدم لكم أشهى وألذ المأكولات الشامية والوجبات السريعة المحضرة بأعلى معايير الجودة والنظافة، باستخدام أفضل المكونات والبهارات الأصلية لننقل لكم طعم الشام الحقيقي في كل وجبة.
+                </p>
                 <p class="slogan-sidebar" data-i18n="slogan">"أطيب من هيك .. ما في غير عند البيك"</p>
+            </div>
+            
+            <hr class="sidebar-divider">
+
+            <!-- أزرار الفئات داخل السايدبار -->
+            <div class="sidebar-menu-categories">
+                <h4><i class="fas fa-utensils"></i> <span data-i18n="menuCategoriesTitle">الوجبات والعروض</span></h4>
+                <ul class="sidebar-menu-list">
+                    <li><button class="sidebar-cat-btn" data-category="featured" data-i18n="featuredMeals">البوكسات الرئيسية</button></li>
+                    <li><button class="sidebar-cat-btn" data-category="single" data-i18n="singleMeals">وجبات الفرد</button></li>
+                    <li><button class="sidebar-cat-btn" data-category="two" data-i18n="twoMeals">وجبات الفردين</button></li>
+                    <li><button class="sidebar-cat-btn" data-category="family" data-i18n="familyMeals">وجبات العائلة</button></li>
+                    <li><button class="sidebar-cat-btn" data-category="sandwiches" data-i18n="sandwichesTitle">سندويتشات البيك</button></li>
+                    <li><button class="sidebar-cat-btn" data-category="albaikOffers" data-i18n="albaikOffersTitle">عروض البيك</button></li>
+                </ul>
             </div>
 
             <hr class="sidebar-divider">
 
-            <a href="https://maps.google.com/?q=7X3G%2BH93+Alexandria" target="_blank" class="sidebar-btn">
-                <i class="fas fa-map-marker-alt"></i> <span data-i18n="mapBtn">موقعنا على الخريطة</span>
-            </a>
+            <a href="https://maps.app.goo.gl/uXpAnX3q5MvdEpxp7" target="_blank" class="sidebar-btn"><i class="fas fa-map-marker-alt"></i> <span data-i18n="mapBtn">موقعنا على الخريطة</span></a>
+            <button id="downloadVcardBtn" class="sidebar-btn"><i class="fas fa-address-card"></i> <span data-i18n="vcardBtn">حفظ جهة الاتصال (vCard)</span></button>
 
-            <button id="downloadVcardBtn" class="sidebar-btn">
-                <i class="fas fa-address-card"></i> <span data-i18n="vcardBtn">حفظ جهة الاتصال (vCard)</span>
-            </button>
-
+            <!-- قسم الـ QR Code -->
             <div class="qr-container">
                 <h4 data-i18n="qrTitle">رمز QR الخاص بالمنيو</h4>
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.facebook.com/share/18GpESiAv5/" alt="QR Code" id="qrImage">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://mydigital-id.github.io/Albaik-ElShami/" alt="QR Code Menu">
                 <br>
-                <a href="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://www.facebook.com/share/18GpESiAv5/" download="AlBaik-QR.png" target="_blank" class="download-qr-btn">
-                    <i class="fas fa-download"></i> <span data-i18n="qrDownload">تحميل الـ QR Code</span>
-                </a>
+                <a href="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://mydigital-id.github.io/Albaik-ElShami/" download="Albaik-Menu-QR.png" class="download-qr-btn" data-i18n="qrDownload">تحميل الـ QR Code</a>
             </div>
         </div>
     </aside>
 
-    <!-- الهيدر واللوجو ممركزين -->
+    <!-- الهيدر والعنوان الرئيسي -->
     <header class="main-header">
-        <img src="Assets/logo/Albick-logo.png" alt="البيك الشامي" class="main-logo">
+        <img src="assets/images/Albaik-logo.png" alt="شعار البيك الشامي" class="main-logo">
         <h1 class="sparkle-title" data-i18n="mainTitle">مطعم البيك الشامي</h1>
     </header>
 
-    <!-- فيديو الشيف / اللوجو الثاني -->
+    <!-- منطقة الفيديوهات والتفاعل -->
     <section class="hero-section">
-        <div class="video-wrapper" id="videoWrapper">
+        <div id="videoWrapper" class="video-wrapper">
             <video id="chefVideo" autoplay muted playsinline>
-                <source src="Assets/video/Chef.mp4" type="video/mp4">
+                <source src="assets/videos/chef.mp4" type="video/mp4">
             </video>
         </div>
-        <div class="logo2-wrapper" id="logo2Wrapper">
-            <img src="Assets/logo/Albaick-logo-2.png" alt="شعار البيك الشامي 2" class="logo-secondary">
+        <div id="logo2Wrapper" class="logo2-wrapper">
+            <img src="assets/images/Albaik-logo2.png" alt="البيك الشامي" class="logo-secondary">
         </div>
     </section>
 
-    <!-- الكرات الطافية للتصفية -->
+    <!-- الكرات الطافية الثلاث الرئيسية -->
     <section class="floating-categories">
-        <div class="category-ball" data-category="family">
-            <img src="Assets/images/Family-meal.png" alt="وجبات العائلة">
+        <div class="category-ball" data-category="single">
+            <img src="assets/images/Single.png" alt="وجبات الفرد">
         </div>
         <div class="category-ball" data-category="two">
-            <img src="Assets/images/Two-persons-meal.png" alt="وجبات لفردين">
+            <img src="assets/images/Two.png" alt="وجبات الفردين">
         </div>
-        <div class="category-ball" data-category="single">
-            <img src="Assets/images/Single-meal.png" alt="وجبات الفرد">
+        <div class="category-ball" data-category="family">
+            <img src="assets/images/Family.png" alt="وجبات العائلة">
         </div>
     </section>
 
-    <!-- شبكة عرض الوجبات كاملة بالصفوف -->
-    <main class="menu-container">
-        <div class="menu-grid" id="menuGrid">
+    <!-- الكرات الطافية الإضافية (سندويتشات وعروض) -->
+    <section class="floating-categories secondary-balls show">
+        <div class="category-ball" data-category="sandwiches">
+            <img src="assets/images/Sandwiches.png" alt="سندويتشات البيك">
+        </div>
+        <div class="category-ball" data-category="albaikOffers">
+            <img src="assets/images/Albaik-offers.png" alt="عروض البيك">
+        </div>
+    </section>
 
-            <!-- 1. الرئيسية: الأربع بوكسات المميزة -->
-            <div class="grid-row main-featured-row">
-                <div class="card smoky-frame" data-name="بوكس الميكس العائلي">
-                    <img src="Assets/images/Mix-box.png" alt="بوكس الميكس">
-                    <h3 data-i18n="mixBox">بوكس الميكس العائلي</h3>
+    <!-- قسم المنيو والوجبات -->
+    <main id="menuGrid" class="menu-container">
+
+        <!-- ================= 1. الوجبات العائلية (تظهر افتراضياً + عند الضغط على كرة وجبات العائلة) ================= -->
+        <div class="grid-row featured-row" data-category-row="featured family">
+            <div class="card">
+                <img src="assets/images/Mix-box.png" alt="Mix Box">
+                <h3>Mix Box</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/images/Sitra-box.png" alt="Sitra Box">
+                <h3>Sitra Box</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-row featured-row" data-category-row="featured family">
+            <div class="card">
+                <img src="assets/images/Farha-box.png" alt="Farha Box">
+                <h3>Farha Box</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/images/Shawermaking-box.png" alt="Shawerma King Box">
+                <h3>Shawerma King Box</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-row hidden-row" data-category-row="family">
+            <div class="card">
+                <img src="assets/images/Family-box.png" alt="Family Box">
+                <h3>Family Box</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/images/Azama-box.png" alt="Azama Box">
+                <h3>Azama Box</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-row hidden-row" data-category-row="family">
+            <div class="card">
+                <img src="assets/images/Akila-box.png" alt="Akila Box">
+                <h3>Akila Box</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/images/Moalem-box.png" alt="Moalem Box">
+                <h3>Moalem Box</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= 2. وجبة لفردين (تظهر عند الضغط على كرة وجبات الفردين) ================= -->
+        <div class="grid-row hidden-row" data-category-row="two">
+            <div class="card">
+                <img src="assets/images/Ard-Elkarm.jpg" alt="عرض الكرم">
+                <h3>عرض الكرم</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/images/Melok-Almaria.jpg" alt="ملوك المعمورة">
+                <h3>ملوك المعمورة</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-row hidden-row" data-category-row="two">
+            <div class="card">
+                <img src="assets/images/Ard-Elsaif.jpg" alt="عرض الصيف">
+                <h3>عرض الصيف</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/images/Ard-Elagaza.jpg" alt="عرض الإجازة">
+                <h3>عرض الإجازة</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-row hidden-row" data-category-row="two">
+            <div class="card">
+                <img src="assets/images/Ard-Elbakawat.jpg" alt="عرض البكاوات">
+                <h3>عرض البكاوات</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/images/Ard-Eltabtba.jpg" alt="عرض الطبطبة">
+                <h3>عرض الطبطبة</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= 3. وجبة الفرد (تظهر عند الضغط على كرة وجبة الفرد) ================= -->
+        <div class="grid-row hidden-row" data-category-row="single">
+            <div class="card">
+                <img src="assets/images/Ard-Elking.jpg" alt="عرض الكينج">
+                <h3>عرض الكينج</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/images/Ard-Elmoalem.jpg" alt="عرض المعلم">
+                <h3>عرض المعلم</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-row hidden-row" data-category-row="single">
+            <div class="card">
+                <img src="assets/images/Ard-Elmzag.jpg" alt="عرض المزاج">
+                <h3>عرض المزاج</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/images/Ard-Elraiq-lahma.jpg" alt="عرض الرايق لحم">
+                <h3>عرض الرايق لحم</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-row hidden-row" data-category-row="single">
+            <div class="card">
+                <img src="assets/images/Ard-Elraiq-dgag.jpg" alt="عرض الرايق دجاج">
+                <h3>عرض الرايق دجاج</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/images/Ard-Elsaada.jpg" alt="عرض السعادة">
+                <h3>عرض السعادة</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-row hidden-row" data-category-row="single">
+            <div class="card">
+                <img src="assets/images/Ard-Elostora.jpg" alt="عرض الأسطورة">
+                <h3>عرض الأسطورة</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/images/Ard-Ebn-Elbaik.jpg" alt="عرض ابن البيك">
+                <h3>عرض ابن البيك</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= 4. قائمة سندويتشات البيك ================= -->
+        <div id="sandwichesSection" class="sandwiches-section hidden-row" data-category-row="sandwiches">
+            <h2 class="section-title" data-i18n="sandwichesTitle">سندويتشات البيك</h2>
+            <div class="sandwiches-list">
+                <div class="sandwich-item">
+                    <span class="sandwich-name">سندويتش شاورما دجاج</span>
                     <div class="card-controls">
                         <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
                         <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
                     </div>
                 </div>
-                <div class="card smoky-frame" data-name="بوكس الفرحة">
-                    <img src="Assets/images/Farha-box.png" alt="بوكس الفرحة">
-                    <h3 data-i18n="farhaBox">بوكس الفرحة</h3>
+                <div class="sandwich-item">
+                    <span class="sandwich-name">سندويتش شاورما لحم</span>
+                    <div class="card-controls">
+                        <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                        <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                    </div>
+                </div>
+                <div class="sandwich-item">
+                    <span class="sandwich-name">سندويتش كرسبي إكسترا</span>
+                    <div class="card-controls">
+                        <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                        <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                    </div>
+                </div>
+                <div class="sandwich-item">
+                    <span class="sandwich-name">سندويتش زنجر حار</span>
+                    <div class="card-controls">
+                        <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                        <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                    </div>
+                </div>
+                <div class="sandwich-item">
+                    <span class="sandwich-name">سندويتش فاهيتا دجاج</span>
+                    <div class="card-controls">
+                        <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                        <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                    </div>
+                </div>
+                <div class="sandwich-item">
+                    <span class="sandwich-name">سندويتش فرانسيسكو</span>
+                    <div class="card-controls">
+                        <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                        <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                    </div>
+                </div>
+                <div class="sandwich-item">
+                    <span class="sandwich-name">سندويتش شيش طاووق</span>
+                    <div class="card-controls">
+                        <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                        <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                    </div>
+                </div>
+                <div class="sandwich-item">
+                    <span class="sandwich-name">سندويتش كبده شامية</span>
+                    <div class="card-controls">
+                        <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                        <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                    </div>
+                </div>
+                <div class="sandwich-item">
+                    <span class="sandwich-name">سندويتش بطاطس مكسيكانو</span>
+                    <div class="card-controls">
+                        <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                        <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                    </div>
+                </div>
+                <div class="sandwich-item">
+                    <span class="sandwich-name">سندويتش معمرية جيل ناري</span>
                     <div class="card-controls">
                         <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
                         <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="grid-row main-featured-row">
-                <div class="card smoky-frame" data-name="بوكس العيلة">
-                    <img src="Assets/images/Family-box.png" alt="بوكس العيلة">
-                    <h3 data-i18n="familyBox">بوكس العيلة</h3>
+        <!-- ================= 5. قسم عروض البيك (albaikOffers) ================= -->
+        <div id="albaikOffersSection" class="albaik-offers-section hidden-row" data-category-row="albaikOffers">
+            <h2 class="section-title" data-i18n="albaikOffersTitle">عروض البيك المميزة</h2>
+            <div class="offers-grid">
+                <div class="card">
+                    <img src="assets/images/offer1.png" alt="عرض 1">
+                    <h3>عرض سوبر البيك</h3>
                     <div class="card-controls">
                         <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
                         <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
                     </div>
                 </div>
-                <div class="card smoky-frame" data-name="بوكس السترة">
-                    <img src="Assets/images/Sitra-box.png" alt="بوكس السترة">
-                    <h3 data-i18n="sitraBox">بوكس السترة</h3>
+                <div class="card">
+                    <img src="assets/images/offer2.png" alt="عرض 2">
+                    <h3>عرض المكس السريع</h3>
+                    <div class="card-controls">
+                        <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                        <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="assets/images/offer3.png" alt="عرض 3">
+                    <h3>عرض الوجبة الذهبية</h3>
+                    <div class="card-controls">
+                        <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                        <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="assets/images/offer4.png" alt="عرض 4">
+                    <h3>عرض اللمة الشامية</h3>
+                    <div class="card-controls">
+                        <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                        <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="assets/images/offer5.png" alt="عرض 5">
+                    <h3>عرض التوفير العائلي</h3>
+                    <div class="card-controls">
+                        <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                        <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="assets/images/offer6.png" alt="عرض 6">
+                    <h3>عرض الكومبو الملكي</h3>
                     <div class="card-controls">
                         <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
                         <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
                     </div>
                 </div>
             </div>
-
-            <!-- 2. وجبات العائلة (8 وجبات كاملة) -->
-            <div class="grid-row hidden-row" data-category-row="family">
-                <div class="card smoky-frame" data-name="بوكس الميكس العائلي"><img src="Assets/images/Mix-box.png" alt="بوكس الميكس"><h3 data-i18n="mixBox">بوكس الميكس العائلي</h3><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
-                <div class="card smoky-frame" data-name="بوكس السترة"><img src="Assets/images/Sitra-box.png" alt="بوكس السترة"><h3 data-i18n="sitraBox">بوكس السترة</h3><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
-            </div>
-            <div class="grid-row hidden-row" data-category-row="family">
-                <div class="card smoky-frame" data-name="بوكس الفرحة"><img src="Assets/images/Farha-box.png" alt="بوكس الفرحة"><h3 data-i18n="farhaBox">بوكس الفرحة</h3><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
-                <div class="card smoky-frame" data-name="بوكس ملك الشاورما"><img src="Assets/images/Shawermaking-box.png" alt="بوكس ملك الشاورما"><h3 data-i18n="kingShawarmaBox">بوكس ملك الشاورما</h3><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
-            </div>
-            <div class="grid-row hidden-row" data-category-row="family">
-                <div class="card smoky-frame" data-name="بوكس العيلة"><img src="Assets/images/Family-box.png" alt="بوكس العيلة"><h3 data-i18n="familyBox">بوكس العيلة</h3><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
-                <div class="card smoky-frame" data-name="بوكس العظمة"><img src="Assets/images/Azama-box.png" alt="بوكس العظمة"><h3 data-i18n="azamaBox">بوكس العظمة</h3><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
-            </div>
-            <div class="grid-row hidden-row" data-category-row="family">
-                <div class="card smoky-frame" data-name="بوكس الأكيلة"><img src="Assets/images/Akila-box.png" alt="بوكس الأكيلة"><h3 data-i18n="akilaBox">بوكس الأكيلة</h3><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
-                <div class="card smoky-frame" data-name="بوكس المعلم"><img src="Assets/images/Moalem-box.png" alt="بوكس المعلم"><h3 data-i18n="moalemBox">بوكس المعلم</h3><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
-            </div>
-
-            <!-- 3. وجبات لفردين (6 وجبات) -->
-            <div class="grid-row hidden-row" data-category-row="two">
-                <div class="card smoky-frame" data-name="عرض الكرم"><img src="Assets/images/Ard-Elkarm.jpg" alt="عرض الكرم"><h3 data-i18n="karmOffer">عرض الكرم</h3><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
-                <div class="card smoky-frame" data-name="ملوك المعمرية"><img src="Assets/images/Melok-Almaria.jpg" alt="ملوك المعمرية"><h3 data-i18n="mariaKings">ملوك المعمرية</h3><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
-            </div>
-            <div class="grid-row hidden-row" data-category-row="two">
-                <div class="card smoky-frame" data-name="عرض الصيف"><img src="Assets/images/Ard-Elsaif.jpg" alt="عرض الصيف"><h3 data-i18n="summerOffer">عرض الصيف</h3><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
-                <div class="card smoky-frame" data-name="عرض الإجازة"><img src="Assets/images/Ard-Elagaza.jpg" alt="عرض الإجازة"><h3 data-i18n="vacationOffer">عرض الإجازة</h3><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
-            </div>
-            <div class="grid-row hidden-row" data-category-row="two">
-                <div class="card smoky-frame" data-name="عرض البكاوات"><img src="Assets/images/Ard-Elbakawat.jpg" alt="عرض البكاوات"><h3 data-i18n="bakawatOffer">عرض البكاوات</h3><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
-                <div class="card smoky-frame" data-name="عرض الطبطبة"><img src="Assets/images/Ard-Eltabtba.jpg" alt="عرض الطبطبة"><h3 data-i18n="tabtabaOffer">عرض الطبطبة</h3><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
-            </div>
-
-            <!-- 4. وجبات الفرد (8 وجبات) -->
-            <div class="grid-row hidden-row" data-category-row="single">
-                <div class="card smoky-frame" data-name="عرض الكينج"><img src="Assets/images/Ard-Elking.jpg" alt="عرض الكينج"><h3 data-i18n="kingOffer">عرض الكينج</h3><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
-                <div class="card smoky-frame" data-name="عرض المعلم"><img src="Assets/images/Ard-Elmoalem.jpg" alt="عرض المعلم"><h3 data-i18n="moalemOffer">عرض المعلم</h3><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
-            </div>
-            <div class="grid-row hidden-row" data-category-row="single">
-                <div class="card smoky-frame" data-name="عرض المزاج"><img src="Assets/images/Ard-Elmzag.jpg" alt="عرض المزاج"><h3 data-i18n="mzagOffer">عرض المزاج</h3><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
-                <div class="card smoky-frame" data-name="عرض الرايق لحم"><img src="Assets/images/Ard-Elraiq-lahma.jpg" alt="عرض الرايق لحم"><h3 data-i18n="raiqMeatOffer">عرض الرايق لحم</h3><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
-            </div>
-            <div class="grid-row hidden-row" data-category-row="single">
-                <div class="card smoky-frame" data-name="عرض الرايق دجاج"><img src="Assets/images/Ard-Elraiq-dgag.jpg" alt="عرض الرايق دجاج"><h3 data-i18n="raiqChickenOffer">عرض الرايق دجاج</h3><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
-                <div class="card smoky-frame" data-name="عرض السعادة"><img src="Assets/images/Ard-Elsaada.jpg" alt="عرض السعادة"><h3 data-i18n="saadaOffer">عرض السعادة</h3><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
-            </div>
-            <div class="grid-row hidden-row" data-category-row="single">
-                <div class="card smoky-frame" data-name="عرض الأسطورة"><img src="Assets/images/Ard-Elostora.jpg" alt="عرض الأسطورة"><h3 data-i18n="ostoraOffer">عرض الأسطورة</h3><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
-                <div class="card smoky-frame" data-name="عرض ابن البيك"><img src="Assets/images/Ard-Ebn-Elbaik.jpg" alt="عرض ابن البيك"><h3 data-i18n="ebnBaikOffer">عرض ابن البيك</h3><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
-            </div>
-
         </div>
     </main>
 
-    <!-- سلة الطلبات المباشرة في منتصف الصفحة تحت البوكسات -->
+    <!-- سلة الطلبات المباشرة -->
     <section class="inpage-cart-section">
         <div class="inpage-cart-box">
             <div class="inpage-cart-header">
-                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-shopping-basket"></i>
                 <span data-i18n="cartTitle">سلة الطلبات المباشرة</span>
-                <span class="inline-cart-badge" id="cartBadge">0</span>
+                <span id="cartBadge" class="inline-cart-badge">0</span>
             </div>
-            
-            <div class="inpage-cart-items" id="cartItemsList">
+
+            <!-- قائمة عناصر السلة -->
+            <div id="cartItemsList" class="inpage-cart-items">
                 <p class="empty-cart-msg">السلة فارغة حالياً</p>
             </div>
 
-            <button class="confirm-order-btn" id="sendCartWhatsapp">
-                <i class="fab fa-whatsapp"></i> <span data-i18n="confirmOrder">تأكيد الطلب</span>
+            <!-- فيديو Chicken.mp4 داخل السلة المباشرة -->
+            <div class="inline-chicken-video">
+                <video id="cartChickenVideo" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    <source src="assets/videos/Chicken.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <!-- زر اطلب الآن عبر الواتساب -->
+            <button id="sendCartWhatsapp" class="confirm-order-btn">
+                <i class="fab fa-whatsapp"></i>
+                <span data-i18n="orderNowBtn">اطلب الآن عبر الواتساب</span>
             </button>
 
-            <!-- العبارة التي طلبتها تحت زر تأكيد الطلب مباشرة -->
-            <div class="direct-upload-notice">
-                <i class="fas fa-bolt"></i> <span data-i18n="directUploadText">جميع طلباتك يتم رفعها بشكل مباشر</span>
-            </div>
+            <!-- النص المباشر تحت الزر -->
+            <p class="direct-upload-notice">
+                <i class="fas fa-bolt"></i> <span data-i18n="directUploadText">طلباتك يتم رفعها بشكل مباشر</span>
+            </p>
         </div>
     </section>
 
-    <!-- فيديو الدجاج والشعارات -->
+    <!-- الشعارات والعبارات الأسفل -->
     <section class="bottom-section">
-        <div class="video-wrapper bottom-video-box">
-            <video id="chickenVideo" autoplay muted playsinline>
-                <source src="Assets/video/Chicken.mp4" type="video/mp4">
-            </video>
-        </div>
-
         <div class="pearl-text-container">
-            <p class="pearl-text slogan" data-i18n="slogan">" أطيب من هيك .. ما في غير عند البيك "</p>
+            <p class="pearl-text slogan" data-i18n="slogan">"أطيب من هيك .. ما في غير عند البيك"</p>
             <p class="pearl-text sub-slogan" data-i18n="subSlogan">البيك الشامي .. الطعم السوري الأصلي</p>
         </div>
     </section>
 
-    <!-- الفوتر وتوقيع المطور -->
+    <!-- الفوتر -->
     <footer class="main-footer">
         <div class="social-links">
-            <a href="https://www.facebook.com/share/18GpESiAv5/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.facebook.com/share/18GpESiAv5/" target="_blank"><i class="fab fa-facebook"></i></a>
             <a href="https://www.instagram.com/albaik_elshami/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/201287307518" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
-        <p class="copyright">© 2026 Al-Baik Al-Shami</p>
-        <a href="https://mydigital-id.github.io/" target="_blank" class="powered-by-link">
-            <div class="powered-by">
-                <span>Powered-by</span>
-                <img src="Assets/logo/Albick-logo.png" alt="MyDigital-ID Logo" class="brand-icon">
-                <span style="color: #00d2ff;">MyDigital-ID</span>
-            </div>
+        <p class="copyright">&copy; 2026 مطعم البيك الشامي. جميع الحقوق محفوظة.</p>
+        
+        <a href="https://mydigital-id.github.io/MyDigital-ID/" target="_blank" class="powered-by-link">
+            <p class="powered-by">
+                Powered by MyDigital-ID
+                <img src="assets/images/MyDigital-ID-logo.png" alt="MyDigital-ID" class="brand-icon">
+            </p>
         </a>
     </footer>
 
     <script src="script.js"></script>
-
-    <!-- كود الماتريكس (توزيع عشوائي متفرق) -->
-    <script>
-        const canvas = document.getElementById('matrix-canvas');
-        const ctx = canvas.getContext('2d');
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-
-        const items = ['🍗', '🍗', '🌶️', '🧄', '🥫', '🍟', '✨'];
-        const fontSize = 18;
-        const columns = Math.floor(canvas.width / (fontSize + 12)) || 10;
-        
-        const drops = [];
-        for (let i = 0; i < columns; i++) {
-            drops[i] = Math.floor(Math.random() * -50); 
-        }
-
-        function drawMatrix() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            for (let i = 0; i < drops.length; i++) {
-                const text = items[Math.floor(Math.random() * items.length)];
-                const x = i * (fontSize + 12);
-                const y = drops[i] * fontSize;
-                
-                if (y > 0) {
-                    ctx.font = `${fontSize}px sans-serif`;
-                    ctx.globalAlpha = 0.35;
-                    ctx.fillText(text, x, y);
-                }
-                
-                if (y > canvas.height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
-                drops[i]++;
-            }
-        }
-        setInterval(drawMatrix, 50);
-    </script>
 </body>
 </html>
