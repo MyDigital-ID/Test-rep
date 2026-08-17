@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             albaikOffersTitle: 'عروض البيك المميزة',
             mapBtn: 'موقعنا على الخريطة',
             vcardBtn: 'حفظ جهة الاتصال (vCard)',
-            qrTitle: 'رمز QR الخاص بالمنيو',
+            qrTitle: 'رمز QR',
             qrDownload: 'تحميل الـ QR Code',
             mainTitle: 'مطعم البيك الشامي',
             addToCart: 'إضافة للسلة',
