@@ -1,1 +1,449 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="pageTitle">سندويتشات الزوز | ELZOZ SANDWICHES</title>
 
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="مطعم سندويتشات الزوز في الإسكندرية - أطيب وألذ أطباق الجمبري، السبيط، الفيليه، السندويتشات والوجبات البحرية الطازجة.">
+    <meta name="keywords" content="سندويتشات الزوز, منيو الزوز, مطعم أسماك الإسكندرية, جمبري مقلي, سبيط, فيليه, مأكولات بحرية, شارع خالد بن الوليد">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="ELZOZ SANDWICHES">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="سندويتشات الزوز | ELZOZ SANDWICHES">
+    <meta property="og:description" content="أطيب وألذ أطباق الجمبري، السبيط، الفيليه والوجبات البحرية الطازجة من سندويتشات الزوز.">
+    <meta property="og:image" content="assets/logo/Elzoz-header-logo.png">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- خلفية أعماق البحار المتحركة -->
+    <div class="ocean-background">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+
+        <div class="sea-creature fish1">🐟</div>
+        <div class="sea-creature fish2">🐠</div>
+        <div class="sea-creature shrimp">🦐</div>
+        <div class="sea-creature squid">🦑</div>
+    </div>
+
+    <!-- أزرار التحكم العليا -->
+    <div class="header-controls">
+        <button id="menuToggleBtn" class="menu-toggle-btn" title="القائمة">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <button id="langToggleBtn" class="lang-toggle-btn">
+            EN
+        </button>
+    </div>
+
+    <!-- القائمة الجانبية Sidebar -->
+    <aside id="sidebar" class="sidebar">
+        <button id="closeSidebarBtn" class="close-sidebar-btn">&times;</button>
+
+        <div class="sidebar-content">
+            <div class="about-section">
+                <h3 data-i18n="aboutTitle">عن سندويتشات الزوز</h3>
+                <p data-i18n="aboutText">
+                    مرحباً بكم في مطعم سندويتشات الزوز ❤️ نقدم لكم أشهى وألذ السندويتشات والأطباق البحرية الطازجة من الجمبري والسبيط والفيليه بأعلى معايير الجودة.
+                </p>
+                <p class="slogan-sidebar" data-i18n="slogan">
+                    "عند الزوز .. السندويتشات بتبوظ"
+                </p>
+            </div>
+
+            <hr class="sidebar-divider">
+
+            <div class="location-info">
+                <h4>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span data-i18n="addressTitle">العنوان</span>
+                </h4>
+                <p data-i18n="addressText">
+                    سيدى بشر ترام، شارع خالد بن الوليد، أمام جزارة الثوره ، محافظة الإسكندرية
+                </p>
+                <p class="phone-landline">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:01041514004" dir="ltr" class="phone-number-styled">01041514004</a>
+                </p>
+            </div>
+
+            <hr class="sidebar-divider">
+
+            <div class="sidebar-menu-categories">
+                <h4>
+                    <i class="fas fa-utensils"></i>
+                    <span data-i18n="menuCategoriesTitle">القائمة والوجبات</span>
+                </h4>
+
+                <ul class="sidebar-menu-list">
+                    <li><button class="sidebar-cat-btn" data-category="home" data-i18n="homeMeal">الرئيسية</button></li>
+                    <li><button class="sidebar-cat-btn" data-category="single" data-i18n="singleMeals">وجبات الفرد</button></li>
+                    <li><button class="sidebar-cat-btn" data-category="offers" data-i18n="offersTitle">عروض الزوز</button></li>
+                    <li><button class="sidebar-cat-btn" data-category="sandwiches" data-i18n="sandwichesTitle">السندويتشات</button></li>
+                    <li><button class="sidebar-cat-btn" data-category="rice" data-i18n="riceTitle">أطباق الأرز</button></li>
+                    <li><button class="sidebar-cat-btn" data-category="pasta" data-i18n="pastaTitle">المكرونات</button></li>
+                    <li><button class="sidebar-cat-btn" data-category="soups" data-i18n="soupsTitle">الشوربة والأطباق</button></li>
+                    <li><button class="sidebar-cat-btn" data-category="sauces" data-i18n="saucesTitle">الصوصات</button></li>
+                    <li><button class="sidebar-cat-btn" data-category="drinks" data-i18n="drinksTitle">المشروبات</button></li>
+                </ul>
+            </div>
+
+            <hr class="sidebar-divider">
+
+            <a href="https://www.google.com/maps/search/?api=1&query=31.254272,29.978256" target="_blank" class="sidebar-btn">
+                <i class="fas fa-map-marker-alt"></i>
+                <span data-i18n="mapBtn">موقعنا على الخريطة</span>
+            </a>
+
+            <button id="downloadVcardBtn" class="sidebar-btn">
+                <i class="fas fa-address-card"></i>
+                <span data-i18n="vcardBtn">حفظ جهة الاتصال (vCard)</span>
+            </button>
+
+            <!-- رمز QR التفاعلي المبروز -->
+            <div class="qr-custom-card">
+                <span class="qr-brand-title" data-i18n="qrBrandName">الزوز - QR</span>
+                <div class="qr-frame">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://mydigital-id.github.io/elzoz/" alt="Elzoz QR Code">
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- الهيدر والعنوان الرئيسي -->
+    <header class="main-header">
+        <div class="brand-container">
+            <img src="assets/logo/Elzoz-header-logo.png" alt="Elzoz Logo" class="header-brand-logo">
+            <h1 class="brand-title" data-i18n="restaurantName">سندويتشات الزوز</h1>
+        </div>
+    </header>
+
+    <!-- منطقة الفيديو -->
+    <section class="hero-section">
+        <div id="videoWrapper" class="video-wrapper">
+            <video id="chefVideo" autoplay muted playsinline>
+                <source src="assets/video/Elzoz-video.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+    <!-- كرات الهيليوم للتنقل -->
+    <section class="floating-categories show">
+        <div class="category-ball" data-category="sandwiches">
+            <img id="imgSandwiches" src="assets/images/Elzoz-sandwiches-arabic.png" alt="السندويتشات">
+        </div>
+        <div class="category-ball" data-category="offers">
+            <img id="imgOffers" src="assets/images/Elzoz-offers-arabic.png" alt="عروض الزوز">
+        </div>
+        <div class="category-ball" data-category="rice">
+            <img id="imgRice" src="assets/images/Rice-Dishes-arabic.png" alt="أطباق الأرز">
+        </div>
+    </section>
+
+    <section class="floating-categories secondary-balls show">
+        <div class="category-ball" data-category="pasta">
+            <img id="imgPasta" src="assets/images/Pasta-arabic.png" alt="المكرونات">
+        </div>
+        <div class="category-ball" data-category="sauces">
+            <img id="imgSauces" src="assets/images/Sauce-arabic.png" alt="الصوصات">
+        </div>
+        <div class="category-ball" data-category="drinks">
+            <img id="imgDrinks" src="assets/images/Drinks-Arabic.png" alt="المشروبات">
+        </div>
+    </section>
+
+    <!-- قسم المنيو والوجبات -->
+    <main id="menuGrid" class="menu-container">
+
+        <!-- الصور الثلاث الرئيسية -->
+        <div class="home-showcase-container" data-category-row="home">
+            <div class="showcase-top">
+                <div class="showcase-card" data-category="offers">
+                    <img src="assets/images/main-page.jpg" alt="عرض العائله" class="showcase-img">
+                    <h3 data-ar="عرض العيله" data-en="Family Offer">عرض العيله</h3>
+                </div>
+            </div>
+
+            <div class="showcase-bottom-grid">
+                <div class="showcase-card" data-category="rice">
+                    <img src="assets/images/Rice-dishes.jpg" alt="أطباق الأرز" class="showcase-img">
+                    <h3 data-ar="أطباق الأرز" data-en="Rice Dishes">أطباق الأرز</h3>
+                </div>
+
+                <div class="showcase-card" data-category="pasta">
+                    <img src="assets/images/Pasta-dishes.jpg" alt="أطباق المكرونة" class="showcase-img">
+                    <h3 data-ar="المكرونات" data-en="Pasta Dishes">المكرونات</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- وجبات الفرد -->
+        <div class="grid-row hidden-row" data-category-row="single">
+            <div class="card">
+                <img src="assets/images/Rice-Fillet.jpg" alt="أرز فيليه">
+                <h3 data-ar="أرز فيليه" data-en="Fillet Rice">أرز فيليه</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="assets/images/Rice-Shrimp.jpg" alt="أرز جمبري">
+                <h3 data-ar="أرز جمبري" data-en="Shrimp Rice">أرز جمبري</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="assets/images/Rice-Mix.jpg" alt="أرز ميكس">
+                <h3 data-ar="أرز ميكس" data-en="Mix Rice">أرز ميكس</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="assets/images/Amir-Elbehar.jpg" alt="عرض أمير البحار">
+                <h3 data-ar="عرض أمير البحار" data-en="Amir Elbehar Offer">عرض أمير البحار</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- عروض الزوز -->
+        <div class="grid-row hidden-row" data-category-row="offers">
+            <div class="card">
+                <img src="assets/images/Elzoz-offer-Fillet-Squid-Shrimp.jpg" alt="عرض الثلاثي">
+                <h3 data-ar="عرض الثلاثي" data-en="Triple Offer">عرض الثلاثي</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="assets/images/White-pasta-Shrimp.jpg" alt="عرض الوايت">
+                <h3 data-ar="عرض الوايت" data-en="White Offer">عرض الوايت</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="assets/images/Ard-Elma.jpg" alt="عرض اللمه">
+                <h3 data-ar="عرض اللمه" data-en="Elma Offer">عرض اللمه</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="assets/images/Ard-Elhoot.jpg" alt="عرض الحوت">
+                <h3 data-ar="عرض الحوت" data-en="Elhoot Offer">عرض الحوت</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="assets/images/Amir-Elbehar.jpg" alt="عرض أمير البحار">
+                <h3 data-ar="عرض أمير البحار" data-en="Amir Elbehar Offer">عرض أمير البحار</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="assets/images/main-page.jpg" alt="عرض العيله">
+                <h3 data-ar="عرض العيله" data-en="Family Offer">عرض العيله</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="assets/images/Ard-Eldoito.jpg" alt="عرض الدويتو">
+                <h3 data-ar="عرض الدويتو" data-en="El Doito Offer">عرض الدويتو</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="assets/images/AlKing-offer.jpg" alt="عرض الكينج">
+                <h3 data-ar="عرض الكينج" data-en="Al King offer">عرض الكينج</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="assets/images/Aleskandrani-offer.jpg" alt="عرض الاسكندراني">
+                <h3 data-ar="عرض الاسكندراني" data-en="Al Eskandrani offer">عرض الاسكندراني</h3>
+                <div class="card-controls">
+                    <div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div>
+                    <button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- السندويتشات -->
+        <div id="sandwichesSection" class="sandwiches-section hidden-row" data-category-row="sandwiches">
+            <h2 class="section-title" data-i18n="sandwichesTitle">السندويتشات</h2>
+            <div class="sandwiches-list">
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="جمبري مقلي - L (95 جنيه)" data-en="Fried Shrimp - L (95 EGP)">جمبري مقلي - L (95 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="جمبري مقلي - XL (110 جنيه)" data-en="Fried Shrimp - XL (110 EGP)">جمبري مقلي - XL (110 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="جمبري مقلي - عيش رده (85 جنيه)" data-en="Fried Shrimp - Bran Bread (85 EGP)">جمبري مقلي - عيش رده (85 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="سبيط مقلي - L (105 جنيه)" data-en="Fried Squid - L (105 EGP)">سبيط مقلي - L (105 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="سبيط مقلي - XL (120 جنيه)" data-en="Fried Squid - XL (120 EGP)">سبيط مقلي - XL (120 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="سبيط مقلي - عيش رده (95 جنيه)" data-en="Fried Squid - Bran Bread (95 EGP)">سبيط مقلي - عيش رده (95 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="فيليه مقلي - L (80 جنيه)" data-en="Fried Fillet - L (80 EGP)">فيليه مقلي - L (80 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="فيليه مقلي - XL (120 جنيه)" data-en="Fried Fillet - XL (120 EGP)">فيليه مقلي - XL (120 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="فيليه مقلي - عيش رده (75 جنيه)" data-en="Fried Fillet - Bran Bread (75 EGP)">فيليه مقلي - عيش رده (75 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="ميكس 2 مقلي (جمبري وسبيط) - L (120 جنيه)" data-en="Mix 2 Fried (Shrimp & Squid) - L (120 EGP)">ميكس 2 مقلي (جمبري وسبيط) - L (120 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="ميكس 2 مقلي (جمبري وسبيط) - XL (140 جنيه)" data-en="Mix 2 Fried (Shrimp & Squid) - XL (140 EGP)">ميكس 2 مقلي (جمبري وسبيط) - XL (140 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="ميكس 2 مقلي - عيش رده (95 جنيه)" data-en="Mix 2 Fried - Bran Bread (95 EGP)">ميكس 2 مقلي - عيش رده (95 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+            </div>
+        </div>
+
+        <!-- أطباق الأرز -->
+        <div class="sandwiches-section hidden-row" data-category-row="rice">
+            <div class="category-header-banner">
+                <img src="assets/images/Rice-dishes.jpg" alt="Rice Dishes" class="cat-banner-img">
+            </div>
+            <h2 class="section-title" data-i18n="riceTitle">أطباق الأرز</h2>
+            <div class="sandwiches-list">
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="أرز جمبري (185 جنيه)" data-en="Shrimp Rice (185 EGP)">أرز جمبري (185 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="أرز سبيط مقلي (195 جنيه)" data-en="Fried Squid Rice (195 EGP)">أرز سبيط مقلي (195 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="أرز فيليه مقلي (170 جنيه)" data-en="Fried Fillet Rice (170 EGP)">أرز فيليه مقلي (170 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="أرز ميكس مقلي (جمبري وسبيط وفيليه) (200 جنيه)" data-en="Fried Mix Rice (Shrimp, Squid, Fillet) (200 EGP)">أرز ميكس مقلي (جمبري وسبيط وفيليه) (200 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="أرز ميكس مقلي مخصوص (جمبري وسبيط وفيليه وبيض سبيط) (270 جنيه)" data-en="Special Fried Mix Rice (Shrimp, Squid, Fillet, Squid Roe) (270 EGP)">أرز ميكس مقلي مخصوص (جمبري وسبيط وفيليه وبيض سبيط) (270 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+            </div>
+        </div>
+
+        <!-- المكرونات -->
+        <div class="sandwiches-section hidden-row" data-category-row="pasta">
+            <div class="category-header-banner">
+                <img src="assets/images/Pasta-dishes.jpg" alt="Pasta Dishes" class="cat-banner-img">
+            </div>
+            <h2 class="section-title" data-i18n="pastaTitle">المكرونات</h2>
+            <div class="sandwiches-list">
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="جمبري وايت صوص (200 جنيه)" data-en="Shrimp White Sauce (200 EGP)">جمبري وايت صوص (200 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="سبيط وايت صوص (200 جنيه)" data-en="Squid White Sauce (200 EGP)">سبيط وايت صوص (200 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="ميكس وايت صوص مخصوص (جمبري وسبيط وبيض سبيط) (270 جنيه)" data-en="Special Mix White Sauce (Shrimp, Squid, Squid Roe) (270 EGP)">ميكس وايت صوص مخصوص (جمبري وسبيط وبيض سبيط) (270 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+            </div>
+        </div>
+
+        <!-- الشوربة والأطباق -->
+        <div class="sandwiches-section hidden-row" data-category-row="soups">
+            <h2 class="section-title" data-i18n="soupsTitle">الشوربة والأطباق</h2>
+            <div class="sandwiches-list">
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="شوربة جمبري حمراء ساده (25 جنيه)" data-en="Plain Red Shrimp Soup (25 EGP)">شوربة جمبري حمراء ساده (25 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="شوربة جمبري حمراء قطع (60 جنيه)" data-en="Red Shrimp Soup with Pieces (60 EGP)">شوربة جمبري حمراء قطع (60 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="شوربة سي فود وايت صوص (جمبري وسبيط وفيليه وكابوريا وجندوفلي) (190 جنيه)" data-en="White Sauce Seafood Soup (Shrimp, Squid, Fillet, Crab, Clams) (190 EGP)">شوربة سي فود وايت صوص (جمبري وسبيط وفيليه وكابوريا وجندوفلي) (190 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+            </div>
+        </div>
+
+        <!-- الصوصات -->
+        <div class="sandwiches-section hidden-row" data-category-row="sauces">
+            <h2 class="section-title" data-i18n="saucesTitle">الصوصات</h2>
+            <div class="sandwiches-list">
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="التارتار (15 جنيه)" data-en="Tartar (15 EGP)">التارتار (15 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="مايونيز (10 جنيه)" data-en="Mayonnaise (10 EGP)">مايونيز (10 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="مايونيز سبايسي (10 جنيه)" data-en="Spicy Mayonnaise (10 EGP)">مايونيز سبايسي (10 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="طحينه سبايسي (10 جنيه)" data-en="Spicy Tahini (10 EGP)">طحينه سبايسي (10 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+            </div>
+        </div>
+
+        <!-- المشروبات -->
+        <div class="sandwiches-section hidden-row" data-category-row="drinks">
+            <h2 class="section-title" data-i18n="drinksTitle">المشروبات</h2>
+            <div class="sandwiches-list">
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="كولا (25 جنيه)" data-en="Cola (25 EGP)">كولا (25 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+                <div class="sandwich-item"><span class="sandwich-name" data-ar="مياه (10 جنيه)" data-en="Water (10 EGP)">مياه (10 جنيه)</span><div class="card-controls"><div class="qty-btn"><button class="minus">-</button><span>1</span><button class="plus">+</button></div><button class="add-to-cart" data-i18n="addToCart">إضافة للسلة</button></div></div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- سلة الطلبات المباشرة -->
+    <section class="inpage-cart-section">
+        <div class="inpage-cart-box">
+            <div class="inpage-cart-header">
+                <i class="fas fa-shopping-basket"></i>
+                <span data-i18n="cartTitle">سلة الطلبات المباشرة</span>
+                <span id="cartBadge" class="inline-cart-badge">0</span>
+            </div>
+
+            <div id="cartItemsList" class="inpage-cart-items">
+                <p class="empty-cart-msg" data-i18n="emptyCartMsg">السلة فارغة حالياً</p>
+            </div>
+
+            <button id="sendCartWhatsapp" class="confirm-order-btn">
+                <i class="fab fa-whatsapp"></i>
+                <span data-i18n="orderNowBtn">تأكيد الطلبات عبر الواتساب</span>
+            </button>
+
+            <p class="direct-upload-notice">
+                <i class="fas fa-bolt"></i>
+                <span data-i18n="directUploadText">طلباتك يتم رفعها بشكل مباشر</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- زر الصفحة الرئيسية -->
+    <div class="home-bottom-container">
+        <button id="goHomeBtn" class="go-home-btn" title="الرئيسية">
+            <i class="fas fa-home"></i>
+            <span data-i18n="homeMeal">الرئيسية</span>
+        </button>
+    </div>
+
+    <!-- الفوتر -->
+    <footer class="main-footer">
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/1FRxjRE3jE/" target="_blank" class="facebook-link" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+
+        <p class="copyright">
+            &copy; 2026 سندويتشات الزوز. جميع الحقوق محفوظة.
+        </p>
+
+        <div class="mydigital-footer">
+            <span>Powered by</span>
+            <a href="https://mydigital-id.github.io/" target="_blank" rel="noopener noreferrer" class="mydigital-link">
+                <i class="fas fa-fingerprint"></i> MyDigital-ID
+            </a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
