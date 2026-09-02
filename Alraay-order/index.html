@@ -24,7 +24,7 @@
   <button id="menuBtn" class="icon-btn" aria-label="menu">
     <span></span><span></span><span></span>
   </button>
-  <span class="site-brand" data-ar="جزارة الراعي" data-en="Alraay Butchery">جزارة الراعي</span>
+  <span class="site-brand" id="brandTopbar" data-ar="جزارة الراعي" data-en="Alraay Butchery">جزارة الراعي</span>
   <button id="langBtn" class="lang-btn">English</button>
 </header>
 
@@ -34,12 +34,12 @@
 
   <div class="sidebar-logo">
     <img src="assets/logo/logo.png" alt="جزارة الراعي" onerror="this.style.display='none'">
-    <h3 data-ar="جزارة الراعي" data-en="Alraay Butchery">جزارة الراعي</h3>
+    <h3 id="brandSidebar" data-ar="جزارة الراعي" data-en="Alraay Butchery">جزارة الراعي</h3>
   </div>
 
   <div class="sidebar-section">
     <h4 data-ar="عننا" data-en="About Us">عننا</h4>
-    <p data-ar="نقدم جميع أنواع اللحوم الطازجة من مزارعنا، لنضمن لك الجودة والطعام الصحي بضمان الراعي."
+    <p id="aboutText" data-ar="نقدم جميع أنواع اللحوم الطازجة من مزارعنا، لنضمن لك الجودة والطعام الصحي بضمان الراعي."
        data-en="We offer all kinds of fresh meat from our own farms, guaranteeing you quality and healthy food with Alraay's promise.">
       نقدم جميع أنواع اللحوم الطازجة من مزارعنا، لنضمن لك الجودة والطعام الصحي بضمان الراعي.
     </p>
@@ -47,7 +47,7 @@
 
   <div class="sidebar-section">
     <h4 data-ar="قنوات التواصل" data-en="Contact Channels">قنوات التواصل</h4>
-    <ul class="contact-list">
+    <ul class="contact-list" id="contactList">
       <li>📞 <a href="tel:+201223958113">01223958113</a></li>
       <li>📞 <a href="tel:+201095786333">01095786333</a></li>
       <li>📞 <a href="tel:+201069613383">01069613383</a></li>
@@ -59,11 +59,11 @@
 
   <div class="sidebar-section">
     <h4 data-ar="العنوان" data-en="Address">العنوان</h4>
-    <p data-ar="٥٦ شارع خالد بن الوليد - سيدي بشر بحري - أمام مدرسة الفرنسيسكان - الإسكندرية"
+    <p id="addressText" data-ar="٥٦ شارع خالد بن الوليد - سيدي بشر بحري - أمام مدرسة الفرنسيسكان - الإسكندرية"
        data-en="56 Khaled Ibn Al-Walid St. - Sidi Bishr Bahari - in front of Franciscan School - Alexandria">
       ٥٦ شارع خالد بن الوليد - سيدي بشر بحري - أمام مدرسة الفرنسيسكان - الإسكندرية
     </p>
-    <a class="map-link" target="_blank" rel="noopener"
+    <a id="mapLink" class="map-link" target="_blank" rel="noopener"
        href="https://www.google.com/maps/search/?api=1&query=%D8%AC%D8%B2%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D8%B1%D8%A7%D8%B9%D9%8A%20%D8%B3%D9%8A%D8%AF%D9%8A%20%D8%A8%D8%B4%D8%B1%20%D8%A7%D9%84%D8%A7%D8%B3%D9%83%D9%86%D8%AF%D8%B1%D9%8A%D8%A9"
        data-ar="📍 افتح في خرائط جوجل" data-en="📍 Open in Google Maps">📍 افتح في خرائط جوجل</a>
   </div>
@@ -84,8 +84,8 @@
     </div>
   </div>
 
-  <h1 class="brand-ar">جزارة الراعي</h1>
-  <h2 class="brand-en">ALRAAY BUTCHERY</h2>
+  <h1 id="brandH1" class="brand-ar">جزارة الراعي</h1>
+  <h2 id="brandH2" class="brand-en">ALRAAY BUTCHERY</h2>
 
   <div id="zoneGrid" class="zone-grid"></div>
 </main>
@@ -120,7 +120,7 @@
 </section>
 
 <footer class="site-footer">
-  <p class="rights" data-ar="جميع الحقوق محفوظة لجزارة الراعي" data-en="All rights reserved to Alraay Butchery">جميع الحقوق محفوظة لجزارة الراعي</p>
+  <p id="rightsText" class="rights" data-ar="جميع الحقوق محفوظة لجزارة الراعي" data-en="All rights reserved to Alraay Butchery">جميع الحقوق محفوظة لجزارة الراعي</p>
   <a href="https://mydigital-id.github.io/" target="_blank" rel="noopener" class="powered-by">
     <span class="fingerprint-icon">
       <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6">

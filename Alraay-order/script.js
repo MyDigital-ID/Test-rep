@@ -2,17 +2,35 @@
    جزارة الراعي | ALRAAY BUTCHERY - script.js
    ========================================================= */
 
-const WHATSAPP_NUMBER = "201095786333";
-
 let currentLang = "ar"; // 'ar' | 'en'
 
 /* ---------------------------------------------------------
-   DATA: zones + products
-   type: "simple"  -> qty only
+   EDITABLE SITE DATA
+   Loaded at runtime from site-data.json (edited via the admin
+   panel / Cloudflare Worker). The blocks below are only a
+   fallback used if site-data.json fails to load (offline-first
+   PWA safety net) — keep them roughly in sync but they are not
+   the source of truth once the admin panel is in use.
+--------------------------------------------------------- */
+const DEFAULT_CONFIG = {
+  whatsappNumber: "201095786333",
+  brand_ar: "جزارة الراعي",
+  brand_en: "Alraay Butchery",
+  about_ar: "نقدم جميع أنواع اللحوم الطازجة من مزارعنا، لنضمن لك الجودة والطعام الصحي بضمان الراعي.",
+  about_en: "We offer all kinds of fresh meat from our own farms, guaranteeing you quality and healthy food with Alraay's promise.",
+  phones: ["01223958113", "01095786333", "01069613383"],
+  address_ar: "٥٦ شارع خالد بن الوليد - سيدي بشر بحري - أمام مدرسة الفرنسيسكان - الإسكندرية",
+  address_en: "56 Khaled Ibn Al-Walid St. - Sidi Bishr Bahari - in front of Franciscan School - Alexandria",
+  mapUrl: "https://www.google.com/maps/search/?api=1&query=%D8%AC%D8%B2%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D8%B1%D8%A7%D8%B9%D9%8A%20%D8%B3%D9%8A%D8%AF%D9%8A%20%D8%A8%D8%B4%D8%B1%20%D8%A7%D9%84%D8%A7%D8%B3%D9%83%D9%86%D8%AF%D8%B1%D9%8A%D8%A9",
+  rights_ar: "جميع الحقوق محفوظة لجزارة الراعي",
+  rights_en: "All rights reserved to Alraay Butchery"
+};
+
+/* type: "simple"  -> qty only
    type: "variant" -> grouped fixed-price options (e.g. Hawawshi sizes)
    type: "weight"  -> price per kg, weight select (0.5/1) + packaging note
---------------------------------------------------------- */
-const ZONES = [
+   type: "gallery" -> image + caption only, no cart controls */
+const DEFAULT_ZONES = [
   {
     id: "hawawshi",
     icon: "🥙",
@@ -156,6 +174,66 @@ const ZONES = [
   }
 ];
 
+/* Live, mutable copies — start as the fallback, get overwritten by
+   site-data.json once it loads successfully. */
+let CONFIG = DEFAULT_CONFIG;
+let ZONES = DEFAULT_ZONES;
+let WHATSAPP_NUMBER = DEFAULT_CONFIG.whatsappNumber;
+
+/* Fetch the admin-editable data file. Cache-busted with a timestamp so
+   an admin edit shows up immediately instead of waiting on any HTTP
+   cache — the service worker's own cache is bypassed too since this
+   is a normal fetch, not a navigation. */
+async function loadSiteData() {
+  try {
+    const res = await fetch(`site-data.json?t=${Date.now()}`, { cache: "no-store" });
+    if (!res.ok) throw new Error("bad status");
+    const data = await res.json();
+    if (data && data.zones && data.zones.length) {
+      CONFIG = Object.assign({}, DEFAULT_CONFIG, data.config || {});
+      ZONES = data.zones;
+      WHATSAPP_NUMBER = CONFIG.whatsappNumber || DEFAULT_CONFIG.whatsappNumber;
+    }
+  } catch (e) {
+    // offline or file missing — keep DEFAULT_CONFIG / DEFAULT_ZONES
+  }
+}
+
+/* Apply CONFIG (brand names, about text, contact info, address, footer)
+   into the DOM. Runs after loadSiteData() and again on language toggle. */
+function renderConfig() {
+  const setText = (id, ar, en) => {
+    const el = document.getElementById(id);
+    if (el) { el.setAttribute("data-ar", ar); el.setAttribute("data-en", en); el.textContent = t(ar, en); }
+  };
+  setText("brandTopbar", CONFIG.brand_ar, CONFIG.brand_en);
+  setText("brandSidebar", CONFIG.brand_ar, CONFIG.brand_en);
+  setText("brandH1", CONFIG.brand_ar, CONFIG.brand_en);
+  setText("aboutText", CONFIG.about_ar, CONFIG.about_en);
+  setText("addressText", CONFIG.address_ar, CONFIG.address_en);
+  setText("rightsText", CONFIG.rights_ar, CONFIG.rights_en);
+  const brandH2 = document.getElementById("brandH2");
+  if (brandH2) brandH2.textContent = CONFIG.brand_en;
+
+  const mapLink = document.getElementById("mapLink");
+  if (mapLink) mapLink.href = CONFIG.mapUrl;
+
+  const contactList = document.getElementById("contactList");
+  if (contactList) {
+    contactList.innerHTML = "";
+    (CONFIG.phones || []).forEach(phone => {
+      const li = document.createElement("li");
+      li.innerHTML = `📞 <a href="tel:+2${phone.replace(/^0/, "")}">${phone}</a>`;
+      contactList.appendChild(li);
+    });
+    const waLi = document.createElement("li");
+    waLi.innerHTML = `💬 <a href="https://wa.me/${WHATSAPP_NUMBER}" target="_blank" rel="noopener">
+      <span data-ar="واتساب مباشر" data-en="Direct WhatsApp">${t("واتساب مباشر","Direct WhatsApp")}</span>: +${WHATSAPP_NUMBER}
+    </a>`;
+    contactList.appendChild(waLi);
+  }
+}
+
 /* ---------------------------------------------------------
    CART
 --------------------------------------------------------- */
@@ -243,6 +321,7 @@ document.getElementById("langBtn").addEventListener("click", () => {
   currentLang = currentLang === "ar" ? "en" : "ar";
   document.getElementById("langBtn").textContent = currentLang === "ar" ? "English" : "عربي";
   applyStaticTranslations();
+  renderConfig();
   renderZoneGrid();
   renderCart();
   if (currentZone) openZone(currentZone, true);
@@ -575,3 +654,11 @@ if ("serviceWorker" in navigator) {
 applyStaticTranslations();
 renderZoneGrid();
 renderCart();
+
+loadSiteData().then(() => {
+  applyStaticTranslations();
+  renderConfig();
+  renderZoneGrid();
+  renderCart();
+  if (currentZone) openZone(currentZone, true);
+});

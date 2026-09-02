@@ -1,10 +1,11 @@
-const CACHE_NAME = "alraay-butchery-v5";
+const CACHE_NAME = "alraay-butchery-v6";
 const CORE_ASSETS = [
   "./",
   "./index.html",
   "./style.css",
   "./script.js",
-  "./manifest.json"
+  "./manifest.json",
+  "./site-data.json"
 ];
 
 self.addEventListener("install", (event) => {
