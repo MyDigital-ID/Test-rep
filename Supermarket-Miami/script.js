@@ -811,11 +811,140 @@ function showNotification(text, type = '') {
 // ============================================================
 // 22. تشغيل التطبيق
 // ============================================================
+// ============================================================
+// 23. PWA Install Banner
+// ============================================================
+let deferredPrompt = null;
+const INSTALL_BANNER_DISMISSED_KEY = 'installBannerDismissed';
+
+// كشف نظام التشغيل
+function getOS() {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return 'iOS';
+    }
+    if (/android/i.test(userAgent)) {
+        return 'Android';
+    }
+    return 'Desktop';
+}
+
+// كشف iOS Safari
+function isIOSSafari() {
+    const ua = navigator.userAgent;
+    const iOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+    const webkit = /WebKit/.test(ua);
+    const notChrome = !/CriOS/.test(ua);
+    const notFirefox = !/FxiOS/.test(ua);
+    return iOS && webkit && notChrome && notFirefox;
+}
+
+// كشف إذا كان التطبيق مثبت
+function isAppInstalled() {
+    if (window.matchMedia('(display-mode: standalone)').matches) return true;
+    if (window.navigator.standalone === true) return true;
+    return false;
+}
+
+// عرض الـ Banner
+function showInstallBanner() {
+    // لو مثبت خلاص، مفيش داعي
+    if (isAppInstalled()) return;
+    
+    // لو المستخدم قفله قبل كده، مفيش داعي
+    if (localStorage.getItem(INSTALL_BANNER_DISMISSED_KEY) === 'true') return;
+    
+    const banner = document.getElementById('installBanner');
+    if (!banner) return;
+    
+    const os = getOS();
+    
+    // نعدّل النص حسب النظام
+    const textH4 = banner.querySelector('.install-banner-text h4');
+    const textP = banner.querySelector('.install-banner-text p');
+    const primaryBtn = banner.querySelector('.install-btn-primary');
+    
+    if (os === 'iOS') {
+        // iOS: نعرض إرشادات يدوية
+        textH4.textContent = 'أضف التطبيق لشاشتك الرئيسية';
+        textP.textContent = 'اضغط على [مشاركة] في Safari ثم اختر "إضافة إلى الشاشة الرئيسية"';
+        primaryBtn.innerHTML = '<i class="fas fa-check"></i> فهمت';
+        primaryBtn.onclick = dismissInstallBanner;
+    } else if (os === 'Android' || os === 'Desktop') {
+        // Android / Desktop: زر التثبيت العادي
+        textH4.textContent = 'ثبت التطبيق الآن';
+        textP.textContent = 'للحصول على تجربة تسوق سريعة وسهلة';
+        primaryBtn.innerHTML = '<i class="fas fa-download"></i> تثبيت';
+        primaryBtn.onclick = installPWA;
+    }
+    
+    // نعرض الـ Banner
+    banner.style.display = 'block';
+}
+
+// دالة التثبيت
+async function installPWA() {
+    if (deferredPrompt) {
+        // Android / Desktop: نستخدم beforeinstallprompt
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        
+        if (outcome === 'accepted') {
+            console.log('✅ التطبيق اتثبت');
+            dismissInstallBanner();
+        } else {
+            console.log('❌ المستخدم رفض التثبيت');
+        }
+        deferredPrompt = null;
+    } else {
+        // لو مش متاح، نخفي الـ Banner
+        dismissInstallBanner();
+    }
+}
+
+// إغلاق الـ Banner
+function dismissInstallBanner() {
+    const banner = document.getElementById('installBanner');
+    if (banner) {
+        banner.classList.add('hidden');
+        setTimeout(() => {
+            banner.style.display = 'none';
+        }, 400);
+    }
+    // نحفظ إن المستخدم قفله
+    localStorage.setItem(INSTALL_BANNER_DISMISSED_KEY, 'true');
+}
+
+// ===== الاستماع لأحداث PWA =====
+
+// قبل التثبيت (Android / Desktop)
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    console.log('💡 التطبيق قابل للتثبيت');
+    showInstallBanner();
+});
+
+// بعد التثبيت
+window.addEventListener('appinstalled', () => {
+    console.log('✅ التطبيق اتثبت بنجاح');
+    dismissInstallBanner();
+});
+
+// لو النظام iOS، نعرض الـ Banner بعد تحميل الصفحة
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        if (isIOSSafari()) {
+            showInstallBanner();
+        }
+    }, 2000);
+});
 document.addEventListener('DOMContentLoaded', initApp);
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js?v=1')
+        navigator.serviceWorker.register('service-worker.js?v=2')
             .then(() => console.log('✅ Service Worker مسجّل'))
             .catch(e => console.log('❌ Service Worker:', e));
     });

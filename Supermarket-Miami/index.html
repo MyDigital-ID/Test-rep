@@ -149,7 +149,26 @@
         </a>
     </div>
 </footer>
-
+<!-- ============ PWA Install Banner ============ -->
+<div id="installBanner" class="install-banner" style="display:none;">
+    <div class="install-banner-content">
+        <div class="install-banner-icon">
+            <i class="fas fa-mobile-alt"></i>
+        </div>
+        <div class="install-banner-text">
+            <h4>ثبت التطبيق الآن</h4>
+            <p>للحصول على تجربة تسوق سريعة وسهلة</p>
+        </div>
+    </div>
+    <div class="install-banner-actions">
+        <button class="install-btn-primary" onclick="installPWA()">
+            <i class="fas fa-download"></i> تثبيت
+        </button>
+        <button class="install-btn-secondary" onclick="dismissInstallBanner()">
+            لاحقاً
+        </button>
+    </div>
+</div>
 <!-- ============ Overlay ============ -->
 <div class="overlay" id="overlay" onclick="closeAll()"></div>
 
