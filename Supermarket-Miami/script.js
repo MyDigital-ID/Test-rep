@@ -815,7 +815,7 @@ document.addEventListener('DOMContentLoaded', initApp);
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js?v=10')
+        navigator.serviceWorker.register('service-worker.js?v=1')
             .then(() => console.log('✅ Service Worker مسجّل'))
             .catch(e => console.log('❌ Service Worker:', e));
     });
