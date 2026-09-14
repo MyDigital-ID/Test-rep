@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#D32F2F">
+    <title>ميامي ماركت - طلباتك أوامر</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="assets/images/Miami-logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/images/Miami-logo.png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ شاشة البداية (Splash Screen) ============ -->
+<div id="splashScreen" class="splash-screen">
+    <div class="splash-image-wrapper">
+        <img src="assets/images/Miami-market.png" alt="ميامي ماركت" class="splash-image">
+    </div>
+    <p class="splash-welcome">يسعدنا خدمتكم</p>
+</div>
+
+<!-- ============ القائمة الجانبية ============ -->
+<aside id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+        <img src="assets/images/Miami-logo.png" alt="ميامي ماركت" class="sidebar-logo-img">
+        <button class="icon-btn" onclick="closeSidebar()" aria-label="إغلاق">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <p class="sidebar-message">
+        "نقدم لكم أفضل الأصناف وبأقل سعر ممكن، ونلبي طلباتكم في أسرع وقت"
+    </p>
+    <div class="sidebar-contact">
+        <h3><i class="fas fa-headset"></i> تواصل معنا</h3>
+        <a href="tel:01008070087" class="contact-item">
+            <i class="fas fa-phone"></i> 01008070087
+        </a>
+        <a href="https://wa.me/201008070087" target="_blank" class="contact-item">
+            <i class="fab fa-whatsapp"></i> واتساب
+        </a>
+        <a href="mailto:info@miamimarket.com" class="contact-item">
+            <i class="fas fa-envelope"></i> info@miamimarket.com
+        </a>
+    </div>
+</aside>
+
+<!-- ============ الهيدر ============ -->
+<header class="header">
+    <div class="header-top">
+        <button class="icon-btn" onclick="openSidebar()" aria-label="القائمة">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="logo-container">
+            <img src="assets/images/Miami-logo.png" alt="Miami Market" class="header-logo-img">
+            <div class="logo-text">
+                <span class="logo-name-en">Miami Market</span>
+                <span class="logo-name-ar" id="marketName">ميامي ماركت</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchInput" 
+               placeholder="ابحث عن منتج..." 
+               oninput="handleSearch(this.value)"
+               autocomplete="off">
+        <button class="clear-btn" id="clearBtn" onclick="clearSearch()" style="display:none;">
+            <i class="fas fa-times-circle"></i>
+        </button>
+    </div>
+</header>
+
+<!-- ============ الأقسام ============ -->
+<section class="categories" id="categoriesSection">
+    <div class="market-banner-wrapper">
+        <div class="market-banner-circle">
+            <img src="assets/images/market-sc.jpg" alt="أقسام الماركت" class="market-banner-img">
+        </div>
+    </div>
+    <div class="categories-grid" id="categoriesGrid"></div>
+</section>
+
+<!-- ============ المنتجات ============ -->
+<section class="products-section" id="productsSection">
+    <div class="products-header" id="productsHeader" style="display:none;">
+        <h2 id="categoryTitle">
+            <i class="fas fa-folder-open"></i> <span id="categoryName"></span>
+        </h2>
+        <button class="back-btn" id="backBtn" onclick="showHome()">
+            <i class="fas fa-arrow-right"></i> رجوع
+        </button>
+    </div>
+    <div class="products-grid" id="productsGrid"></div>
+</section>
+
+<!-- ============ ركن الطلبات ============ -->
+<section class="orders-box" id="ordersBox">
+    <div class="orders-header">
+        <div class="orders-title">
+            <div class="cart-motion">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="speed-line"></span>
+                <span class="speed-line"></span>
+                <span class="speed-line"></span>
+                <span class="wheel"></span>
+            </div>
+            <h3>ركن الطلبات</h3>
+            <span class="orders-count" id="ordersCount">0</span>
+        </div>
+    </div>
+
+    <div class="orders-content" id="ordersContent">
+        <p class="empty-orders">
+            <i class="fas fa-shopping-basket"></i>
+            لم تقم بإضافة أي منتجات بعد
+        </p>
+    </div>
+
+    <div class="orders-footer" id="ordersFooter" style="display:none;">
+        <div class="orders-total">
+            <span>الإجمالي:</span>
+            <span id="ordersTotal">0.00 ج.م</span>
+        </div>
+        <button class="checkout-btn" onclick="checkout()">
+            <i class="fab fa-whatsapp"></i>
+            تأكيد الطلب عبر واتساب
+        </button>
+    </div>
+</section>
+
+<!-- ============ الفوتر ============ -->
+<footer class="footer">
+    <div class="footer-content">
+        <button class="footer-btn" onclick="showHome()">
+            <i class="fas fa-home"></i>
+            <span>الرئيسية</span>
+        </button>
+        <div class="footer-info">
+            <p>جميع الحقوق محفوظة &copy; 2026 <span id="footerName">ميامي ماركت</span></p>
+        </div>
+        <a href="https://mydigital-id.github.io/" target="_blank" class="footer-btn">
+            <i class="fas fa-fingerprint"></i>
+            <span>Digital-ID</span>
+        </a>
+    </div>
+</footer>
+
+<!-- ============ Overlay ============ -->
+<div class="overlay" id="overlay" onclick="closeAll()"></div>
+
+<!-- ============ Notifications ============ -->
+<div id="notifications" class="notifications-container"></div>
+
+<!-- ============ مكتبة الباركود ============ -->
+<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+
+<!-- ============ سكريبت التطبيق ============ -->
+<script src="script.js"></script>
+</body>
+</html>
