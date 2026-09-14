@@ -5,12 +5,14 @@
     "start_url": "./index.html",
     "scope": "./",
     "display": "standalone",
+    "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
     "orientation": "portrait",
     "background_color": "#ffffff",
     "theme_color": "#D32F2F",
     "lang": "ar",
     "dir": "rtl",
-    "categories": ["shopping", "food", "lifestyle"],
+    "categories": ["shopping", "food", "lifestyle", "business"],
+    "prefer_related_applications": false,
     "icons": [
         {
             "src": "assets/images/icon-192.png",
@@ -37,12 +39,33 @@
             "purpose": "maskable"
         }
     ],
+    "screenshots": [
+        {
+            "src": "assets/images/shelves.png",
+            "sizes": "1080x1920",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "الصفحة الرئيسية"
+        }
+    ],
     "shortcuts": [
         {
             "name": "الأقسام",
             "short_name": "الأقسام",
             "description": "تصفح أقسام ميامي ماركت",
             "url": "./index.html",
+            "icons": [
+                {
+                    "src": "assets/images/icon-192.png",
+                    "sizes": "192x192"
+                }
+            ]
+        },
+        {
+            "name": "ركن الطلبات",
+            "short_name": "الطلبات",
+            "description": "شوف طلباتك",
+            "url": "./index.html#orders",
             "icons": [
                 {
                     "src": "assets/images/icon-192.png",
