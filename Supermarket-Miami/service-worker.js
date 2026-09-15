@@ -1,8 +1,8 @@
 // ============================================================
 // Service Worker - ميامي ماركت PWA
 // ============================================================
-const CACHE_VERSION = 'v5';
-const CACHE_NAME = 'miami-market-' + CACHE_VERSION;
+const CACHE_NAME = 'miami-market-v10';
+const CACHE_VERSION = '2.0.0';
 
 // الملفات الأساسية
 const CORE_ASSETS = [
@@ -21,8 +21,8 @@ const MAIN_IMAGES = [
     './assets/images/Miami-market.png',
     './assets/images/market-sc.jpg',
     './assets/images/shelves.png',
-    './assets/icons/icon-192.png',
-    './assets/icons/icon-512.png'
+    './assets/images/icon-192.png',
+    './assets/images/icon-512.png'
 ];
 
 // صور الأقسام (12)
@@ -41,15 +41,32 @@ const CATEGORY_IMAGES = [
     './assets/images/cleaning.jpg'
 ];
 
+// أيقونات SVG (12)
+const SVG_ICONS = [
+    './assets/icons/cheese.svg',
+    './assets/icons/meat.svg',
+    './assets/icons/pasta.svg',
+    './assets/icons/oil.svg',
+    './assets/icons/vegetables.svg',
+    './assets/icons/cans.svg',
+    './assets/icons/tea.svg',
+    './assets/icons/cookies.svg',
+    './assets/icons/chips.svg',
+    './assets/icons/water.svg',
+    './assets/icons/misc.svg',
+    './assets/icons/cleaning.svg'
+];
+
 // كل الملفات اللي هنخزنها
 const ALL_ASSETS = [
     ...CORE_ASSETS,
     ...MAIN_IMAGES,
-    ...CATEGORY_IMAGES
+    ...CATEGORY_IMAGES,
+    ...SVG_ICONS
 ];
 
 // ============================================================
-// Install
+// Install - تخزين الملفات
 // ============================================================
 self.addEventListener('install', (event) => {
     console.log('[SW] Installing version:', CACHE_VERSION);
@@ -58,6 +75,7 @@ self.addEventListener('install', (event) => {
         caches.open(CACHE_NAME)
             .then((cache) => {
                 console.log('[SW] Caching all assets');
+                // تخزين كل ملف لوحده عشان لو واحد فشل ما يوقفش الباقي
                 return Promise.allSettled(
                     ALL_ASSETS.map(url => 
                         cache.add(url).catch(err => 
@@ -71,7 +89,7 @@ self.addEventListener('install', (event) => {
 });
 
 // ============================================================
-// Activate
+// Activate - حذف الكاش القديم
 // ============================================================
 self.addEventListener('activate', (event) => {
     console.log('[SW] Activating version:', CACHE_VERSION);
@@ -93,40 +111,29 @@ self.addEventListener('activate', (event) => {
 });
 
 // ============================================================
-// Fetch
+// Fetch - استراتيجية Cache First
 // ============================================================
 self.addEventListener('fetch', (event) => {
     const { request } = event;
     
+    // تجاهل الطلبات غير GET
     if (request.method !== 'GET') return;
+    
+    // تجاهل طلبات chrome extensions
     if (request.url.startsWith('chrome-extension://')) return;
     
-    // HTML → Network First
-    if (request.headers.get('accept')?.includes('text/html')) {
-        event.respondWith(
-            fetch(request)
-                .then((response) => {
-                    const responseClone = response.clone();
-                    caches.open(CACHE_NAME).then((cache) => {
-                        cache.put(request, responseClone);
-                    });
-                    return response;
-                })
-                .catch(() => caches.match(request).then(r => r || caches.match('./index.html')))
-        );
-        return;
-    }
-    
-    // الباقي → Cache First
     event.respondWith(
         caches.match(request)
             .then((cachedResponse) => {
+                // لو موجود في الكاش، رجعه
                 if (cachedResponse) {
                     return cachedResponse;
                 }
                 
+                // لو مش موجود، اطلبه من الشبكة
                 return fetch(request)
                     .then((networkResponse) => {
+                        // خزنه في الكاش
                         if (networkResponse && networkResponse.status === 200) {
                             const responseClone = networkResponse.clone();
                             caches.open(CACHE_NAME)
@@ -135,6 +142,12 @@ self.addEventListener('fetch', (event) => {
                                 });
                         }
                         return networkResponse;
+                    })
+                    .catch(() => {
+                        // لو الشبكة فشلت وده HTML، رجع الصفحة الرئيسية
+                        if (request.headers.get('accept')?.includes('text/html')) {
+                            return caches.match('./index.html');
+                        }
                     });
             })
     );
