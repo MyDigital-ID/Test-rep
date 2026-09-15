@@ -1,7 +1,7 @@
 // ============================================================
 // Service Worker - ميامي ماركت PWA
 // ============================================================
-const CACHE_VERSION = '3.0.0';
+const CACHE_VERSION = 'v5';
 const CACHE_NAME = 'miami-market-' + CACHE_VERSION;
 
 // الملفات الأساسية
@@ -49,7 +49,7 @@ const ALL_ASSETS = [
 ];
 
 // ============================================================
-// Install - تخزين الملفات
+// Install
 // ============================================================
 self.addEventListener('install', (event) => {
     console.log('[SW] Installing version:', CACHE_VERSION);
@@ -71,7 +71,7 @@ self.addEventListener('install', (event) => {
 });
 
 // ============================================================
-// Activate - حذف الكاش القديم
+// Activate
 // ============================================================
 self.addEventListener('activate', (event) => {
     console.log('[SW] Activating version:', CACHE_VERSION);
@@ -93,7 +93,7 @@ self.addEventListener('activate', (event) => {
 });
 
 // ============================================================
-// Fetch - استراتيجية Network First للـ HTML، Cache First للباقي
+// Fetch
 // ============================================================
 self.addEventListener('fetch', (event) => {
     const { request } = event;
@@ -101,7 +101,7 @@ self.addEventListener('fetch', (event) => {
     if (request.method !== 'GET') return;
     if (request.url.startsWith('chrome-extension://')) return;
     
-    // HTML → Network First (دايماً اجيب آخر نسخة)
+    // HTML → Network First
     if (request.headers.get('accept')?.includes('text/html')) {
         event.respondWith(
             fetch(request)
