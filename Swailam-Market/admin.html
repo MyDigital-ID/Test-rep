@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#1565C0">
+    <title>لوحة تحكم سويلم ماركت</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        /* ============================================================
+           المتغيرات
+           ============================================================ */
+        :root {
+            --primary: #1565C0;
+            --primary-dark: #0D47A1;
+            --primary-light: #BBDEFB;
+            --success: #2E7D32;
+            --warning: #F57C00;
+            --danger: #C62828;
+            --white: #ffffff;
+            --pearl: #F5F5F0;
+            --text: #212121;
+            --text-light: #757575;
+            --border: #E0E0E0;
+            --radius: 12px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        html, body {
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+            color: var(--text);
+            direction: rtl;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        /* ============================================================
+           شاشة تسجيل الدخول
+           ============================================================ */
+        .login-screen {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .login-box {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px 30px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+            animation: loginFadeIn 0.5s ease;
+        }
+        
+        @keyframes loginFadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .login-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 30px rgba(21,101,192,0.4);
+        }
+        
+        .login-box h1 {
+            font-size: 22px;
+            color: var(--text);
+            margin-bottom: 8px;
+            font-weight: 900;
+        }
+        
+        .login-box p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        
+        .login-input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            font-size: 16px;
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 15px;
+            transition: var(--transition);
+            background: var(--pearl);
+        }
+        
+        .login-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(21,101,192,0.15);
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            font-size: 16px;
+            font-weight: 900;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 5px 20px rgba(21,101,192,0.4);
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(21,101,192,0.5);
+        }
+        
+        .login-error {
+            color: var(--danger);
+            font-size: 13px;
+            margin-top: 10px;
+            font-weight: 700;
+            display: none;
+        }
+        
+        .login-error.show {
+            display: block;
+        }
+        
+        /* ============================================================
+           لوحة التحكم
+           ============================================================ */
+        .admin-panel {
+            display: none;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .admin-panel.active {
+            display: block;
+        }
+        
+        /* الهيدر */
+        .admin-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 20px 24px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 30px rgba(21,101,192,0.35);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .admin-header-info h1 {
+            font-size: 22px;
+            font-weight: 900;
+            margin-bottom: 4px;
+        }
+        
+        .admin-header-info p {
+            font-size: 13px;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+        
+        .admin-header-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+        }
+        
+        .btn-logout {
+            background: rgba(255,255,255,0.2);
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.4);
+        }
+        
+        .btn-logout:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        /* شريط البحث */
+        .admin-search {
+            background: var(--white);
+            border-radius: 50px;
+            padding: 12px 22px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .admin-search i {
+            color: var(--primary);
+            font-size: 16px;
+        }
+        
+        .admin-search input {
+            border: none;
+            outline: none;
+            flex: 1;
+            font-size: 15px;
+            background: transparent;
+            font-weight: 600;
+        }
+        
+        /* الإحصائيات */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 16px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--primary);
+        }
+        
+        .stat-card i {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+        
+        .stat-card .stat-value {
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--text);
+        }
+        
+        .stat-card .stat-label {
+            font-size: 12px;
+            color: var(--text-light);
+            font-weight: 700;
+            margin-top: 3px;
+        }
+        
+        .stat-card.success { border-top-color: var(--success); }
+        .stat-card.success i { color: var(--success); }
+        .stat-card.danger { border-top-color: var(--danger); }
+        .stat-card.danger i { color: var(--danger); }
+        
+        /* الفلاتر */
+        .filter-buttons {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 8px 18px;
+            border: 2px solid var(--border);
+            background: var(--white);
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--text);
+        }
+        
+        .filter-btn.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+        
+        .filter-btn:hover:not(.active) {
+            background: var(--primary-light);
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============ شاشة تسجيل الدخول ============ -->
+<div id="loginScreen" class="login-screen">
+    <div class="login-box">
+        <div class="login-icon">
+            <i class="fas fa-lock"></i>
+        </div>
+        <h1>لوحة تحكم سويلم ماركت</h1>
+        <p>يرجى إدخال كلمة المرور للمتابعة</p>
+        
+        <input type="password" 
+               id="passwordInput" 
+               class="login-input" 
+               placeholder="كلمة المرور"
+               onkeypress="if(event.key==='Enter') login()">
+        
+        <button class="login-btn" onclick="login()">
+            <i class="fas fa-sign-in-alt"></i> تسجيل الدخول
+        </button>
+        
+        <p id="loginError" class="login-error">
+            <i class="fas fa-times-circle"></i> كلمة المرور غير صحيحة
+        </p>
+    </div>
+</div>
+
+<!-- ============ لوحة التحكم ============ -->
+<div id="adminPanel" class="admin-panel">
+    
+    <!-- الهيدر -->
+    <div class="admin-header">
+        <div class="admin-header-info">
+            <h1><i class="fas fa-store"></i> سويلم ماركت - لوحة التحكم</h1>
+            <p>إدارة المنتجات، الأسعار، والحالة</p>
+        </div>
+        <div class="admin-header-actions">
+            <button class="btn btn-logout" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i> خروج
+            </button>
+        </div>
+    </div>
+    
+    <!-- شريط البحث -->
+    <div class="admin-search">
+        <i class="fas fa-search"></i>
+        <input type="text" 
+               id="searchInput" 
+               placeholder="ابحث عن منتج..." 
+               oninput="filterProducts()">
+    </div>
+    
+    <!-- الإحصائيات -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <i class="fas fa-box"></i>
+            <div class="stat-value" id="statTotal">0</div>
+            <div class="stat-label">إجمالي المنتجات</div>
+        </div>
+        <div class="stat-card success">
+            <i class="fas fa-check-circle"></i>
+            <div class="stat-value" id="statAvailable">0</div>
+            <div class="stat-label">متوفر</div>
+        </div>
+        <div class="stat-card danger">
+            <i class="fas fa-times-circle"></i>
+            <div class="stat-value" id="statUnavailable">0</div>
+            <div class="stat-label">غير متوفر</div>
+        </div>
+    </div>
+    
+    <!-- الفلاتر -->
+    <div class="filter-buttons">
+        <button class="filter-btn active" onclick="setFilter('all', this)">
+            <i class="fas fa-list"></i> الكل
+        </button>
+        <button class="filter-btn" onclick="setFilter('available', this)">
+            <i class="fas fa-check"></i> المتوفر
+        </button>
+        <button class="filter-btn" onclick="setFilter('unavailable', this)">
+            <i class="fas fa-ban"></i> غير المتوفر
+        </button>
+    </div>
+    
+    <!-- قائمة المنتجات -->
+    <div id="productsList" class="products-list"></div>
+    
+</div>
+
+<!-- === نهاية الجزء 1 === -->
+    <!-- ============================================================
+         قائمة المنتجات (CSS)
+         ============================================================ -->
+    <style>
+        .products-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+        
+        .product-row {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-right: 5px solid var(--primary);
+            transition: var(--transition);
+        }
+        
+        .product-row.unavailable {
+            border-right-color: var(--danger);
+            background: #FFEBEE;
+        }
+        
+        .product-row:hover {
+            box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+        }
+        
+        .product-row-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .product-info {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .product-info h3 {
+            font-size: 16px;
+            font-weight: 900;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+        
+        .product-info .product-brand {
+            font-size: 12px;
+            color: var(--text-light);
+            font-weight: 700;
+        }
+        
+        .product-info .product-category {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 11px;
+            font-weight: 800;
+            padding: 2px 10px;
+            border-radius: 50px;
+            margin-top: 4px;
+        }
+        
+        .product-status-badge {
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 900;
+            color: var(--white);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        
+        .product-status-badge.available {
+            background: var(--success);
+        }
+        
+        .product-status-badge.unavailable {
+            background: var(--danger);
+        }
+        
+        .product-fields {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .field-group label {
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--text-light);
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .field-group label i {
+            color: var(--primary);
+        }
+        
+        .field-input {
+            padding: 10px 14px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            background: var(--pearl);
+            transition: var(--transition);
+            text-align: center;
+            font-family: inherit;
+        }
+        
+        .field-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(21,101,192,0.15);
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-family: inherit;
+        }
+        
+        .btn-save {
+            background: var(--success);
+            color: var(--white);
+            flex: 1;
+            justify-content: center;
+        }
+        
+        .btn-save:hover {
+            background: #1B5E20;
+            transform: translateY(-2px);
+        }
+        
+        .btn-toggle {
+            background: var(--warning);
+            color: var(--white);
+        }
+        
+        .btn-toggle:hover {
+            background: #E65100;
+            transform: translateY(-2px);
+        }
+        
+        .btn-toggle.available {
+            background: var(--danger);
+        }
+        
+        .btn-toggle.available:hover {
+            background: #B71C1C;
+        }
+        
+        /* Toast Notifications */
+        .toast-container {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            pointer-events: none;
+            width: 90%;
+            max-width: 400px;
+        }
+        
+        .toast {
+            padding: 14px 24px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--white);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            animation: toastIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            text-align: center;
+        }
+        
+        .toast.success { background: var(--success); }
+        .toast.error { background: var(--danger); }
+        .toast.info { background: var(--primary); }
+        .toast.fadeOut { animation: toastOut 0.3s ease forwards; }
+        
+        @keyframes toastIn {
+            from { opacity: 0; transform: translateY(-30px) scale(0.8); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        
+        @keyframes toastOut {
+            to { opacity: 0; transform: translateY(-20px) scale(0.9); }
+        }
+        
+        /* Export Bar */
+        .export-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            padding: 14px 20px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .export-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 900;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: inherit;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        
+        .export-btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+        }
+        
+        .export-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(21,101,192,0.5);
+        }
+        
+        .export-btn-warning {
+            background: var(--warning);
+            color: var(--white);
+        }
+        
+        .export-btn-warning:hover {
+            background: #E65100;
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 600px) {
+            .product-fields {
+                grid-template-columns: 1fr;
+            }
+            
+            .admin-header {
+                padding: 16px;
+            }
+            
+            .admin-header-info h1 {
+                font-size: 17px;
+            }
+            
+            .admin-header-info p {
+                font-size: 11px;
+            }
+            
+            .stat-card .stat-value {
+                font-size: 18px;
+            }
+            
+            .stat-card .stat-label {
+                font-size: 10px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .products-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+    
+    <!-- ============ Export Bar ============ -->
+    <div class="export-bar">
+        <button class="export-btn export-btn-primary" onclick="exportData()">
+            <i class="fas fa-download"></i> تصدير data.json
+        </button>
+        <button class="export-btn export-btn-warning" onclick="resetData()">
+            <i class="fas fa-undo"></i> استرجاع الأصلي
+        </button>
+    </div>
+
+<!-- === نهاية الجزء 2 === -->
+    <!-- ============================================================
+         JavaScript
+         ============================================================ -->
+    <script>
+        // ============================================================
+        // الإعدادات
+        // ============================================================
+        const ADMIN_PASSWORD = 'Sw@alex26';
+        const STORAGE_KEY = 'swailam_products_data';
+        const LOGIN_KEY = 'swailam_admin_logged';
+        
+        // ============================================================
+        // المتغيرات
+        // ============================================================
+        let products = [];
+        let currentFilter = 'all';
+        let searchQuery = '';
+        
+        // ============================================================
+        // تسجيل الدخول
+        // ============================================================
+        function login() {
+            const input = document.getElementById('passwordInput');
+            const error = document.getElementById('loginError');
+            const password = input.value.trim();
+            
+            if (password === ADMIN_PASSWORD) {
+                // نجاح
+                localStorage.setItem(LOGIN_KEY, 'true');
+                showAdminPanel();
+            } else {
+                // فشل
+                error.classList.add('show');
+                input.value = '';
+                input.focus();
+                setTimeout(() => error.classList.remove('show'), 3000);
+            }
+        }
+        
+        function logout() {
+            localStorage.removeItem(LOGIN_KEY);
+            location.reload();
+        }
+        
+        function showAdminPanel() {
+            document.getElementById('loginScreen').style.display = 'none';
+            document.getElementById('adminPanel').classList.add('active');
+            loadProducts();
+        }
+        
+        // ============================================================
+        // تحميل المنتجات
+        // ============================================================
+        async function loadProducts() {
+            try {
+                // جرب من localStorage الأول
+                const stored = localStorage.getItem(STORAGE_KEY);
+                if (stored) {
+                    products = JSON.parse(stored);
+                } else {
+                    // لو مفيش، حمّل من data.json
+                    const response = await fetch('data.json');
+                    products = await response.json();
+                }
+                
+                renderProducts();
+                updateStats();
+            } catch (error) {
+                console.error('خطأ في تحميل المنتجات:', error);
+                showToast('❌ فشل تحميل المنتجات', 'error');
+            }
+        }
+        
+        // ============================================================
+        // عرض المنتجات
+        // ============================================================
+        function renderProducts() {
+            const container = document.getElementById('productsList');
+            
+            // تصفية
+            let filtered = [...products];
+            
+            // بالحالة
+            if (currentFilter === 'available') {
+                filtered = filtered.filter(p => p.status !== 'unavailable');
+            } else if (currentFilter === 'unavailable') {
+                filtered = filtered.filter(p => p.status === 'unavailable');
+            }
+            
+            // بالبحث
+            if (searchQuery) {
+                const q = searchQuery.toLowerCase();
+                filtered = filtered.filter(p => 
+                    p.name.toLowerCase().includes(q) ||
+                    (p.brand && p.brand.toLowerCase().includes(q)) ||
+                    p.category.toLowerCase().includes(q) ||
+                    (p.barcode && p.barcode.includes(q))
+                );
+            }
+            
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div style="grid-column:1/-1;text-align:center;padding:40px;color:#999;">
+                        <i class="fas fa-search" style="font-size:50px;display:block;margin-bottom:15px;color:#ddd;"></i>
+                        <p style="font-weight:700;">لا توجد منتجات مطابقة</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = filtered.map(p => renderProductRow(p)).join('');
+        }
+        
+        function renderProductRow(p) {
+            const isAvailable = p.status !== 'unavailable';
+            
+            return `
+                <div class="product-row ${!isAvailable ? 'unavailable' : ''}" data-id="${p.id}">
+                    <div class="product-row-header">
+                        <div class="product-info">
+                            <h3>${p.name}</h3>
+                            <div class="product-brand">${p.brand || 'بدون ماركة'}</div>
+                            <span class="product-category">${p.category}</span>
+                        </div>
+                        <span class="product-status-badge ${isAvailable ? 'available' : 'unavailable'}">
+                            ${isAvailable ? '✓ متوفر' : '✗ غير متوفر'}
+                        </span>
+                    </div>
+                    
+                    <div class="product-fields">
+                        <div class="field-group">
+                            <label><i class="fas fa-tag"></i> السعر (ج.م)</label>
+                            <input type="number" 
+                                   class="field-input" 
+                                   value="${p.price}" 
+                                   min="0" 
+                                   step="0.5"
+                                   data-field="price">
+                        </div>
+                        <div class="field-group">
+                            <label><i class="fas fa-barcode"></i> الباركود</label>
+                            <input type="text" 
+                                   class="field-input" 
+                                   value="${p.barcode || ''}" 
+                                   placeholder="اتركه فارغاً"
+                                   data-field="barcode">
+                        </div>
+                    </div>
+                    
+                    <div class="product-actions">
+                        <button class="action-btn btn-save" onclick="saveProduct('${p.id}', this)">
+                            <i class="fas fa-save"></i> حفظ التعديلات
+                        </button>
+                        <button class="action-btn btn-toggle ${isAvailable ? 'available' : ''}" 
+                                onclick="toggleStatus('${p.id}')">
+                            <i class="fas fa-${isAvailable ? 'ban' : 'check'}"></i>
+                            ${isAvailable ? 'تعيين كغير متوفر' : 'تعيين كمتوفر'}
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // ============================================================
+        // حفظ منتج
+        // ============================================================
+        function saveProduct(productId, btn) {
+            const row = btn.closest('.product-row');
+            const priceInput = row.querySelector('[data-field="price"]');
+            const barcodeInput = row.querySelector('[data-field="barcode"]');
+            
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            
+            const newPrice = parseFloat(priceInput.value);
+            const newBarcode = barcodeInput.value.trim();
+            
+            if (isNaN(newPrice) || newPrice < 0) {
+                showToast('⚠️ السعر غير صحيح', 'error');
+                return;
+            }
+            
+            product.price = newPrice;
+            product.barcode = newBarcode;
+            
+            saveToLocalStorage();
+            showToast('✅ تم حفظ التعديلات', 'success');
+        }
+        
+        // ============================================================
+        // تبديل الحالة
+        // ============================================================
+        function toggleStatus(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            
+            product.status = product.status === 'unavailable' ? 'available' : 'unavailable';
+            
+            saveToLocalStorage();
+            renderProducts();
+            updateStats();
+            showToast(
+                product.status === 'unavailable' ? '⚠️ تم تعيين كغير متوفر' : '✅ تم تعيين كمتوفر',
+                product.status === 'unavailable' ? 'info' : 'success'
+            );
+        }
+        
+        // ============================================================
+        // حفظ في localStorage
+        // ============================================================
+        function saveToLocalStorage() {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(products));
+        }
+        
+        // ============================================================
+        // الفلاتر
+        // ============================================================
+        function setFilter(filter, btn) {
+            currentFilter = filter;
+            
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            renderProducts();
+        }
+        
+        function filterProducts() {
+            searchQuery = document.getElementById('searchInput').value.trim();
+            renderProducts();
+        }
+        
+        // ============================================================
+        // الإحصائيات
+        // ============================================================
+        function updateStats() {
+            const total = products.length;
+            const available = products.filter(p => p.status !== 'unavailable').length;
+            const unavailable = total - available;
+            
+            document.getElementById('statTotal').textContent = total;
+            document.getElementById('statAvailable').textContent = available;
+            document.getElementById('statUnavailable').textContent = unavailable;
+        }
+        
+        // ============================================================
+        // تصدير data.json
+        // ============================================================
+        function exportData() {
+            // نحول للـ JSON
+            const dataStr = JSON.stringify(products, null, 2);
+            
+            // نعمل ملف للتحميل
+            const blob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'data.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            showToast('✅ تم تصدير data.json — ارفعه على GitHub', 'success');
+        }
+        
+        // ============================================================
+        // استرجاع البيانات الأصلية
+        // ============================================================
+        async function resetData() {
+            if (!confirm('هل أنت متأكد؟ سيتم حذف كل التعديلات والرجوع للنسخة الأصلية.')) {
+                return;
+            }
+            
+            localStorage.removeItem(STORAGE_KEY);
+            await loadProducts();
+            showToast('✅ تم استرجاع البيانات الأصلية', 'success');
+        }
+        
+        // ============================================================
+        // Toast Notifications
+        // ============================================================
+        function showToast(message, type = 'info') {
+            let container = document.querySelector('.toast-container');
+            if (!container) {
+                container = document.createElement('div');
+                container.className = 'toast-container';
+                document.body.appendChild(container);
+            }
+            
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            toast.textContent = message;
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.add('fadeOut');
+                setTimeout(() => toast.remove(), 300);
+            }, 2500);
+        }
+        
+        // ============================================================
+        // تشغيل اللوحة
+        // ============================================================
+        document.addEventListener('DOMContentLoaded', () => {
+            // لو مسجّل دخول بالفعل
+            if (localStorage.getItem(LOGIN_KEY) === 'true') {
+                showAdminPanel();
+            } else {
+                document.getElementById('passwordInput').focus();
+            }
+        });
+    </script>
+</body>
+</html>
+
+<!-- === نهاية الملف === -->
