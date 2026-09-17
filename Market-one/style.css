@@ -357,7 +357,7 @@ button, input { font-family: inherit; }
    الأقسام - صور كاملة العرض
    ============================================================ */
 .categories { 
-    padding: 20px 16px; 
+    padding: 30px 16px 20px; 
     max-width: 100vw;
     overflow-x: hidden;
     box-sizing: border-box;
@@ -473,14 +473,14 @@ button, input { font-family: inherit; }
    المنتجات
    ============================================================ */
 .products-section { 
-    padding: 0 12px 20px; 
+    padding: 20px 12px 20px; 
     max-width: 100vw;
     overflow-x: hidden;
     box-sizing: border-box;
 }
 
 .products-header {
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 14px;
@@ -497,7 +497,7 @@ button, input { font-family: inherit; }
 
 .products-header h2 {
     font-size: 15px;
-    display: flex;
+    display: none;
     align-items: center;
     gap: 6px;
     color: var(--brown);
@@ -1679,7 +1679,7 @@ button, input { font-family: inherit; }
    ============================================================ */
 
 .products-header.show {
-    display: flex !important;
+   display: flex !important;
 }
 
 /* ============================================================
