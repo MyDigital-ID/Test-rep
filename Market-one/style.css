@@ -1590,3 +1590,66 @@ button, input { font-family: inherit; }
 }
 
 /* === نهاية الملف === */
+/* ============================================================
+   Feedback Box - رضائكم هدفنا
+   ============================================================ */
+.feedback-box {
+    background: linear-gradient(135deg, #FFF5F5 0%, #FFEBEE 100%);
+    border: 2px solid var(--primary);
+    border-radius: var(--radius);
+    padding: 16px;
+    margin-top: 16px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.feedback-box > i {
+    font-size: 32px;
+    color: var(--primary);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.feedback-box p {
+    font-size: 13px;
+    color: var(--brown);
+    font-weight: 700;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.feedback-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: var(--whatsapp);
+    color: var(--white);
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 800;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(37,211,102,0.4);
+}
+
+.feedback-btn:hover {
+    background: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37,211,102,0.6);
+}
+
+.feedback-btn i {
+    font-size: 16px;
+}
+
+/* ============================================================
+   إخفاء الأقسام عند فتح قسم
+   ============================================================ */
+.contact-section.hidden {
+    display: none !important;
+}

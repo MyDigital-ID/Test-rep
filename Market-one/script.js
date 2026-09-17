@@ -221,7 +221,18 @@ function openCategory(cat) {
         `<i class="fas fa-folder-open"></i> ${cat}`;
     document.getElementById('backBtn').style.display = 'inline-flex';
     renderProducts(items);
+    
+    // إخفاء الأقسام
     document.getElementById('categoriesSection').style.display = 'none';
+    
+    // إخفاء قسم تواصل معنا
+    const contactSection = document.getElementById('contactSection');
+    if (contactSection) contactSection.style.display = 'none';
+    
+    // إظهار هيدر المنتجات
+    const productsHeader = document.getElementById('productsHeader');
+    if (productsHeader) productsHeader.style.display = 'flex';
+    
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -632,8 +643,15 @@ function clearSearch() {
 function showHome() {
     currentView = 'home';
     setCategoryBackground(null);
+    
+    // إظهار الأقسام
     document.getElementById('categoriesSection').style.display = 'block';
     
+    // إظهار قسم تواصل معنا
+    const contactSection = document.getElementById('contactSection');
+    if (contactSection) contactSection.style.display = 'block';
+    
+    // إخفاء هيدر المنتجات
     const productsHeader = document.getElementById('productsHeader');
     if (productsHeader) productsHeader.style.display = 'none';
     
