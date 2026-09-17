@@ -1653,3 +1653,52 @@ button, input { font-family: inherit; }
 .contact-section.hidden {
     display: none !important;
 }
+/* ============================================================
+   Feedback Card - بوكس الملاحظات
+   ============================================================ */
+.feedback-card {
+    background: linear-gradient(135deg, #FFF5F5 0%, #FFEBEE 100%) !important;
+    border-color: var(--primary) !important;
+}
+
+.feedback-card i {
+    color: var(--primary) !important;
+    font-size: 26px !important;
+}
+
+.feedback-card span {
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+    text-align: center;
+    font-weight: 800 !important;
+    color: var(--brown) !important;
+}
+
+/* ============================================================
+   زر الرجوع - تأكيد الظهور
+   ============================================================ */
+
+.products-header.show {
+    display: flex !important;
+}
+
+/* ============================================================
+   Responsive - موبايل صغير
+   ============================================================ */
+@media (max-width: 360px) {
+    .brand-name-en { font-size: 24px; }
+    .brand-name-ar { font-size: 20px; }
+    .brand-logo { width: 80px; height: 80px; }
+    
+    .category-item { height: 140px; }
+    .category-item::before { font-size: 18px; bottom: 16px; }
+    
+    .contact-card {
+        padding: 12px 8px;
+    }
+    
+    .contact-card i { font-size: 22px; }
+    .contact-card span { font-size: 11px; }
+    
+    .feedback-card span { font-size: 10px !important; }
+}

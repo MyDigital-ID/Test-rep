@@ -1,4 +1,4 @@
-// ============================================================
+(())// ============================================================
 // ⚙️ إعدادات الماركت
 // ============================================================
 const MARKET_NAME = 'ميامي ماركت';
@@ -217,21 +217,37 @@ function openCategory(cat) {
     setCategoryBackground(cat);
     
     const items = productData.filter(p => p.category === cat);
-    document.getElementById('categoryTitle').innerHTML = 
-        `<i class="fas fa-folder-open"></i> ${cat}`;
-    document.getElementById('backBtn').style.display = 'inline-flex';
-    renderProducts(items);
+    
+    // تعديل عنوان القسم
+    const categoryTitle = document.getElementById('categoryTitle');
+    const categoryName = document.getElementById('categoryName');
+    if (categoryTitle) categoryTitle.innerHTML = `<i class="fas fa-folder-open"></i> ${cat}`;
+    if (categoryName) categoryName.textContent = cat;
+    
+    // إظهار هيدر المنتجات (اللي فيه زر الرجوع)
+    const productsHeader = document.getElementById('productsHeader');
+    if (productsHeader) {
+        productsHeader.style.display = 'flex';
+        productsHeader.classList.add('show');
+    }
+    
+    // إظهار زر الرجوع
+    const backBtn = document.getElementById('backBtn');
+    if (backBtn) {
+        backBtn.style.display = 'inline-flex';
+        backBtn.classList.add('show');
+    }
     
     // إخفاء الأقسام
-    document.getElementById('categoriesSection').style.display = 'none';
+    const categoriesSection = document.getElementById('categoriesSection');
+    if (categoriesSection) categoriesSection.style.display = 'none';
     
     // إخفاء قسم تواصل معنا
     const contactSection = document.getElementById('contactSection');
     if (contactSection) contactSection.style.display = 'none';
     
-    // إظهار هيدر المنتجات
-    const productsHeader = document.getElementById('productsHeader');
-    if (productsHeader) productsHeader.style.display = 'flex';
+    // عرض المنتجات
+    renderProducts(items);
     
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -645,7 +661,8 @@ function showHome() {
     setCategoryBackground(null);
     
     // إظهار الأقسام
-    document.getElementById('categoriesSection').style.display = 'block';
+    const categoriesSection = document.getElementById('categoriesSection');
+    if (categoriesSection) categoriesSection.style.display = 'block';
     
     // إظهار قسم تواصل معنا
     const contactSection = document.getElementById('contactSection');
@@ -653,11 +670,28 @@ function showHome() {
     
     // إخفاء هيدر المنتجات
     const productsHeader = document.getElementById('productsHeader');
-    if (productsHeader) productsHeader.style.display = 'none';
+    if (productsHeader) {
+        productsHeader.style.display = 'none';
+        productsHeader.classList.remove('show');
+    }
     
-    document.getElementById('searchInput').value = '';
-    document.getElementById('clearBtn').style.display = 'none';
-    document.getElementById('productsGrid').innerHTML = '';
+    // إخفاء زر الرجوع
+    const backBtn = document.getElementById('backBtn');
+    if (backBtn) {
+        backBtn.style.display = 'none';
+        backBtn.classList.remove('show');
+    }
+    
+    // تصفير البحث
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) searchInput.value = '';
+    
+    const clearBtn = document.getElementById('clearBtn');
+    if (clearBtn) clearBtn.style.display = 'none';
+    
+    // تفريغ شبكة المنتجات
+    const productsGrid = document.getElementById('productsGrid');
+    if (productsGrid) productsGrid.innerHTML = '';
     
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }

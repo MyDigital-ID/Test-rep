@@ -48,24 +48,20 @@
     </div>
 </aside>
 
-<!-- ============ الهيدر الجديد ============ -->
+<!-- ============ الهيدر ============ -->
 <header class="header-new">
-    <!-- زر القائمة -->
     <button class="menu-btn-new" onclick="openSidebar()" aria-label="القائمة">
         <i class="fas fa-bars"></i>
     </button>
     
-    <!-- الشعار -->
     <div class="brand-logo-wrapper">
         <img src="assets/images/Miami-logo.png" alt="Miami Market" class="brand-logo">
     </div>
     
-    <!-- الاسم -->
     <h1 class="brand-name-en">Miami Market</h1>
     <h2 class="brand-name-ar" id="marketName">ميامي ماركت</h2>
     <p class="brand-slogan">طلباتك أوامر</p>
     
-    <!-- شريط البحث -->
     <div class="search-bar-new">
         <i class="fas fa-search"></i>
         <input type="text" id="searchInput" 
@@ -83,7 +79,7 @@
     <div class="categories-grid" id="categoriesGrid"></div>
 </section>
 
-<!-- ============ المنتجات ============ -->
+<!-- ============ هيدر المنتجات + زر الرجوع ============ -->
 <section class="products-section" id="productsSection">
     <div class="products-header" id="productsHeader" style="display:none;">
         <h2 id="categoryTitle">
@@ -94,31 +90,6 @@
         </button>
     </div>
     <div class="products-grid" id="productsGrid"></div>
-</section>
-
-<!-- ============ قسم تواصل معنا (أسفل) ============ -->
-<section class="contact-section" id="contactSection">
-    <h3 class="contact-title"><i class="fas fa-headset"></i> تواصل معنا</h3>
-    
-    <div class="contact-grid">
-        <a href="tel:01008070087" class="contact-card">
-            <i class="fas fa-phone"></i>
-            <span>01008070087</span>
-        </a>
-        <a href="https://wa.me/201008070087" target="_blank" class="contact-card">
-            <i class="fab fa-whatsapp"></i>
-            <span>واتساب</span>
-        </a>
-    </div>
-    
-    <!-- بوكس رضائكم هدفنا -->
-    <div class="feedback-box">
-        <i class="fas fa-comment-dots"></i>
-        <p>رضائكم هدفنا .. للمقترحات و الملاحظات برجاء إرسالها هنا</p>
-        <a href="https://wa.me/201008070087?text=مقترح/ملاحظة:" target="_blank" class="feedback-btn">
-            <i class="fab fa-whatsapp"></i> إرسال
-        </a>
-    </div>
 </section>
 
 <!-- ============ ركن الطلبات ============ -->
@@ -153,6 +124,25 @@
             <i class="fab fa-whatsapp"></i>
             تأكيد الطلب عبر واتساب
         </button>
+    </div>
+</section>
+
+<!-- ============ قسم تواصل معنا (تحت السلة) ============ -->
+<section class="contact-section" id="contactSection">
+    <h3 class="contact-title"><i class="fas fa-headset"></i> تواصل معنا</h3>
+    
+    <div class="contact-grid">
+        <!-- بوكس الرقم -->
+        <a href="tel:01008070087" class="contact-card">
+            <i class="fas fa-phone"></i>
+            <span>01008070087</span>
+        </a>
+        
+        <!-- بوكس الملاحظات -->
+        <a href="https://wa.me/201008070087?text=مقترح/ملاحظة:" target="_blank" class="contact-card feedback-card">
+            <i class="fas fa-comment-dots"></i>
+            <span>رضائكم هدفنا .. للملاحظات</span>
+        </a>
     </div>
 </section>
 
