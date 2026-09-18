@@ -868,7 +868,9 @@ function showNotification(text, type = '') {
 // 22. PWA Install Banner
 // ============================================================
 let deferredPrompt = null;
-const INSTALL_BANNER_DISMISSED_KEY = 'installBannerDismissed';
+// استخدمنا sessionStorage مش localStorage عشان الرسالة تظهر تاني في كل مرة
+// يتفتح فيها الموقع من جديد، وتفضل مختفية بس لحد ما يقفل ويفتح الصفحة تاني
+const INSTALL_BANNER_DISMISSED_KEY = 'installBannerDismissedThisSession';
 
 function getOS() {
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -894,25 +896,22 @@ function isAppInstalled() {
 
 function showInstallBanner() {
     if (isAppInstalled()) return;
-    if (localStorage.getItem(INSTALL_BANNER_DISMISSED_KEY) === 'true') return;
+    if (sessionStorage.getItem(INSTALL_BANNER_DISMISSED_KEY) === 'true') return;
     
     const banner = document.getElementById('installBanner');
     if (!banner) return;
     
     const os = getOS();
-    const textH4 = banner.querySelector('.install-banner-text h4');
     const textP = banner.querySelector('.install-banner-text p');
     const primaryBtn = banner.querySelector('.install-btn-primary');
     
     if (os === 'iOS') {
-        textH4.textContent = 'أضف التطبيق لشاشتك الرئيسية';
-        textP.textContent = 'اضغط على [مشاركة] في Safari ثم اختر "إضافة إلى الشاشة الرئيسية"';
+        textP.textContent = 'أضف التطبيق لشاشتك الرئيسية: اضغط [مشاركة] في Safari ثم "إضافة إلى الشاشة الرئيسية"';
         primaryBtn.innerHTML = '<i class="fas fa-check"></i> فهمت';
         primaryBtn.onclick = dismissInstallBanner;
     } else {
-        textH4.textContent = 'ثبت التطبيق الآن';
-        textP.textContent = 'للحصول على تجربة تسوق سريعة وسهلة';
-        primaryBtn.innerHTML = '<i class="fas fa-download"></i> تثبيت';
+        textP.textContent = 'ثبت التطبيق الآن لتجربة سهلة و سريعة';
+        primaryBtn.innerHTML = '<i class="fas fa-download"></i> ثبت الآن';
         primaryBtn.onclick = installPWA;
     }
     
@@ -940,7 +939,7 @@ function dismissInstallBanner() {
             banner.style.display = 'none';
         }, 400);
     }
-    localStorage.setItem(INSTALL_BANNER_DISMISSED_KEY, 'true');
+    sessionStorage.setItem(INSTALL_BANNER_DISMISSED_KEY, 'true');
 }
 
 window.addEventListener('beforeinstallprompt', (e) => {

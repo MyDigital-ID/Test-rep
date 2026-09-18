@@ -1,7 +1,7 @@
 // ============================================================
 // Service Worker - ميامي ماركت PWA
 // ============================================================
-const CACHE_VERSION = '3.0.0';
+const CACHE_VERSION = '3.1.0';
 const CACHE_NAME = 'miami-market-' + CACHE_VERSION;
 
 // الملفات الأساسية
@@ -97,23 +97,31 @@ self.addEventListener('fetch', (event) => {
     if (request.method !== 'GET') return;
     if (request.url.startsWith('chrome-extension://')) return;
     
-    // HTML → Network First
-    if (request.headers.get('accept')?.includes('text/html')) {
+    // HTML/CSS/JS/JSON (كود التطبيق) → Network First
+    // عشان أي تحديث نرفعه على GitHub يظهر فورًا من غير ما حد يحتاج يمسح الكاش
+    const isAppShell = request.headers.get('accept')?.includes('text/html')
+        || request.url.endsWith('.js')
+        || request.url.endsWith('.css')
+        || request.url.endsWith('.json');
+
+    if (isAppShell) {
         event.respondWith(
             fetch(request)
                 .then((response) => {
-                    const responseClone = response.clone();
-                    caches.open(CACHE_NAME).then((cache) => {
-                        cache.put(request, responseClone);
-                    });
+                    if (response && response.status === 200) {
+                        const responseClone = response.clone();
+                        caches.open(CACHE_NAME).then((cache) => {
+                            cache.put(request, responseClone);
+                        });
+                    }
                     return response;
                 })
                 .catch(() => caches.match(request).then(r => r || caches.match('./index.html')))
         );
         return;
     }
-    
-    // الباقي → Cache First
+
+    // الصور والخطوط وباقي الملفات الثابتة → Cache First
     event.respondWith(
         caches.match(request)
             .then((cachedResponse) => {
