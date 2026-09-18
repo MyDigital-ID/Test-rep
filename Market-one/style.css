@@ -59,6 +59,22 @@ body {
 
 button, input { font-family: inherit; }
 
+
+/* ============================================================
+   خلفيات الأقسام
+   ============================================================ */
+body.category-cheese  { background-image: url('assets/images/dairy.jpg'); background-size: cover; background-attachment: fixed; background-position: center; background-repeat: no-repeat; }
+body.category-meat    { background-image: url('assets/images/meat.jpg'); background-size: cover; background-attachment: fixed; background-position: center; background-repeat: no-repeat; }
+body.category-pasta   { background-image: url('assets/images/pasta.jpg'); background-size: cover; background-attachment: fixed; background-position: center; background-repeat: no-repeat; }
+body.category-oil     { background-image: url('assets/images/oils.jpg'); background-size: cover; background-attachment: fixed; background-position: center; background-repeat: no-repeat; }
+body.category-veg     { background-image: url('assets/images/frozen.jpg'); background-size: cover; background-attachment: fixed; background-position: center; background-repeat: no-repeat; }
+body.category-cans    { background-image: url('assets/images/canned.jpg'); background-size: cover; background-attachment: fixed; background-position: center; background-repeat: no-repeat; }
+body.category-tea     { background-image: url('assets/images/tea.jpg'); background-size: cover; background-attachment: fixed; background-position: center; background-repeat: no-repeat; }
+body.category-cookies { background-image: url('assets/images/biscuits.jpg'); background-size: cover; background-attachment: fixed; background-position: center; background-repeat: no-repeat; }
+body.category-chips   { background-image: url('assets/images/chips.jpg'); background-size: cover; background-attachment: fixed; background-position: center; background-repeat: no-repeat; }
+body.category-water   { background-image: url('assets/images/water.jpg'); background-size: cover; background-attachment: fixed; background-position: center; background-repeat: no-repeat; }
+body.category-misc    { background-image: url('assets/images/misc.jpg'); background-size: cover; background-attachment: fixed; background-position: center; background-repeat: no-repeat; }
+body.category-clean   { background-image: url('assets/images/cleaning.jpg'); background-size: cover; background-attachment: fixed; background-position: center; background-repeat: no-repeat; }
 /* ============================================================
    شاشة البداية (Splash Screen)
    ============================================================ */
