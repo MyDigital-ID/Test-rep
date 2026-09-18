@@ -30,17 +30,20 @@
 }
 
 *{box-sizing:border-box;}
+html{ font-size:112.5%; } /* 18px base — bumps every rem size up a notch */
 html,body{margin:0;padding:0;}
 body{
   background: radial-gradient(ellipse at top, var(--cream-light), var(--cream) 65%);
   color: var(--ink);
   font-family: var(--font-body);
+  font-weight:700;
   overflow-x:hidden;
   min-height:100vh;
 }
 img{max-width:100%;display:block;}
-button{font-family:inherit;cursor:pointer;}
-h1,h2,h3{font-family: var(--font-head); margin:0;}
+button, textarea, input{ font-family:inherit; font-weight:700; }
+button{cursor:pointer;}
+h1,h2,h3{font-family: var(--font-head); font-weight:800; margin:0;}
 ul{list-style:none;margin:0;padding:0;}
 
 /* =========================================================
@@ -147,7 +150,7 @@ ul{list-style:none;margin:0;padding:0;}
 }
 .site-header .sub{
   color:var(--ink-soft);
-  font-size:.92rem;
+  font-size:1.02rem;
   margin-top:8px;
 }
 
@@ -235,7 +238,7 @@ ul{list-style:none;margin:0;padding:0;}
 .svc-item.selected .svc-check svg{ opacity:1; }
 
 .svc-item{ flex:1; cursor:pointer; }
-.svc-item p{ margin:0; font-size:.94rem; line-height:1.55; }
+.svc-item p{ margin:0; font-size:1.02rem; line-height:1.6; }
 .svc-num{ color:var(--copper); font-weight:700; }
 
 .svc-freetext{
