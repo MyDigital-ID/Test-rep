@@ -225,7 +225,7 @@ function escapeHtml(str){
 
 document.getElementById('cart-send').addEventListener('click', () => {
   if(cart.length === 0) return;
-  let msg = "السلام عليكم، عايز أطلب من (الكمال) الخدمات الآتية:\n\n";
+  let msg = "السلام عليكم، محتاج من (*الكمال لأعمال الصيانه*) الخدمات الآتية:\n\n";
   cart.forEach((item, i) => {
     msg += `${i + 1}) [${item.service}] ${item.text}`;
     if(item.note) msg += `\n   ملاحظة: ${item.note}`;
