@@ -254,7 +254,7 @@ document.getElementById('feedback-send').addEventListener('click', () => {
     document.getElementById('feedback-text').focus();
     return;
   }
-  let msg = "السلام عليكم، ده تقييمي وملاحظاتي على الخدمة اللي اتقدمت لي من (الكمال):\n\n";
+  let msg = " *السلام عليكم، ده تقييمي وملاحظاتي على الخدمة اللي اتقدمت لي من *(الكمال لأعمال الصيانه):\n\n";
   if(ratingValue) msg += `التقييم: ${'★'.repeat(ratingValue)}${'☆'.repeat(5 - ratingValue)}\n`;
   if(text) msg += `الملاحظات: ${text}`;
   const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
