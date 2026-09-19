@@ -214,6 +214,8 @@ ul{list-style:none;margin:0;padding:0;}
   background:none; border:none; color:var(--ink-soft);
   font-size:.85rem; padding:6px 4px;
 }
+.back-btn svg{ color:#2E86C1; }   /* السهم بالأزرق */
+.back-btn span{ color:#C0392B; } /* كلمة "الرئيسية" بالأحمر */
 .back-btn svg{ transform:scaleX(-1); } /* points right, matching RTL "forward = home" feel */
 [dir="rtl"] .back-btn svg{ transform:none; }
 

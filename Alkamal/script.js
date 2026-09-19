@@ -16,7 +16,7 @@ const SERVICES = {
       "إصلاح قفلات الكهرباء بسبب ماس كهربائي أو خطأ في التركيبات",
       "تركيب مفاتيح ذات الأحمال العالية والخاصة بأجهزة التكييف",
     ],
-    other: "صيانات أخرى (برجاء شرح الأمر برسالة نصية، أو أرسلها صوتيًا مباشرة في واتساب بعد الإرسال)",
+    other: "صيانات أخرى (برجاء شرح الأمر برسالة نصية، أو صوتيًا مباشرة في واتساب)",
   },
   painting: {
     title: "أعمال الدهانات",
@@ -225,7 +225,7 @@ function escapeHtml(str){
 
 document.getElementById('cart-send').addEventListener('click', () => {
   if(cart.length === 0) return;
-  let msg = "السلام عليكم، محتاج من *(الكمال لأعمال الصيانه)* الخدمات الآتية:\n\n";
+  let msg = "السلام عليكم، محتاج أطلب من *(الكمال لأعمال الصيانه)* الخدمات الآتية:\n\n";
   cart.forEach((item, i) => {
     msg += `${i + 1}) [${item.service}] ${item.text}`;
     if(item.note) msg += `\n   ملاحظة: ${item.note}`;
@@ -254,7 +254,7 @@ document.getElementById('feedback-send').addEventListener('click', () => {
     document.getElementById('feedback-text').focus();
     return;
   }
-  let msg = " *السلام عليكم، ده تقييمي وملاحظاتي على الخدمة اللي اتقدمت لي من *(الكمال لأعمال الصيانه):\n\n";
+  let msg = "السلام عليكم، ده تقييمي وملاحظاتي على الخدمة اللي اتقدمت لي من *الكمال لأعمال الصيانم*:\n\n";
   if(ratingValue) msg += `التقييم: ${'★'.repeat(ratingValue)}${'☆'.repeat(5 - ratingValue)}\n`;
   if(text) msg += `الملاحظات: ${text}`;
   const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
