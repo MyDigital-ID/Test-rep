@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<base href="/Fashion-Store/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Fashion Store | متجر الأزياء</title>
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header class="site-header">
+  <div class="header-row">
+    <button id="menuBtn" class="icon-btn" aria-label="menu">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+
+    <div class="brand" id="brandHome">
+      <span class="brand-name" data-ar="Fashion Store" data-en="Fashion Store">Fashion Store</span>
+      <span class="brand-sub" data-ar="أناقة بلا حدود" data-en="Fashion Without Limits">أناقة بلا حدود</span>
+    </div>
+
+    <div class="header-actions">
+      <button id="langBtn" class="pill-btn">EN</button>
+      <button id="cartBtn" class="icon-btn cart-btn" aria-label="cart">
+        🛒<span id="cartCount" class="cart-count">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Splash ===== -->
+<div id="splashScreen" class="splash-screen">
+  <p class="splash-text">✨ أناقة بلا حدود ✨</p>
+</div>
+
+<!-- ===== Side Menu ===== -->
+<div id="sideOverlay" class="overlay"></div>
+<aside id="sideMenu" class="side-menu">
+  <button id="closeMenu" class="icon-btn close-btn">✕</button>
+  <nav class="side-nav">
+    <a href="#" class="side-link" data-nav="home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+    <a href="#" class="side-link" data-nav="about" data-ar="عنا" data-en="About Us">عنا</a>
+    <a href="#" class="side-link" data-nav="contact" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
+  </nav>
+  
+  <div id="aboutBox" class="side-box hidden">
+    <p class="side-title" data-ar="عن المتجر" data-en="About Us">عن المتجر</p>
+    <p data-ar="نقدر اهتمامك بمظهرك ونسعى بإجتهاد أن نقدم لك كل ما هو جديد ومتميز ونقدم في سبيل ذلك أحدث موديلات وتصميمات بيوت الأزياء العالمية من أجود وأرقى الخامات التي تناسب جميع الأذواق والأعمار." 
+       data-en="We appreciate your attention to your appearance and strive to offer you everything new and distinctive with the latest fashion designs from the finest materials.">
+      نقدر اهتمامك بمظهرك ونسعى بإجتهاد أن نقدم لك كل ما هو جديد ومتميز ونقدم في سبيل ذلك أحدث موديلات وتصميمات بيوت الأزياء العالمية من أجود وأرقى الخامات التي تناسب جميع الأذواق والأعمار.
+    </p>
+    <p class="side-motto" data-ar="هدفنا إرضائكم" data-en="Our goal is your satisfaction">هدفنا إرضائكم</p>
+  </div>
+  
+  <div id="contactBox" class="side-box hidden">
+    <p class="side-title" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</p>
+    <p>📍 <span id="contactAddress">Online Fashion Store</span></p>
+    <p id="contactPhones"></p>
+    <a id="contactWhatsapp" class="wa-link" href="#" target="_blank" data-ar="راسلنا على واتساب" data-en="Message us on WhatsApp">راسلنا على واتساب</a>
+    <a id="contactMap" class="map-link hidden" href="#" target="_blank" data-ar="افتح الموقع على الخريطة" data-en="Open location on map">افتح الموقع على الخريطة</a>
+  </div>
+</aside>
+
+<main id="app">
+
+  <!-- ===== HOME VIEW ===== -->
+  <section id="view-home" class="view">
+    <div class="hero-box">
+      <h1 class="hero-title" data-ar="أناقة بلا حدود" data-en="Fashion Without Limits">أناقة بلا حدود</h1>
+      <p class="hero-sub" data-ar="اكتشف أحدث الموديلات" data-en="Discover the latest trends">اكتشف أحدث الموديلات</p>
+    </div>
+    <div class="categories-grid" id="categoriesGrid"></div>
+  </section>
+
+  <!-- ===== CATEGORY VIEW ===== -->
+  <section id="view-category" class="view hidden">
+    <button class="back-btn" id="backBtnCategory">→ <span data-ar="رجوع للرئيسية" data-en="Back to home">رجوع للرئيسية</span></button>
+    <h2 id="categoryTitle" class="category-title"></h2>
+    <div id="productsList" class="products-list"></div>
+  </section>
+
+  <!-- ===== PRODUCT VIEW ===== -->
+  <section id="view-product" class="view hidden">
+    <button class="back-btn" id="backBtnProduct">→ <span data-ar="رجوع" data-en="Back">رجوع</span></button>
+    <div class="product-detail" id="productDetail"></div>
+  </section>
+
+</main>
+
+<!-- ===== Cart Drawer ===== -->
+<div id="cartOverlay" class="overlay"></div>
+<aside id="cartDrawer" class="cart-drawer">
+  <div class="cart-header">
+    <h3 data-ar="سلة الطلبات" data-en="Your Order">سلة الطلبات</h3>
+    <button id="closeCart" class="icon-btn close-btn">✕</button>
+  </div>
+  <div id="cartItems" class="cart-items"></div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span data-ar="الإجمالي" data-en="Total">الإجمالي</span>
+      <span id="cartTotal">0</span> <span data-ar="ج.م" data-en="EGP">ج.م</span>
+    </div>
+    <button id="sendOrderBtn" class="cta-btn" data-ar="إرسال الطلب عبر واتساب" data-en="Send order via WhatsApp">إرسال الطلب عبر واتساب</button>
+  </div>
+</aside>
+
+<!-- ===== Install Prompt ===== -->
+<div id="installPrompt" class="install-prompt hidden">
+  <p data-ar="ثبّت التطبيق على شاشتك الرئيسية" data-en="Install the app to your home screen">ثبّت التطبيق على شاشتك الرئيسية</p>
+  <div class="install-actions">
+    <button id="installNowBtn" class="cta-btn small" data-ar="تثبيت الآن" data-en="Install now">تثبيت الآن</button>
+    <button id="installLaterBtn" class="pill-btn small" data-ar="لاحقاً" data-en="Later">لاحقاً</button>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p data-ar="جميع الحقوق محفوظة لـ Fashion Store" data-en="All rights reserved to Fashion Store">جميع الحقوق محفوظة لـ Fashion Store</p>
+</footer>
+
+<script src="site-data-loader.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

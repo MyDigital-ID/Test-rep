@@ -1,0 +1,883 @@
+{
+  "config": {
+    "brand_ar": "Fashion Store",
+    "brand_en": "Fashion Store",
+    "tagline_ar": "أناقة بلا حدود",
+    "tagline_en": "Fashion Without Limits",
+    "about_ar": "نقدر اهتمامك بمظهرك ونسعى بإجتهاد أن نقدم لك كل ما هو جديد ومتميز ونقدم في سبيل ذلك أحدث موديلات وتصميمات بيوت الأزياء العالمية من أجود وأرقى الخامات التي تناسب جميع الأذواق والأعمار.",
+    "about_en": "We appreciate your attention to your appearance and strive to offer you everything new and distinctive with the latest fashion designs from the finest materials.",
+    "whatsappNumber": "",
+    "phones": [],
+    "address_ar": "Online Fashion Store",
+    "address_en": "Online Fashion Store",
+    "mapUrl": "",
+    "email": "",
+    "instagram": "",
+    "facebook": "",
+    "tiktok": "",
+    "rights_ar": "جميع الحقوق محفوظة لـ Fashion Store"
+  },
+  "categories": [
+    {
+      "id": "men-shirts",
+      "icon": "👔",
+      "name_ar": "قمصان رجالي",
+      "name_en": "Men's Shirts",
+      "homeImg": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "ms1",
+          "name_ar": "قميص كلاسيك أبيض",
+          "name_en": "Classic White Shirt",
+          "desc_ar": "قميص قطن 100% بتصميم كلاسيكي أنيق",
+          "desc_en": "100% cotton classic elegant shirt",
+          "price": 250,
+          "price_xxxl": 300,
+          "sizes": ["S", "M", "L", "XL", "XXL", "XXXL"],
+          "images": ["https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=80"]
+        },
+        {
+          "id": "ms2",
+          "name_ar": "قميص كاجوال أزرق",
+          "name_en": "Blue Casual Shirt",
+          "desc_ar": "قميص قطن مخلوط بتصميم كاجوال عصري",
+          "desc_en": "Cotton blend modern casual shirt",
+          "price": 300,
+          "price_xxxl": 360,
+          "sizes": ["M", "L", "XL", "XXL"],
+          "images": ["https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=800&q=80"]
+        },
+        {
+          "id": "ms3",
+          "name_ar": "قميص مقلم رسمي",
+          "name_en": "Striped Formal Shirt",
+          "desc_ar": "قميص مقلم مناسب للمناسبات الرسمية",
+          "desc_en": "Striped shirt for formal occasions",
+          "price": 350,
+          "price_xxxl": 0,
+          "sizes": ["S", "M", "L", "XL"],
+          "images": ["https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=800&q=80"]
+        }
+      ]
+    },
+    {
+      "id": "men-tshirts",
+      "icon": "👕",
+      "name_ar": "تيشيرتات رجالي",
+      "name_en": "Men's T-Shirts",
+      "homeImg": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "mt1",
+          "name_ar": "تيشيرت قطني أسود",
+          "name_en": "Black Cotton T-Shirt",
+          "desc_ar": "تيشيرت قطن 100% مريح للاستخدام اليومي",
+          "desc_en": "100% cotton comfortable daily t-shirt",
+          "price": 150,
+          "price_xxxl": 180,
+          "sizes": ["S", "M", "L", "XL", "XXL"],
+          "images": ["https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80"]
+        },
+        {
+          "id": "mt2",
+          "name_ar": "تيشيرت مطبوع أبيض",
+          "name_en": "White Printed T-Shirt",
+          "desc_ar": "تيشيرت بتصميم مطبوع عصري",
+          "desc_en": "Modern printed design t-shirt",
+          "price": 200,
+          "price_xxxl": 0,
+          "sizes": ["S", "M", "L", "XL"],
+          "images": ["https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80"]
+        },
+        {
+          "id": "mt3",
+          "name_ar": "تيشيرت رياضي رمادي",
+          "name_en": "Gray Sports T-Shirt",
+          "desc_ar": "تيشيرت رياضي بخامة سريعة الجفاف",
+          "desc_en": "Sports t-shirt quick-dry fabric",
+          "price": 180,
+          "price_xxxl": 220,
+          "sizes": ["M", "L", "XL", "XXL", "XXXL"],
+          "images": ["https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=800&q=80"]
+        }
+      ]
+    },
+    {
+      "id": "men-pants",
+      "icon": "👖",
+      "name_ar": "بناطيل رجالي",
+      "name_en": "Men's Pants",
+      "homeImg": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "mp1",
+          "name_ar": "بنطلون جينز كلاسيك",
+          "name_en": "Classic Jeans",
+          "desc_ar": "بنطلون جينز بقصة مستقيمة",
+          "desc_en": "Straight cut jeans pants",
+          "price": 400,
+          "price_xxxl": 480,
+          "sizes": ["S", "M", "L", "XL", "XXL"],
+          "images": ["https://images.unsplash.com/photo-1542272604-787c3835535d?w=800&q=80"]
+        },
+        {
+          "id": "mp2",
+          "name_ar": "بنطلون قماش أسود",
+          "name_en": "Black Fabric Pants",
+          "desc_ar": "بنطلون قماش رسمي أنيق",
+          "desc_en": "Elegant formal fabric pants",
+          "price": 350,
+          "price_xxxl": 0,
+          "sizes": ["M", "L", "XL"],
+          "images": ["https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=800&q=80"]
+        },
+        {
+          "id": "mp3",
+          "name_ar": "بنطلون شينو بيج",
+          "name_en": "Beige Chino Pants",
+          "desc_ar": "بنطلون شينو كاجوال",
+          "desc_en": "Casual chino pants",
+          "price": 320,
+          "price_xxxl": 380,
+          "sizes": ["S", "M", "L", "XL", "XXL", "XXXL"],
+          "images": ["https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&q=80"]
+        }
+      ]
+    },
+    {
+      "id": "men-suits",
+      "icon": "🤵",
+      "name_ar": "بدل رجالي",
+      "name_en": "Men's Suits",
+      "homeImg": "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "msu1",
+          "name_ar": "بدلة رسمية سوداء",
+          "name_en": "Black Formal Suit",
+          "desc_ar": "بدلة رسمية بتصميم إيطالي",
+          "desc_en": "Italian design formal suit",
+          "price": 1500,
+          "price_xxxl": 1800,
+          "sizes": ["M", "L", "XL", "XXL"],
+          "images": ["https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=800&q=80"]
+        },
+        {
+          "id": "msu2",
+          "name_ar": "بدلة كحلي كلاسيك",
+          "name_en": "Navy Classic Suit",
+          "desc_ar": "بدلة كحلي بقصة كلاسيكية",
+          "desc_en": "Navy suit classic cut",
+          "price": 1400,
+          "price_xxxl": 0,
+          "sizes": ["S", "M", "L", "XL"],
+          "images": ["https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80"]
+        },
+        {
+          "id": "msu3",
+          "name_ar": "بدلة رمادي غامق",
+          "name_en": "Dark Gray Suit",
+          "desc_ar": "بدلة رمادي غامق للمناسبات",
+          "desc_en": "Dark gray suit for occasions",
+          "price": 1600,
+          "price_xxxl": 1900,
+          "sizes": ["M", "L", "XL", "XXL", "XXXL"],
+          "images": ["https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800&q=80"]
+        }
+      ]
+    },
+    {
+      "id": "men-jackets",
+      "icon": "🧥",
+      "name_ar": "جاكيتات رجالي",
+      "name_en": "Men's Jackets",
+      "homeImg": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "mj1",
+          "name_ar": "جاكيت جينز أزرق",
+          "name_en": "Blue Denim Jacket",
+          "desc_ar": "جاكيت جينز كلاسيكي",
+          "desc_en": "Classic denim jacket",
+          "price": 600,
+          "price_xxxl": 700,
+          "sizes": ["S", "M", "L", "XL", "XXL"],
+          "images": ["https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&q=80"]
+        },
+        {
+          "id": "mj2",
+          "name_ar": "جاكيت جلد أسود",
+          "name_en": "Black Leather Jacket",
+          "desc_ar": "جاكيت جلد صناعي عالي الجودة",
+          "desc_en": "High quality leather jacket",
+          "price": 900,
+          "price_xxxl": 0,
+          "sizes": ["M", "L", "XL"],
+          "images": ["https://images.unsplash.com/photo-1520975954732-35dd22299614?w=800&q=80"]
+        },
+        {
+          "id": "mj3",
+          "name_ar": "جاكيت بافر رمادي",
+          "name_en": "Gray Puffer Jacket",
+          "desc_ar": "جاكيت بافر دافئ للشتاء",
+          "desc_en": "Warm winter puffer jacket",
+          "price": 750,
+          "price_xxxl": 850,
+          "sizes": ["S", "M", "L", "XL", "XXL", "XXXL"],
+          "images": ["https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&q=80"]
+        }
+      ]
+    },
+    {
+      "id": "men-shoes",
+      "icon": "👞",
+      "name_ar": "أحذية رجالي",
+      "name_en": "Men's Shoes",
+      "homeImg": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "msh1",
+          "name_ar": "حذاء رسمي أسود",
+          "name_en": "Black Formal Shoes",
+          "desc_ar": "حذاء جلد طبيعي رسمي",
+          "desc_en": "Formal genuine leather shoes",
+          "price": 550,
+          "price_xxxl": 0,
+          "sizes": ["40", "41", "42", "43", "44", "45"],
+          "images": ["https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&q=80"]
+        },
+        {
+          "id": "msh2",
+          "name_ar": "حذاء رياضي أبيض",
+          "name_en": "White Sneakers",
+          "desc_ar": "حذاء رياضي عصري",
+          "desc_en": "Modern sports sneakers",
+          "price": 450,
+          "price_xxxl": 0,
+          "sizes": ["40", "41", "42", "43", "44", "45", "46"],
+          "images": ["https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80"]
+        },
+        {
+          "id": "msh3",
+          "name_ar": "حذاء كاجوال بني",
+          "name_en": "Brown Casual Shoes",
+          "desc_ar": "حذاء كاجوال جلد",
+          "desc_en": "Casual leather shoes",
+          "price": 500,
+          "price_xxxl": 0,
+          "sizes": ["40", "41", "42", "43", "44"],
+          "images": ["https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=800&q=80"]
+        }
+      ]
+    },
+    {
+      "id": "women-shirts",
+      "icon": "👚",
+      "name_ar": "قمصان نسائي",
+      "name_en": "Women's Shirts",
+      "homeImg": "https://images.unsplash.com/photo-1564257577192-3c5d9da5a5d1?w=600&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "ws1",
+          "name_ar": "قميص نسائي أبيض",
+          "name_en": "White Women's Shirt",
+          "desc_ar": "قميص نسائي أنيق",
+          "desc_en": "Elegant women's shirt",
+          "price": 280,
+          "price_xxxl": 330,
+          "sizes": ["S", "M", "L", "XL"],
+          "images": ["https://images.unsplash.com/photo-1564257577192-3c5d9da5a5d1?w=800&q=80"]
+        },
+        {
+          "id": "ws2",
+          "name_ar": "قميص نسائي وردي",
+          "name_en": "Pink Women's Shirt",
+          "desc_ar": "قميص نسائي بلون هادئ",
+          "desc_en": "Soft color women's shirt",
+          "price": 300,
+          "price_xxxl": 0,
+          "sizes": ["S", "M", "L"],
+          "images": ["https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=800&q=80"]
+        },
+        {
+          "id": "ws3",
+          "name_ar": "قميص نسائي مقلم",
+          "name_en": "Striped Women's Shirt",
+          "desc_ar": "قميص نسائي مقلم عصري",
+          "desc_en": "Modern striped women's shirt",
+          "price": 320,
+          "price_xxxl": 380,
+          "sizes": ["S", "M", "L", "XL", "XXL"],
+          "images": ["https://images.unsplash.com/photo-1564859228273-274232fdb516?w=800&q=80"]
+        }
+      ]
+    },
+    {
+      "id": "women-blouses",
+      "icon": "👘",
+      "name_ar": "بلوزات نسائي",
+      "name_en": "Women's Blouses",
+      "homeImg": "https://images.unsplash.com/photo-1551803091-e20673f15770?w=600&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "wb1",
+          "name_ar": "بلوزة حرير أسود",
+          "name_en": "Black Silk Blouse",
+          "desc_ar": "بلوزة حرير أنيقة",
+          "desc_en": "Elegant silk blouse",
+          "price": 350,
+          "price_xxxl": 0,
+          "sizes": ["S", "M", "L", "XL"],
+          "images": ["https://images.unsplash.com/photo-1551803091-e20673f15770?w=800&q=80"]
+        },
+        {
+          "id": "wb2",
+          "name_ar": "بلوزة بيضاء كلاسيك",
+          "name_en": "White Classic Blouse",
+          "desc_ar": "بلوزة بيضاء كلاسيكية",
+          "desc_en": "White classic blouse",
+          "price": 280,
+          "price_xxxl": 320,
+          "sizes": ["S", "M", "L", "XL", "XXL"],
+          "images": ["https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&q=80"]
+        },
+        {
+          "id": "wb3",
+          "name_ar": "بلوزة زرقاء أنيقة",
+          "name_en": "Blue Elegant Blouse",
+          "desc_ar": "بلوزة زرقاء بتصميم عصري",
+          "desc_en": "Modern blue blouse",
+          "price": 320,
+          "price_xxxl": 0,
+          "sizes": ["M", "L", "XL"],
+          "images": ["https://images.unsplash.com/photo-1583744946564-b52ac1c389c8?w=800&q=80"]
+        }
+      ]
+    },
+    {
+      "id": "dresses",
+      "icon": "👗",
+      "name_ar": "فساتين",
+      "name_en": "Dresses",
+      "homeImg": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "d1",
+          "name_ar": "فستان سواريه أسود",
+          "name_en": "Black Evening Dress",
+          "desc_ar": "فستان سواريه أنيق",
+          "desc_en": "Elegant evening dress",
+          "price": 800,
+          "price_xxxl": 950,
+          "sizes": ["S", "M", "L", "XL"],
+          "images": ["https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&q=80"]
+        },
+        {
+          "id": "d2",
+          "name_ar": "فستان صيفي مزهر",
+          "name_en": "Floral Summer Dress",
+          "desc_ar": "فستان صيفي بنقشة أزهار",
+          "desc_en": "Floral summer dress",
+          "price": 450,
+          "price_xxxl": 0,
+          "sizes": ["S", "M", "L"],
+          "images": ["https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=800&q=80"]
+        },
+        {
+          "id": "d3",
+          "name_ar": "فستان كاجوال بيج",
+          "name_en": "Beige Casual Dress",
+          "desc_ar": "فستان كاجوال مريح",
+          "desc_en": "Comfortable casual dress",
+          "price": 500,
+          "price_xxxl": 580,
+          "sizes": ["S", "M", "L", "XL", "XXL"],
+          "images": ["https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=800&q=80"]
+        }
+      ]
+    },
+    {
+      "id": "skirts",
+      "icon": "👝",
+      "name_ar": "جيبات",
+      "name_en": "Skirts",
+      "homeImg": "https://images.unsplash.com/photo-1583496661160-fb5886a13d77?w=600&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "sk1",
+          "name_ar": "جيبة بليسيه سوداء",
+          "name_en": "Black Pleated Skirt",
+          "desc_ar": "جيبة بليسيه أنيقة",
+          "desc_en": "Elegant pleated skirt",
+          "price": 350,
+          "price_xxxl": 0,
+          "sizes": ["S", "M", "L", "XL"],
+          "images": ["https://images.unsplash.com/photo-1583496661160-fb5886a13d77?w=800&q=80"]
+        },
+        {
+          "id": "sk2",
+          "name_ar": "جيبة جينز قصيرة",
+          "name_en": "Denim Mini Skirt",
+          "desc_ar": "جيبة جينز قصيرة",
+          "desc_en": "Denim mini skirt",
+          "price": 280,
+          "price_xxxl": 320,
+          "sizes": ["S", "M", "L"],
+          "images": ["https://images.unsplash.com/photo-1582552938357-32b906df40cb?w=800&q=80"]
+        },
+        {
+          "id": "sk3",
+          "name_ar": "جيبة طويلة مزهرة",
+          "name_en": "Floral Long Skirt",
+          "desc_ar": "جيبة طويلة بنقشة أزهار",
+          "desc_en": "Floral long skirt",
+          "price": 400,
+          "price_xxxl": 0,
+          "sizes": ["S", "M", "L", "XL", "XXL"],
+          "images": ["https://images.unsplash.com/photo-1589363460779-cd717d2ed8fa?w=800&q=80"]
+        }
+      ]
+    },
+    
+    {
+      "id": "women-pants",
+      "icon": "👖",
+      "name_ar": "بناطيل نسائي",
+      "name_en": "Women's Pants",
+      "homeImg": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "wp1",
+          "name_ar": "بنطلون جينز نسائي",
+          "name_en": "Women's Jeans",
+          "desc_ar": "بنطلون جينز نسائي بقصة مريحة",
+          "desc_en": "Comfortable women's jeans",
+          "price": 380,
+          "price_xxxl": 440,
+          "sizes": ["S", "M", "L", "XL"],
+          "images": ["https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&q=80"]
+        },
+        {
+          "id": "wp2",
+          "name_ar": "بنطلون قماش أسود نسائي",
+          "name_en": "Black Women's Pants",
+          "desc_ar": "بنطلون قماش رسمي",
+          "desc_en": "Formal fabric pants",
+          "price": 320,
+          "price_xxxl": 0,
+          "sizes": ["S", "M", "L", "XL"],
+          "images": ["https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=800&q=80"]
+        },
+        {
+          "id": "wp3",
+          "name_ar": "بنطلون كارجو بيج",
+          "name_en": "Beige Cargo Pants",
+          "desc_ar": "بنطلون كارجو كاجوال",
+          "desc_en": "Casual cargo pants",
+          "price": 350,
+          "price_xxxl": 400,
+          "sizes": ["S", "M", "L", "XL", "XXL"],
+          "images": ["https://images.unsplash.com/photo-1509551388413-e18d0ac5d495?w=800&q=80"]
+        }
+      ]
+    },
+    {
+      "id": "abayas",
+      "icon": "🧕",
+      "name_ar": "عبايات",
+      "name_en": "Abayas",
+      "homeImg": "https://images.unsplash.com/photo-1583391733956-6c78276477e2?w=600&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "ab1",
+          "name_ar": "عباية سوداء كلاسيك",
+          "name_en": "Black Classic Abaya",
+          "desc_ar": "عباية سوداء بتصميم كلاسيكي أنيق",
+          "desc_en": "Elegant classic black abaya",
+          "price": 450,
+          "price_xxxl": 550,
+          "sizes": ["S", "M", "L", "XL", "XXL"],
+          "images": ["https://images.unsplash.com/photo-1583391733956-6c78276477e2?w=800&q=80"]
+        },
+        {
+          "id": "ab2",
+          "name_ar": "عباية مطرزة ذهبي",
+          "name_en": "Gold Embroidered Abaya",
+          "desc_ar": "عباية مطرزة بخيوط ذهبية",
+          "desc_en": "Gold embroidered abaya",
+          "price": 700,
+          "price_xxxl": 0,
+          "sizes": ["M", "L", "XL"],
+          "images": ["https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=800&q=80"]
+        },
+        {
+          "id": "ab3",
+          "name_ar": "عباية كاجوال بيج",
+          "name_en": "Beige Casual Abaya",
+          "desc_ar": "عباية كاجوال بلون هادئ",
+          "desc_en": "Soft color casual abaya",
+          "price": 500,
+          "price_xxxl": 600,
+          "sizes": ["S", "M", "L", "XL", "XXL", "XXXL"],
+          "images": ["https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800&q=80"]
+        }
+      ]
+    },
+    {
+      "id": "women-shoes",
+      "icon": "👠",
+      "name_ar": "أحذية نسائي",
+      "name_en": "Women's Shoes",
+      "homeImg": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "wsh1",
+          "name_ar": "حذاء كعب عالي أسود",
+          "name_en": "Black High Heels",
+          "desc_ar": "حذاء كعب عالي أنيق",
+          "desc_en": "Elegant high heels",
+          "price": 550,
+          "price_xxxl": 0,
+          "sizes": ["36", "37", "38", "39", "40"],
+          "images": ["https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=800&q=80"]
+        },
+        {
+          "id": "wsh2",
+          "name_ar": "حذاء رياضي أبيض نسائي",
+          "name_en": "White Women Sneakers",
+          "desc_ar": "حذاء رياضي عصري",
+          "desc_en": "Modern sports sneakers",
+          "price": 420,
+          "price_xxxl": 0,
+          "sizes": ["36", "37", "38", "39", "40", "41"],
+          "images": ["https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80"]
+        },
+        {
+          "id": "wsh3",
+          "name_ar": "حذاء مسطح بني",
+          "name_en": "Brown Flats",
+          "desc_ar": "حذاء مسطح جلد",
+          "desc_en": "Leather flat shoes",
+          "price": 380,
+          "price_xxxl": 0,
+          "sizes": ["36", "37", "38", "39", "40"],
+          "images": ["https://images.unsplash.com/photo-1560343090-f0409e92791a?w=800&q=80"]
+        }
+      ]
+    },
+    {
+      "id": "handbags",
+      "icon": "👜",
+      "name_ar": "شنط",
+      "name_en": "Handbags",
+      "homeImg": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "hb1",
+          "name_ar": "شنطة يد سوداء",
+          "name_en": "Black Handbag",
+          "desc_ar": "شنطة يد أنيقة بجلد صناعي",
+          "desc_en": "Elegant faux leather handbag",
+          "price": 450,
+          "price_xxxl": 0,
+          "sizes": ["Standard"],
+          "images": ["https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&q=80"]
+        },
+        {
+          "id": "hb2",
+          "name_ar": "شنطة كتف بيج",
+          "name_en": "Beige Shoulder Bag",
+          "desc_ar": "شنطة كتف بحجم متوسط",
+          "desc_en": "Medium shoulder bag",
+          "price": 380,
+          "price_xxxl": 0,
+          "sizes": ["Standard"],
+          "images": ["https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&q=80"]
+        },
+        {
+          "id": "hb3",
+          "name_ar": "شنطة ظهر جينز",
+          "name_en": "Denim Backpack",
+          "desc_ar": "شنطة ظهر عصرية",
+          "desc_en": "Trendy backpack",
+          "price": 320,
+          "price_xxxl": 0,
+          "sizes": ["Standard"],
+          "images": ["https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&q=80"]
+        }
+      ]
+    },
+    {
+      "id": "accessories",
+      "icon": "💍",
+      "name_ar": "إكسسوارات",
+      "name_en": "Accessories",
+      "homeImg": "https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=600&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "ac1",
+          "name_ar": "ساعة يد كلاسيك",
+          "name_en": "Classic Wrist Watch",
+          "desc_ar": "ساعة يد بتصميم كلاسيكي",
+          "desc_en": "Classic design wrist watch",
+          "price": 650,
+          "price_xxxl": 0,
+          "sizes": ["Standard"],
+          "images": ["https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=800&q=80"]
+        },
+        {
+          "id": "ac2",
+          "name_ar": "حزام جلد أسود",
+          "name_en": "Black Leather Belt",
+          "desc_ar": "حزام جلد طبيعي",
+          "desc_en": "Genuine leather belt",
+          "price": 220,
+          "price_xxxl": 0,
+          "sizes": ["M", "L", "XL"],
+          "images": ["https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&q=80"]
+        },
+        {
+          "id": "ac3",
+          "name_ar": "محفظة جلد بني",
+          "name_en": "Brown Leather Wallet",
+          "desc_ar": "محفظة جلد أنيقة",
+          "desc_en": "Elegant leather wallet",
+          "price": 280,
+          "price_xxxl": 0,
+          "sizes": ["Standard"],
+          "images": ["https://images.unsplash.com/photo-1627123424574-724758594e93?w=800&q=80"]
+        }
+      ]
+    },
+    {
+      "id": "kids-wear",
+      "icon": "🧒",
+      "name_ar": "ملابس أطفال",
+      "name_en": "Kids Wear",
+      "homeImg": "https://images.unsplash.com/photo-1519278409-1f56fdda7fe5?w=600&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "kw1",
+          "name_ar": "طقم أطفال ولادي",
+          "name_en": "Boys Outfit Set",
+          "desc_ar": "طقم قطني مريح",
+          "desc_en": "Comfortable cotton set",
+          "price": 180,
+          "price_xxxl": 0,
+          "sizes": ["2Y", "3Y", "4Y", "5Y", "6Y"],
+          "images": ["https://images.unsplash.com/photo-1519278409-1f56fdda7fe5?w=800&q=80"]
+        },
+        {
+          "id": "kw2",
+          "name_ar": "فستان بناتي زهري",
+          "name_en": "Pink Girls Dress",
+          "desc_ar": "فستان بناتي بلون زهري",
+          "desc_en": "Pink girls dress",
+          "price": 220,
+          "price_xxxl": 0,
+          "sizes": ["2Y", "3Y", "4Y", "5Y", "6Y", "7Y"],
+          "images": ["https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?w=800&q=80"]
+        },
+        {
+          "id": "kw3",
+          "name_ar": "تيشيرت أطفال مطبوع",
+          "name_en": "Kids Printed T-Shirt",
+          "desc_ar": "تيشيرت قطني بتصميم مرح",
+          "desc_en": "Fun cotton t-shirt",
+          "price": 120,
+          "price_xxxl": 0,
+          "sizes": ["2Y", "3Y", "4Y", "5Y", "6Y", "7Y", "8Y"],
+          "images": ["https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=800&q=80"]
+        }
+      ]
+    },
+    {
+      "id": "sportswear",
+      "icon": "🏃",
+      "name_ar": "ملابس رياضية",
+      "name_en": "Sportswear",
+      "homeImg": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "sp1",
+          "name_ar": "طقم رياضي رجالي",
+          "name_en": "Men's Sports Set",
+          "desc_ar": "طقم رياضي بخامة سريعة الجفاف",
+          "desc_en": "Sports set quick-dry fabric",
+          "price": 450,
+          "price_xxxl": 550,
+          "sizes": ["S", "M", "L", "XL", "XXL"],
+          "images": ["https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80"]
+        },
+        {
+          "id": "sp2",
+          "name_ar": "ليقن رياضي نسائي",
+          "name_en": "Women's Sports Leggings",
+          "desc_ar": "ليقن مطاطي مريح",
+          "desc_en": "Comfortable stretch leggings",
+          "price": 280,
+          "price_xxxl": 0,
+          "sizes": ["S", "M", "L", "XL"],
+          "images": ["https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=800&q=80"]
+        },
+        {
+          "id": "sp3",
+          "name_ar": "جاكيت رياضي أسود",
+          "name_en": "Black Sports Jacket",
+          "desc_ar": "جاكيت رياضي خفيف",
+          "desc_en": "Light sports jacket",
+          "price": 380,
+          "price_xxxl": 450,
+          "sizes": ["S", "M", "L", "XL", "XXL"],
+          "images": ["https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80"]
+        }
+      ]
+    },
+    {
+      "id": "underwear",
+      "icon": "🩲",
+      "name_ar": "ملابس داخلية",
+      "name_en": "Underwear",
+      "homeImg": "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "uw1",
+          "name_ar": "طقم داخلي قطني رجالي",
+          "name_en": "Men's Cotton Set",
+          "desc_ar": "طقم داخلي قطني مريح",
+          "desc_en": "Comfortable cotton set",
+          "price": 150,
+          "price_xxxl": 180,
+          "sizes": ["S", "M", "L", "XL", "XXL"],
+          "images": ["https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80"]
+        },
+        {
+          "id": "uw2",
+          "name_ar": "طقم داخلي نسائي",
+          "name_en": "Women's Set",
+          "desc_ar": "طقم داخلي قطني ناعم",
+          "desc_en": "Soft cotton set",
+          "price": 160,
+          "price_xxxl": 0,
+          "sizes": ["S", "M", "L", "XL"],
+          "images": ["https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=800&q=80"]
+        },
+        {
+          "id": "uw3",
+          "name_ar": "شرابات قطن (3 أزواج)",
+          "name_en": "Cotton Socks (3 Pairs)",
+          "desc_ar": "شرابات قطنية عالية الجودة",
+          "desc_en": "High quality cotton socks",
+          "price": 80,
+          "price_xxxl": 0,
+          "sizes": ["Standard"],
+          "images": ["https://images.unsplash.com/photo-1582966772680-860e372bb558?w=800&q=80"]
+        }
+      ]
+    },
+    {
+      "id": "perfumes",
+      "icon": "🌸",
+      "name_ar": "عطور",
+      "name_en": "Perfumes",
+      "homeImg": "https://images.unsplash.com/photo-1541643600914-78b084683601?w=600&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "pf1",
+          "name_ar": "عطر رجالي فاخر",
+          "name_en": "Luxury Men's Perfume",
+          "desc_ar": "عطر رجالي برائحة خشبية",
+          "desc_en": "Woody fragrance for men",
+          "price": 850,
+          "price_xxxl": 0,
+          "sizes": ["100ml", "50ml"],
+          "images": ["https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&q=80"]
+        },
+        {
+          "id": "pf2",
+          "name_ar": "عطر نسائي زهري",
+          "name_en": "Floral Women's Perfume",
+          "desc_ar": "عطر نسائي برائحة زهرية",
+          "desc_en": "Floral fragrance for women",
+          "price": 900,
+          "price_xxxl": 0,
+          "sizes": ["100ml", "50ml"],
+          "images": ["https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=800&q=80"]
+        },
+        {
+          "id": "pf3",
+          "name_ar": "عطر شرقي مشترك",
+          "name_en": "Oriental Unisex Perfume",
+          "desc_ar": "عطر شرقي للرجال والنساء",
+          "desc_en": "Oriental unisex perfume",
+          "price": 750,
+          "price_xxxl": 0,
+          "sizes": ["100ml"],
+          "images": ["https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=800&q=80"]
+        }
+      ]
+    },
+    {
+      "id": "eyewear",
+      "icon": "🕶️",
+      "name_ar": "نظارات",
+      "name_en": "Eyewear",
+      "homeImg": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "ew1",
+          "name_ar": "نظارة شمسية رجالي",
+          "name_en": "Men's Sunglasses",
+          "desc_ar": "نظارة شمسية بتصميم عصري",
+          "desc_en": "Modern sunglasses",
+          "price": 350,
+          "price_xxxl": 0,
+          "sizes": ["Standard"],
+          "images": ["https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=800&q=80"]
+        },
+         {
+          "id": "ew2",
+          "name_ar": "نظارة شمسية نسائي",
+          "name_en": "Women's Sunglasses",
+          "desc_ar": "نظارة شمسية أنيقة",
+          "desc_en": "Elegant sunglasses",
+          "price": 400,
+          "price_xxxl": 0,
+          "sizes": ["Standard"],
+          "images": ["https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=800&q=80"]
+        },
+        {
+          "id": "ew3",
+          "name_ar": "نظارة طبية إطار أسود",
+          "name_en": "Black Frame Glasses",
+          "desc_ar": "نظارة طبية بإطار أسود",
+          "desc_en": "Black frame optical glasses",
+          "price": 300,
+          "price_xxxl": 0,
+          "sizes": ["Standard"],
+          "images": ["https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=800&q=80"]
+        }
+      ]
+    }
+  ]
+}       
