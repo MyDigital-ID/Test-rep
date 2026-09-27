@@ -273,7 +273,6 @@ function initCenterSlider(wrap, slider, total) {
     const targetItem = items[idx];
     const wrapWidth = wrap.clientWidth;
     const itemWidth = targetItem.offsetWidth;
-    const gap = 16;
     
     // مركز العنصر
     const itemCenter = targetItem.offsetLeft + itemWidth / 2;
@@ -420,45 +419,6 @@ function initCenterSlider(wrap, slider, total) {
 }
 
 // ============================================================
-// عرض الصور المميزة في السلايدر التاني
-// ============================================================
-function renderFeatured() {
-  const slider = document.getElementById("featuredSlider");
-  if (!slider) return;
-  slider.innerHTML = "";
-  
-  const featured = STORE_DATA.featured || [];
-  
-  if (featured.length === 0) {
-    slider.innerHTML = '<p style="padding:20px;color:#999;">لا توجد صور مميزة</p>';
-    return;
-  }
-  
-  featured.forEach((imgUrl, idx) => {
-    const item = document.createElement("div");
-    item.className = "slider-item";
-    item.innerHTML = `<img src="${imgUrl}" alt="صورة مميزة ${idx + 1}" loading="lazy">`;
-    slider.appendChild(item);
-  });
-  
-  autoScroll(slider);
-}
-
-// ============================================================
-// تحريك السلايدر تلقائياً (يمين/شمال)
-// ============================================================
-function autoScroll(slider) {
-  let direction = 1;
-  let paused = false;
-  
-  // إيقاف عند اللمس
-  slider.addEventListener("touchstart", () => { paused = true; }, { passive: true });
-  slider.addEventListener("touchend", () => {
-    setTimeout(() => { paused = false; }, 3000);
-  }, { passive: true });
- 
-
-// ============================================================
 // عرض قائمة الأقسام الرأسية
 // ============================================================
 function renderCategoriesList() {
@@ -532,10 +492,6 @@ function buildProductCard(prod) {
   card.className = "product-card";
   
   const img = prod.images && prod.images[0] ? prod.images[0] : "";
-  
-  // حساب أقل سعر (للعرض الافتراضي)
-  const prices = (prod.sizes || []).map(s => Number(s.price) || 0).filter(p => p > 0);
-  const minPrice = prices.length ? Math.min(...prices) : 0;
   
   // بناء أزرار المقاسات
   const sizesHtml = (prod.sizes || []).map(s => `
