@@ -252,17 +252,21 @@ function initCenterSlider(wrap, slider, total, onItemClick) {
 
   const CLONES = 2;
   const originalItems = Array.from(slider.querySelectorAll(".slider-item"));
+  if (originalItems.length === 0) return;
 
   slider.innerHTML = "";
+  slider.classList.add("slider-track");
+
+  function makeClone(i) {
+    const clone = originalItems[i].cloneNode(true);
+    clone.dataset.clone = "1";
+    clone.dataset.origIdx = i;
+    return clone;
+  }
 
   // كلونات البداية
   for (let i = total - CLONES; i < total; i++) {
-    if (i >= 0) {
-      const clone = originalItems[i].cloneNode(true);
-      clone.dataset.clone = "1";
-      clone.dataset.origIdx = i;
-      slider.appendChild(clone);
-    }
+    if (i >= 0) slider.appendChild(makeClone(i));
   }
 
   // العناصر الأصلية
@@ -274,72 +278,73 @@ function initCenterSlider(wrap, slider, total, onItemClick) {
 
   // كلونات النهاية
   for (let i = 0; i < CLONES; i++) {
-    const clone = originalItems[i].cloneNode(true);
-    clone.dataset.clone = "1";
-    clone.dataset.origIdx = i;
-    slider.appendChild(clone);
+    slider.appendChild(makeClone(i));
   }
 
-  const allItems = slider.querySelectorAll(".slider-item");
+  const allItems = Array.from(slider.querySelectorAll(".slider-item"));
   const REAL_START = CLONES;
-  const totalPadded = allItems.length;
 
   // نبدأ من الصورة رقم 2
   let currentIdx = REAL_START + 1;
   let isAnimating = false;
+  let stepPx = 0; // المسافة الفعلية (بالبكسل) بين مركزي عنصرين متجاورين
 
   function getRealIdx(paddedIdx) {
-    let real = paddedIdx - REAL_START;
-    real = ((real % total) + total) % total;
-    return real;
+    return ((paddedIdx - REAL_START) % total + total) % total;
   }
 
-  function setActive(idx) {
-    allItems.forEach((item, i) => {
-      item.classList.toggle("active", i === idx);
-    });
+  // نقيس المسافة من شاشة العرض الفعلية بدل offsetLeft، فتعمل بشكل سليم
+  // سواء كانت الصفحة RTL أو LTR ومهما كانت نسب العرض المئوية للعناصر
+  function measureStep() {
+    if (allItems.length < 2) {
+      stepPx = allItems[0] ? allItems[0].getBoundingClientRect().width : 0;
+      return;
+    }
+    const r0 = allItems[0].getBoundingClientRect();
+    const r1 = allItems[1].getBoundingClientRect();
+    stepPx = r1.left - r0.left;
+  }
 
-    const realIdx = getRealIdx(idx);
-    const dots = wrap.querySelectorAll(".slider-dots .dot");
-    dots.forEach((dot, i) => {
-      dot.classList.toggle("active", i === realIdx);
+  function applyTransform(animate) {
+    slider.style.transition = animate
+      ? "transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+      : "none";
+    slider.style.transform = `translateX(${-(currentIdx * stepPx)}px)`;
+  }
+
+  function setActiveClasses() {
+    allItems.forEach((item, i) => {
+      item.classList.toggle("active", i === currentIdx);
     });
+    const realIdx = getRealIdx(currentIdx);
+    const dots = wrap.querySelectorAll(".slider-dots .dot");
+    dots.forEach((dot, i) => dot.classList.toggle("active", i === realIdx));
   }
 
   function moveTo(idx, animate) {
-    if (idx < 0) idx = 0;
-    if (idx >= totalPadded) idx = totalPadded - 1;
-
     currentIdx = idx;
-    setActive(idx);
+    setActiveClasses();
+    applyTransform(animate);
+  }
 
-    const targetItem = allItems[idx];
-    const wrapWidth = wrap.clientWidth;
-    const itemWidth = targetItem.offsetWidth;
-    const itemCenter = targetItem.offsetLeft + itemWidth / 2;
-    const translateX = itemCenter - wrapWidth / 2;
-
-    if (animate) {
-      slider.style.transition = "transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
-      slider.style.transform = `translateX(${-translateX}px)`;
-    } else {
-      slider.style.transition = "none";
-      slider.style.transform = `translateX(${-translateX}px)`;
-      void slider.offsetHeight;
-      slider.style.transition = "transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
+  // بعد انتهاء الحركة، لو وصلنا لمنطقة الكلونات نقفز فوراً (بدون أنيميشن)
+  // للصورة الأصلية المقابلة، فيبدو الأمر و كأن الشريط لا ينتهي أبداً
+  function snapIfNeeded() {
+    if (currentIdx >= REAL_START + total) {
+      currentIdx -= total;
+      applyTransform(false);
+    } else if (currentIdx < REAL_START) {
+      currentIdx += total;
+      applyTransform(false);
     }
   }
 
   function goNext() {
     if (isAnimating) return;
     isAnimating = true;
-
     moveTo(currentIdx + 1, true);
-
     setTimeout(() => {
-      if (currentIdx >= REAL_START + total) {
-        moveTo(currentIdx - total, false);
-      }
+      snapIfNeeded();
       isAnimating = false;
     }, 520);
   }
@@ -347,128 +352,93 @@ function initCenterSlider(wrap, slider, total, onItemClick) {
   function goPrev() {
     if (isAnimating) return;
     isAnimating = true;
-
     moveTo(currentIdx - 1, true);
-
     setTimeout(() => {
-      if (currentIdx < REAL_START) {
-        moveTo(currentIdx + total, false);
-      }
+      snapIfNeeded();
       isAnimating = false;
     }, 520);
   }
 
-  setTimeout(() => {
+  function goToReal(realIdx) {
+    if (isAnimating) return;
+    isAnimating = true;
+    moveTo(REAL_START + realIdx, true);
+    setTimeout(() => { isAnimating = false; }, 520);
+  }
+
+  // إعادة القياس عند تغيير حجم الشاشة (مثلاً تدوير الجوال)
+  function refresh() {
+    measureStep();
+    applyTransform(false);
+  }
+  window.addEventListener("resize", refresh);
+
+  // القياس و الوضع الابتدائي بعد أول رسم فعلي للعناصر (بدون تأخيرات وهمية)
+  requestAnimationFrame(() => {
+    measureStep();
     moveTo(currentIdx, false);
-  }, 100);
+  });
 
   // النقاط
   const dots = wrap.querySelectorAll(".slider-dots .dot");
   dots.forEach((dot, i) => {
-    dot.addEventListener("click", () => {
-      if (isAnimating) return;
-      isAnimating = true;
-      moveTo(REAL_START + i, true);
-      setTimeout(() => { isAnimating = false; }, 520);
-    });
+    dot.addEventListener("click", () => goToReal(i));
   });
 
-  // السحب بالإصبع
-  let touchStartX = 0;
-  let isDragging = false;
+  // السحب الموحّد (تاتش + ماوس) بنفس المنطق لكلا الحالتين
+  let dragging = false;
+  let startX = 0;
   let dragOffset = 0;
 
-  wrap.addEventListener("touchstart", (e) => {
-    touchStartX = e.touches[0].clientX;
-    isDragging = true;
+  function dragStart(x) {
+    if (isAnimating) return;
+    dragging = true;
+    startX = x;
     dragOffset = 0;
     slider.style.transition = "none";
-  }, { passive: true });
+  }
 
-  wrap.addEventListener("touchmove", (e) => {
-    if (!isDragging) return;
-    dragOffset = e.touches[0].clientX - touchStartX;
+  function dragMove(x) {
+    if (!dragging) return;
+    dragOffset = x - startX;
+    slider.style.transform = `translateX(${-(currentIdx * stepPx) + dragOffset}px)`;
+  }
 
-    const targetItem = allItems[currentIdx];
-    const wrapWidth = wrap.clientWidth;
-    const itemWidth = targetItem.offsetWidth;
-    const itemCenter = targetItem.offsetLeft + itemWidth / 2;
-    const baseTranslate = -(itemCenter - wrapWidth / 2);
+  function dragEnd() {
+    if (!dragging) return;
+    dragging = false;
 
-    slider.style.transform = `translateX(${baseTranslate + dragOffset}px)`;
-  }, { passive: true });
-
-  wrap.addEventListener("touchend", () => {
-    if (!isDragging) return;
-    isDragging = false;
-
-    const threshold = 40;
-
+    const threshold = Math.max(30, Math.abs(stepPx) * 0.15);
     if (dragOffset < -threshold) {
       goNext();
     } else if (dragOffset > threshold) {
       goPrev();
     } else {
-      moveTo(currentIdx, true);
+      applyTransform(true);
     }
-  }, { passive: true });
+  }
 
-  // Mouse للكمبيوتر
-  let mouseStartX = 0;
-  let mouseDragging = false;
+  wrap.addEventListener("touchstart", (e) => dragStart(e.touches[0].clientX), { passive: true });
+  wrap.addEventListener("touchmove", (e) => dragMove(e.touches[0].clientX), { passive: true });
+  wrap.addEventListener("touchend", dragEnd, { passive: true });
 
   wrap.addEventListener("mousedown", (e) => {
-    mouseStartX = e.clientX;
-    mouseDragging = true;
-    dragOffset = 0;
-    slider.style.transition = "none";
+    e.preventDefault();
+    dragStart(e.clientX);
   });
+  wrap.addEventListener("mousemove", (e) => dragMove(e.clientX));
+  // نراقب الإفلات على مستوى الصفحة كلها، حتى لو أفلت المستخدم الماوس
+  // خارج إطار السلايدر (وهذا كان يسبب "تعليق" السحب في النسخة القديمة)
+  window.addEventListener("mouseup", dragEnd);
+  wrap.addEventListener("mouseleave", () => { if (dragging) dragEnd(); });
 
-  wrap.addEventListener("mousemove", (e) => {
-    if (!mouseDragging) return;
-    dragOffset = e.clientX - mouseStartX;
-
-    const targetItem = allItems[currentIdx];
-    const wrapWidth = wrap.clientWidth;
-    const itemWidth = targetItem.offsetWidth;
-    const itemCenter = targetItem.offsetLeft + itemWidth / 2;
-    const baseTranslate = -(itemCenter - wrapWidth / 2);
-
-    slider.style.transform = `translateX(${baseTranslate + dragOffset}px)`;
-  });
-
-  wrap.addEventListener("mouseup", () => {
-    if (!mouseDragging) return;
-    mouseDragging = false;
-
-    const threshold = 40;
-
-    if (dragOffset < -threshold) {
-      goNext();
-    } else if (dragOffset > threshold) {
-      goPrev();
-    } else {
-      moveTo(currentIdx, true);
-    }
-  });
-
-  wrap.addEventListener("mouseleave", () => {
-    if (mouseDragging) {
-      mouseDragging = false;
-      moveTo(currentIdx, true);
-    }
-  });
-
-  setTimeout(() => moveTo(currentIdx, false), 500);
-  setTimeout(() => moveTo(currentIdx, false), 1500);
-
-  // تفاعل مع الضغط
+  // الضغط على العنصر لفتحه (فقط لو لم يكن هناك سحب فعلي)
   allItems.forEach((item) => {
-    item.onclick = () => {
+    item.addEventListener("click", () => {
       if (Math.abs(dragOffset) > 5) return;
-      const origIdx = parseInt(item.dataset.origIdx);
+      const origIdx = parseInt(item.dataset.origIdx, 10);
       if (onItemClick) onItemClick(origIdx);
-    };
+    });
   });
 }
 

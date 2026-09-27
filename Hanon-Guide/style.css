@@ -540,36 +540,35 @@ main {
 
 .slider-track {
   display: flex;
-  gap: 16px;
+  gap: 0;
   padding: 10px 0;
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
+  align-items: center;
 }
 
 .slider-item {
   flex: 0 0 auto;
-  width: 70%;
-  max-width: 280px;
+  width: 65%;
+  max-width: 260px;
   height: 240px;
   border-radius: 16px;
   overflow: hidden;
   position: relative;
   border: 3px solid var(--gold);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-              box-shadow 0.5s, 
-              opacity 0.5s;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.5s;
   background: var(--marble-cream);
-  opacity: 0.5;
-  transform: scale(0.72);
+  margin: 0 -25px;
+  z-index: 1;
+  transform: scale(0.82);
 }
 
 .slider-item.active {
-  opacity: 1;
-  transform: scale(1);
+  z-index: 3;
   box-shadow: 0 15px 40px rgba(245, 179, 1, 0.55);
-  z-index: 2;
+   transform: scale(1); 
 }
 .slider-item img {
   width: 100%;
