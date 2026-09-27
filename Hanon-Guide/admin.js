@@ -6,11 +6,19 @@
 // ============================================================
 // إعدادات GitHub
 // ============================================================
-const GITHUB_OWNER  = "MyDigital-ID";
-const GITHUB_REPO   = "MyDigital-ID.github.io";
+// ============================================================
+// ⚙️ الإعدادات — عدّل 3 سطور بس لما تغيّر مكان المشروع
+// ============================================================
+const GITHUB_OWNER = "MyDigital-ID";              // ← اسم المستخدم في GitHub
+const GITHUB_REPO  = "MyDigital-ID.github.io";    // ← اسم الريبو
+const FOLDER_PATH  = "Hanon-Store";               // ← اسم الفولدر (سيبه فاضي "" لو الملفات في الجذر)
+
+// ============================================================
+// (مش محتاج تعدّل تحت كده)
+// ============================================================
 const GITHUB_BRANCH = "main";
-const DATA_PATH     = "Hanon-Store/site-data.json";
-const IMAGES_PATH   = "Hanon-Store/assets/uploads";
+const DATA_PATH   = FOLDER_PATH ? `${FOLDER_PATH}/site-data.json` : "site-data.json";
+const IMAGES_PATH = FOLDER_PATH ? `${FOLDER_PATH}/assets/uploads` : "assets/uploads";
 
 const TOKEN_KEY = "hanon_admin_token";
 const DATA_API  = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${DATA_PATH}`;
