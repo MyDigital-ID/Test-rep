@@ -93,12 +93,12 @@ const sideMenu = document.getElementById("sideMenu");
 const sideOverlay = document.getElementById("sideOverlay");
 
 function openSide() {
-  sideMenu.classList.add("open");
-  sideOverlay.classList.add("show");
+  if (sideMenu) sideMenu.classList.add("open");
+  if (sideOverlay) sideOverlay.classList.add("show");
 }
 function closeSide() {
-  sideMenu.classList.remove("open");
-  sideOverlay.classList.remove("show");
+  if (sideMenu) sideMenu.classList.remove("open");
+  if (sideOverlay) sideOverlay.classList.remove("show");
 }
 
 const menuBtn = document.getElementById("menuBtn");
@@ -118,14 +118,16 @@ document.querySelectorAll(".side-link").forEach(link => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
     const nav = link.dataset.nav;
-    document.getElementById("aboutBox").classList.add("hidden");
-    document.getElementById("contactBox").classList.add("hidden");
+    const aboutBox = document.getElementById("aboutBox");
+    const contactBox = document.getElementById("contactBox");
+    if (aboutBox) aboutBox.classList.add("hidden");
+    if (contactBox) contactBox.classList.add("hidden");
     
-    if (nav === "about") {
-      document.getElementById("aboutBox").classList.remove("hidden");
+    if (nav === "about" && aboutBox) {
+      aboutBox.classList.remove("hidden");
     }
-    if (nav === "contact") {
-      document.getElementById("contactBox").classList.remove("hidden");
+    if (nav === "contact" && contactBox) {
+      contactBox.classList.remove("hidden");
     }
     if (nav === "home") {
       closeSide();
@@ -151,7 +153,7 @@ function showHome() {
 }
 
 // ============================================================
-// عرض الأقسام في السلايدر (Center Mode + Infinite Loop)
+// عرض الأقسام في السلايدر
 // ============================================================
 function renderCategories() {
   const wrap = document.getElementById("catsSlider").parentElement;
@@ -191,7 +193,7 @@ function renderCategories() {
 }
 
 // ============================================================
-// عرض الصور المميزة (Center Mode + Infinite Loop)
+// عرض الصور المميزة
 // ============================================================
 function renderFeatured() {
   const wrap = document.getElementById("featuredSlider").parentElement;
@@ -219,7 +221,6 @@ function renderFeatured() {
   });
   
   addDots(wrap, featured.length);
-  
   initCenterSlider(wrap, slider, featured.length, null);
 }
 
@@ -244,7 +245,7 @@ function addDots(wrap, total) {
 }
 
 // ============================================================
-// تهيئة السلايدر Center Mode (Infinite Loop)
+// تهيئة السلايدر Center Mode (Infinite Loop - بدون Auto Play)
 // ============================================================
 function initCenterSlider(wrap, slider, total, onItemClick) {
   if (total === 0) return;
@@ -252,10 +253,9 @@ function initCenterSlider(wrap, slider, total, onItemClick) {
   const CLONES = 2;
   const originalItems = Array.from(slider.querySelectorAll(".slider-item"));
 
-  // امسح وأعد البناء مع الكلونات
   slider.innerHTML = "";
 
-  // كلونات البداية (آخر عنصرين)
+  // كلونات البداية
   for (let i = total - CLONES; i < total; i++) {
     if (i >= 0) {
       const clone = originalItems[i].cloneNode(true);
@@ -272,7 +272,7 @@ function initCenterSlider(wrap, slider, total, onItemClick) {
     slider.appendChild(item);
   });
 
-  // كلونات النهاية (أول عنصرين)
+  // كلونات النهاية
   for (let i = 0; i < CLONES; i++) {
     const clone = originalItems[i].cloneNode(true);
     clone.dataset.clone = "1";
@@ -284,10 +284,8 @@ function initCenterSlider(wrap, slider, total, onItemClick) {
   const REAL_START = CLONES;
   const totalPadded = allItems.length;
 
-  // نبدأ من الصورة رقم 2 (index 1)
+  // نبدأ من الصورة رقم 2
   let currentIdx = REAL_START + 1;
-  let autoPlayTimer = null;
-  let paused = false;
   let isAnimating = false;
 
   function getRealIdx(paddedIdx) {
@@ -360,7 +358,6 @@ function initCenterSlider(wrap, slider, total, onItemClick) {
     }, 520);
   }
 
-  // ابدأ من الموضع الافتراضي
   setTimeout(() => {
     moveTo(currentIdx, false);
   }, 100);
@@ -378,15 +375,12 @@ function initCenterSlider(wrap, slider, total, onItemClick) {
 
   // السحب بالإصبع
   let touchStartX = 0;
-  let touchStartTime = 0;
   let isDragging = false;
   let dragOffset = 0;
 
   wrap.addEventListener("touchstart", (e) => {
     touchStartX = e.touches[0].clientX;
-    touchStartTime = Date.now();
     isDragging = true;
-    paused = true;
     dragOffset = 0;
     slider.style.transition = "none";
   }, { passive: true });
@@ -408,22 +402,15 @@ function initCenterSlider(wrap, slider, total, onItemClick) {
     if (!isDragging) return;
     isDragging = false;
 
-    const timeDiff = Date.now() - touchStartTime;
-    const velocity = Math.abs(dragOffset) / timeDiff;
     const threshold = 40;
 
-    if (dragOffset < -threshold || (velocity > 0.5 && dragOffset < 0)) {
+    if (dragOffset < -threshold) {
       goNext();
     } else if (dragOffset > threshold) {
       goPrev();
     } else {
       moveTo(currentIdx, true);
     }
-
-    setTimeout(() => {
-      paused = false;
-      startAutoPlay();
-    }, 3000);
   }, { passive: true });
 
   // Mouse للكمبيوتر
@@ -433,7 +420,6 @@ function initCenterSlider(wrap, slider, total, onItemClick) {
   wrap.addEventListener("mousedown", (e) => {
     mouseStartX = e.clientX;
     mouseDragging = true;
-    paused = true;
     dragOffset = 0;
     slider.style.transition = "none";
   });
@@ -464,11 +450,6 @@ function initCenterSlider(wrap, slider, total, onItemClick) {
     } else {
       moveTo(currentIdx, true);
     }
-
-    setTimeout(() => {
-      paused = false;
-      startAutoPlay();
-    }, 3000);
   });
 
   wrap.addEventListener("mouseleave", () => {
@@ -478,23 +459,12 @@ function initCenterSlider(wrap, slider, total, onItemClick) {
     }
   });
 
-  // التشغيل التلقائي
-  function startAutoPlay() {
-    if (autoPlayTimer) clearInterval(autoPlayTimer);
-    autoPlayTimer = setInterval(() => {
-      if (paused) return;
-      goNext();
-    }, 4000);
-  }
-
-  startAutoPlay();
-
   setTimeout(() => moveTo(currentIdx, false), 500);
   setTimeout(() => moveTo(currentIdx, false), 1500);
 
   // تفاعل مع الضغط
   allItems.forEach((item) => {
-    item.onclick = (e) => {
+    item.onclick = () => {
       if (Math.abs(dragOffset) > 5) return;
       const origIdx = parseInt(item.dataset.origIdx);
       if (onItemClick) onItemClick(origIdx);
