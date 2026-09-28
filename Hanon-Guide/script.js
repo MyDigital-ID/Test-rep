@@ -342,7 +342,7 @@ function initCenterSlider(wrap, slider, total, onItemClick) {
       resistanceRatio: 0.6,
       coverflowEffect: {
         rotate: 15,        // ميل خفيف فقط (المهم هو تغيير الحجم)
-        stretch: "-50%",   // تقريب الصور الجانبية لتختبئ نصفها خلف الصورة المتوسطة
+        stretch: "55%",    // موجب = تقريب الصور الجانبية لتلتصق وتختبئ خلف الصورة المتوسطة
         depth: 120,        // ابتعاد الصور الجانبية للخلف
         scale: 0.82,       // حجم الصور الجانبية = 82% من حجم الصورة المعروضة
         modifier: 1,
