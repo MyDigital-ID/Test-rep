@@ -1,0 +1,508 @@
+{
+  "config": {
+    "brand_ar": "حنون",
+    "brand_en": "HANON STORE",
+    "tagline_ar": "ستايلك يبدأ من حنون",
+    "tagline_en": "More Than Just Clothes",
+    "about_ar": "حنون - أكثر من مجرد ملابس. نقدم لكم أحدث الموديلات من بيوت الأزياء العالمية بأجود وأرقى الخامات التي تناسب جميع الأذواق والأعمار.",
+    "about_en": "HANON - More than just clothes. We offer the latest fashion from international brands with the finest materials.",
+    "whatsappNumber": "201011475047",
+    "phones": ["01011475047"],
+    "address_ar": "سيدي بشر بحري - شارع محمد نجيب (بجوار مطعم حوشينو)",
+    "address_en": "Sidi Bishr Bahary - Mohamed Naguib St.",
+    "mapUrl": "",
+    "rights_ar": "جميع الحقوق محفوظة لـ حنون"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/share/19NJVHyMDg/",
+    "whatsapp": "https://wa.me/201011475047"
+  },
+  "hero": {
+    "slides": [
+      {
+        "tag": "NEW COLLECTION",
+        "title": "ستايلك يبدأ من",
+        "title2": "حنون",
+        "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1400&q=80",
+        "buttonText": "تسوق الآن"
+      }
+    ]
+  },
+  "features": [
+    { "icon": "🚚", "title": "شحن مجاني", "desc": "لأي مكان في الإسكندرية" },
+    { "icon": "⭐", "title": "جودة عالية", "desc": "في كل قطعة" },
+    { "icon": "💎", "title": "أسعار مميزة", "desc": "تناسب الجميع" }
+  ],
+  "offers": [
+    {
+      "tag": "عرض خاص",
+      "title": "3 تيشيرتات بـ 599 ج.م",
+      "subtitle": "شحن مجاني لأي مكان في الإسكندرية",
+      "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80"
+    },
+    {
+      "tag": "🔥 عرض التوفير",
+      "title": "3 قطع بـ 599 ج.م",
+      "subtitle": "استفد من العرض قبل نهايته",
+      "image": "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80"
+    },
+    {
+      "tag": "🚚 توصيل",
+      "title": "شحن مجاني",
+      "subtitle": "لأي مكان في الإسكندرية",
+      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80"
+    }
+  ],
+  "featured": [],
+  "categories": [
+    {
+      "id": "tshirts",
+      "icon": "👕",
+      "name_ar": "تيشيرتات رجالي",
+      "name_en": "T-SHIRTS",
+      "homeImg": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "ts1",
+          "name_ar": "تيشيرت حنون أوفر سايز",
+          "name_en": "HANON Oversize T-Shirt",
+          "desc_ar": "تيشيرت أوفر سايز بخامة قطنية ثقيلة - طبعة HANON",
+          "images": ["https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80"],
+          "sizes": [
+            { "label": "S", "price": 250 },
+            { "label": "M", "price": 250 },
+            { "label": "L", "price": 270 },
+            { "label": "XL", "price": 290 },
+            { "label": "XXL", "price": 320 },
+            { "label": "XXXL", "price": 350 }
+          ]
+        },
+        {
+          "id": "ts2",
+          "name_ar": "تيشيرت حنون أسود",
+          "name_en": "HANON Black T-Shirt",
+          "desc_ar": "تيشيرت أسود بخامة قطنية عالية - طبعة HANON",
+          "images": ["https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80"],
+          "sizes": [
+            { "label": "S", "price": 250 },
+            { "label": "M", "price": 250 },
+            { "label": "L", "price": 270 },
+            { "label": "XL", "price": 290 },
+            { "label": "XXL", "price": 320 },
+            { "label": "XXXL", "price": 350 }
+          ]
+        },
+        {
+          "id": "ts3",
+          "name_ar": "تيشيرت حنون أبيض",
+          "name_en": "HANON White T-Shirt",
+          "desc_ar": "تيشيرت أبيض بخامة قطنية ناعمة",
+          "images": ["https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&q=80"],
+          "sizes": [
+            { "label": "S", "price": 250 },
+            { "label": "M", "price": 250 },
+            { "label": "L", "price": 270 },
+            { "label": "XL", "price": 290 },
+            { "label": "XXL", "price": 320 }
+          ]
+        },
+        {
+          "id": "ts4",
+          "name_ar": "تيشيرت حنون بيج",
+          "name_en": "HANON Beige T-Shirt",
+          "desc_ar": "تيشيرت بلون بيج فاخر",
+          "images": ["https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=800&q=80"],
+          "sizes": [
+            { "label": "M", "price": 280 },
+            { "label": "L", "price": 280 },
+            { "label": "XL", "price": 300 },
+            { "label": "XXL", "price": 330 },
+            { "label": "XXXL", "price": 360 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shirts",
+      "icon": "👔",
+      "name_ar": "قمصان رجالي",
+      "name_en": "SHIRTS",
+      "homeImg": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "sh1",
+          "name_ar": "قميص كلاسيك أزرق",
+          "name_en": "Classic Blue Shirt",
+          "desc_ar": "قميص كلاسيك بخامة قطنية عالية الجودة",
+          "images": ["https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=80"],
+          "sizes": [
+            { "label": "S", "price": 450 },
+            { "label": "M", "price": 450 },
+            { "label": "L", "price": 480 },
+            { "label": "XL", "price": 510 },
+            { "label": "XXL", "price": 550 }
+          ]
+        },
+        {
+          "id": "sh2",
+          "name_ar": "قميص كاجوال مقلم",
+          "name_en": "Striped Casual Shirt",
+          "desc_ar": "قميص مقلم كاجوال بتصميم عصري",
+          "images": ["https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=800&q=80"],
+          "sizes": [
+            { "label": "M", "price": 480 },
+            { "label": "L", "price": 500 },
+            { "label": "XL", "price": 530 },
+            { "label": "XXL", "price": 560 }
+          ]
+        },
+        {
+          "id": "sh3",
+          "name_ar": "قميص رسمي أبيض",
+          "name_en": "Formal White Shirt",
+          "desc_ar": "قميص أبيض رسمي أنيق",
+          "images": ["https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=800&q=80"],
+          "sizes": [
+            { "label": "S", "price": 500 },
+            { "label": "M", "price": 500 },
+            { "label": "L", "price": 530 },
+            { "label": "XL", "price": 560 },
+            { "label": "XXL", "price": 600 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hoodies",
+      "icon": "🧥",
+      "name_ar": "هودي",
+      "name_en": "HOODIES",
+      "homeImg": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "hd1",
+          "name_ar": "هودي حنون أسود",
+          "name_en": "HANON Black Hoodie",
+          "desc_ar": "هودي أسود بخامة قطنية ثقيلة دافئة",
+          "images": ["https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80"],
+          "sizes": [
+            { "label": "S", "price": 650 },
+            { "label": "M", "price": 650 },
+            { "label": "L", "price": 700 },
+            { "label": "XL", "price": 750 },
+            { "label": "XXL", "price": 800 },
+            { "label": "XXXL", "price": 850 }
+          ]
+        },
+        {
+          "id": "hd2",
+          "name_ar": "هودي حنون رمادي",
+          "name_en": "HANON Gray Hoodie",
+          "desc_ar": "هودي رمادي بتصميم عصري",
+          "images": ["https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&q=80"],
+          "sizes": [
+            { "label": "M", "price": 650 },
+            { "label": "L", "price": 700 },
+            { "label": "XL", "price": 750 },
+            { "label": "XXL", "price": 800 }
+          ]
+        },
+        {
+          "id": "hd3",
+          "name_ar": "هودي حنون بيج",
+          "name_en": "HANON Beige Hoodie",
+          "desc_ar": "هودي بيج بخامة فاخرة",
+          "images": ["https://images.unsplash.com/photo-1614499524207-cd5e30ff03d6?w=800&q=80"],
+          "sizes": [
+            { "label": "S", "price": 650 },
+            { "label": "M", "price": 650 },
+            { "label": "L", "price": 700 },
+            { "label": "XL", "price": 750 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sweatshirts",
+      "icon": "👘",
+      "name_ar": "بلوفرات",
+      "name_en": "SWEATSHIRTS",
+      "homeImg": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "sw1",
+          "name_ar": "بلوفر حنون أسود",
+          "name_en": "HANON Black Sweatshirt",
+          "desc_ar": "بلوفر أسود بخامة قطنية ناعمة",
+          "images": ["https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&q=80"],
+          "sizes": [
+            { "label": "S", "price": 550 },
+            { "label": "M", "price": 550 },
+            { "label": "L", "price": 580 },
+            { "label": "XL", "price": 620 },
+            { "label": "XXL", "price": 660 }
+          ]
+        },
+        {
+          "id": "sw2",
+          "name_ar": "بلوفر حنون بيج",
+          "name_en": "HANON Beige Sweatshirt",
+          "desc_ar": "بلوفر بيج بخامة فاخرة",
+          "images": ["https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=800&q=80"],
+          "sizes": [
+            { "label": "M", "price": 550 },
+            { "label": "L", "price": 580 },
+            { "label": "XL", "price": 620 },
+            { "label": "XXL", "price": 660 }
+          ]
+        },
+        {
+          "id": "sw3",
+          "name_ar": "بلوفر حنون أخضر",
+          "name_en": "HANON Green Sweatshirt",
+          "desc_ar": "بلوفر أخضر زيتي فاخر",
+          "images": ["https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=800&q=80"],
+          "sizes": [
+            { "label": "M", "price": 580 },
+            { "label": "L", "price": 600 },
+            { "label": "XL", "price": 650 },
+            { "label": "XXL", "price": 700 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jeans",
+      "icon": "👖",
+      "name_ar": "جينز",
+      "name_en": "JEANS",
+      "homeImg": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=800&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "jn1",
+          "name_ar": "جينز أزرق كلاسيك",
+          "name_en": "Classic Blue Jeans",
+          "desc_ar": "بنطلون جينز بقصة مستقيمة",
+          "images": ["https://images.unsplash.com/photo-1542272604-787c3835535d?w=800&q=80"],
+          "sizes": [
+            { "label": "S", "price": 650 },
+            { "label": "M", "price": 650 },
+            { "label": "L", "price": 680 },
+            { "label": "XL", "price": 720 },
+            { "label": "XXL", "price": 770 },
+            { "label": "XXXL", "price": 820 }
+          ]
+        },
+        {
+          "id": "jn2",
+          "name_ar": "جينز أسود",
+          "name_en": "Black Jeans",
+          "desc_ar": "جينز أسود بقصة مودرن",
+          "images": ["https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&q=80"],
+          "sizes": [
+            { "label": "M", "price": 650 },
+            { "label": "L", "price": 680 },
+            { "label": "XL", "price": 720 },
+            { "label": "XXL", "price": 770 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pants",
+      "icon": "👖",
+      "name_ar": "بنطال",
+      "name_en": "PANTS",
+      "homeImg": "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "pt1",
+          "name_ar": "بنطال كارجو بيج",
+          "name_en": "Beige Cargo Pants",
+          "desc_ar": "بنطال كارجو كاجوال",
+          "images": ["https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&q=80"],
+          "sizes": [
+            { "label": "S", "price": 450 },
+            { "label": "M", "price": 450 },
+            { "label": "L", "price": 480 },
+            { "label": "XL", "price": 520 },
+            { "label": "XXL", "price": 560 }
+          ]
+        },
+        {
+          "id": "pt2",
+          "name_ar": "بنطال رياضي رمادي",
+          "name_en": "Gray Sports Pants",
+          "desc_ar": "بنطال رياضي بخامة قطنية مريحة",
+          "images": ["https://images.unsplash.com/photo-1509551388413-e18d0ac5d495?w=800&q=80"],
+          "sizes": [
+            { "label": "M", "price": 450 },
+            { "label": "L", "price": 480 },
+            { "label": "XL", "price": 520 },
+            { "label": "XXL", "price": 560 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tracksuits",
+      "icon": "🏃",
+      "name_ar": "ترينجات",
+      "name_en": "TRACKSUITS",
+      "homeImg": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "tr1",
+          "name_ar": "طقم ترينج أسود كامل",
+          "name_en": "Black Tracksuit Set",
+          "desc_ar": "طقم ترينج رياضي كامل بخامة عالية الجودة",
+          "images": ["https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80"],
+          "sizes": [
+            { "label": "S", "price": 750 },
+            { "label": "M", "price": 750 },
+            { "label": "L", "price": 800 },
+            { "label": "XL", "price": 850 },
+            { "label": "XXL", "price": 900 },
+            { "label": "XXXL", "price": 980 }
+          ]
+        },
+        {
+          "id": "tr2",
+          "name_ar": "طقم ترينج رمادي",
+          "name_en": "Gray Tracksuit Set",
+          "desc_ar": "طقم ترينج رمادي عصري",
+          "images": ["https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80"],
+          "sizes": [
+            { "label": "M", "price": 750 },
+            { "label": "L", "price": 800 },
+            { "label": "XL", "price": 850 },
+            { "label": "XXL", "price": 900 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boxers",
+      "icon": "🩲",
+      "name_ar": "بوكسرات",
+      "name_en": "BOXERS",
+      "homeImg": "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "bx1",
+          "name_ar": "بوكسر قطن (3 قطع)",
+          "name_en": "Cotton Boxer (3 Pack)",
+          "desc_ar": "طقم بوكسرات قطنية مريحة - 3 قطع",
+          "images": ["https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80"],
+          "sizes": [
+            { "label": "S", "price": 200 },
+            { "label": "M", "price": 200 },
+            { "label": "L", "price": 220 },
+            { "label": "XL", "price": 240 },
+            { "label": "XXL", "price": 260 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "outfit-sets",
+      "icon": "🎽",
+      "name_ar": "طقم الخروج",
+      "name_en": "SETS",
+      "homeImg": "https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "os1",
+          "name_ar": "طقم تيشيرت + بنطال",
+          "name_en": "T-Shirt + Pants Set",
+          "desc_ar": "طقم كامل - تيشيرت + بنطال بخامة عالية",
+          "images": ["https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800&q=80"],
+          "sizes": [
+            { "label": "S", "price": 499 },
+            { "label": "M", "price": 499 },
+            { "label": "L", "price": 550 },
+            { "label": "XL", "price": 600 },
+            { "label": "XXL", "price": 650 },
+            { "label": "XXXL", "price": 700 }
+          ]
+        },
+        {
+          "id": "os2",
+          "name_ar": "طقم بلوفر + بنطال",
+          "name_en": "Sweatshirt + Pants Set",
+          "desc_ar": "طقم أنيق - بلوفر + بنطال",
+          "images": ["https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80"],
+          "sizes": [
+            { "label": "M", "price": 750 },
+            { "label": "L", "price": 800 },
+            { "label": "XL", "price": 850 },
+            { "label": "XXL", "price": 900 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sneakers",
+      "icon": "👟",
+      "name_ar": "كوتشيات",
+      "name_en": "SHOES",
+      "homeImg": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80",
+      "visible": true,
+      "products": [
+        {
+          "id": "sn1",
+          "name_ar": "كوتشي حنون أبيض",
+          "name_en": "HANON White Sneakers",
+          "desc_ar": "كوتشي رياضي عصري بخامة عالية",
+          "images": ["https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&q=80"],
+          "sizes": [
+            { "label": "40", "price": 299 },
+            { "label": "41", "price": 299 },
+            { "label": "42", "price": 320 },
+            { "label": "43", "price": 340 },
+            { "label": "44", "price": 360 },
+            { "label": "45", "price": 380 }
+          ]
+        },
+        {
+          "id": "sn2",
+          "name_ar": "كوتشي حنون أسود",
+          "name_en": "HANON Black Sneakers",
+          "desc_ar": "كوتشي أسود بتصميم أنيق",
+          "images": ["https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80"],
+          "sizes": [
+            { "label": "40", "price": 299 },
+            { "label": "41", "price": 299 },
+            { "label": "42", "price": 320 },
+            { "label": "43", "price": 340 },
+            { "label": "44", "price": 360 },
+            { "label": "45", "price": 380 }
+          ]
+        },
+        {
+          "id": "sn3",
+          "name_ar": "كوتشي كاجوال رمادي",
+          "name_en": "Gray Casual Sneakers",
+          "desc_ar": "كوتشي كاجوال بتصميم عصري",
+          "images": ["https://images.unsplash.com/photo-1552346154-21d32810aba3?w=800&q=80"],
+          "sizes": [
+            { "label": "40", "price": 350 },
+            { "label": "41", "price": 350 },
+            { "label": "42", "price": 380 },
+            { "label": "43", "price": 400 },
+            { "label": "44", "price": 420 }
+          ]
+        }
+      ]
+    }
+  ]
+}

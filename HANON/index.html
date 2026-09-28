@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<base href="./">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>HANON STORE | حنون - أكثر من مجرد ملابس</title>
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700;900&family=Lalezar&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===== Splash Screen ===== -->
+<div id="splashScreen" class="splash-screen">
+  <div class="splash-content">
+    <h1 class="splash-brand">حنون</h1>
+    <p class="splash-tagline">خامات و جوده و ذوق مضمون</p>
+    <p class="splash-sub">أناقة بلا حدود</p>
+  </div>
+</div>
+
+<!-- ===== Top Bar ===== -->
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <span class="top-msg">🚚 شحن مجاني لأي مكان في الإسكندرية</span>
+    <div class="top-social">
+      <a href="#" id="facebookLink" target="_blank" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+      </a>
+      <a href="#" id="whatsappLink" target="_blank" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Header ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <button id="menuBtn" class="mobile-menu-btn" aria-label="menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a href="#" class="brand" id="brandHome">
+      <span class="brand-ar">حنون</span>
+      <span class="brand-en">HANON</span>
+    </a>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="ابحث عن منتجك المفضل...">
+      <button class="search-icon" aria-label="search">🔍</button>
+    </div>
+
+    <nav class="main-nav">
+      <a href="#" class="nav-link active" data-nav="home">الرئيسية</a>
+      <a href="#" class="nav-link" data-nav="products">المنتجات</a>
+      <a href="#" class="nav-link" data-nav="offers">العروض</a>
+      <a href="#" class="nav-link" data-nav="about">من نحن</a>
+      <a href="#" class="nav-link" data-nav="contact">تواصل معنا</a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="cartBtn" class="action-btn cart-btn" aria-label="cart">
+        🛒
+        <span id="cartCount" class="cart-count">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Side Menu (Mobile) ===== -->
+<div id="sideOverlay" class="overlay"></div>
+<aside id="sideMenu" class="side-menu">
+  <div class="side-header">
+    <span class="brand-ar">حنون</span>
+    <button id="closeMenu" class="close-btn">✕</button>
+  </div>
+  <nav class="side-nav">
+    <a href="#" class="side-link" data-nav="home">🏠 الرئيسية</a>
+    <a href="#" class="side-link" data-nav="products">🛍️ المنتجات</a>
+    <a href="#" class="side-link" data-nav="offers">🔥 العروض</a>
+    <a href="#" class="side-link" data-nav="about">ℹ️ من نحن</a>
+    <a href="#" class="side-link" data-nav="contact">📞 تواصل معنا</a>
+  </nav>
+  <div class="side-social">
+    <a href="#" id="sideFacebook" target="_blank">فيسبوك</a>
+    <a href="#" id="sideWhatsapp" target="_blank">واتساب</a>
+  </div>
+</aside>
+
+<main id="app">
+
+  <!-- ===== HOME VIEW ===== -->
+  <section id="view-home" class="view">
+
+    <!-- ===== HERO SLIDER ===== -->
+    <div class="hero-section">
+      <div class="hero-slider" id="heroSlider">
+        <!-- بيتولد من JS -->
+      </div>
+      
+      <!-- Features Side -->
+      <div class="hero-features" id="heroFeatures">
+        <!-- بيتولد من JS -->
+      </div>
+
+      <!-- Hero Nav Arrows -->
+      <button class="hero-arrow hero-arrow-prev" id="heroPrev" aria-label="prev">‹</button>
+      <button class="hero-arrow hero-arrow-next" id="heroNext" aria-label="next">›</button>
+    </div>
+
+    <!-- ===== CATEGORIES GRID ===== -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">تسوق حسب القسم</h2>
+        <a href="#" class="section-link" id="allCategoriesLink">عرض الكل ›</a>
+      </div>
+      <div class="categories-grid" id="categoriesGrid">
+        <!-- بيتولد من JS -->
+      </div>
+    </section>
+
+    <!-- ===== FEATURED PRODUCTS ===== -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">أحدث المنتجات</h2>
+        <a href="#" class="section-link" id="allProductsLink">عرض الكل ›</a>
+      </div>
+      <div class="products-slider-wrap">
+        <button class="prod-arrow prod-arrow-prev" id="prodPrev" aria-label="prev">‹</button>
+        <div class="products-scroll" id="featuredProductsScroll">
+          <!-- بيتولد من JS -->
+        </div>
+        <button class="prod-arrow prod-arrow-next" id="prodNext" aria-label="next">›</button>
+      </div>
+    </section>
+
+    <!-- ===== OFFERS SECTION ===== -->
+    <section class="section">
+      <div class="offers-grid" id="offersGrid">
+        <!-- بيتولد من JS -->
+      </div>
+    </section>
+
+  </section>
+
+  <!-- ===== CATEGORY VIEW ===== -->
+  <section id="view-category" class="view hidden">
+    <div class="category-header">
+      <button class="back-btn" id="backBtnCategory">‹ رجوع</button>
+      <h2 id="categoryTitle" class="category-title"></h2>
+    </div>
+    <div id="productsList" class="products-list"></div>
+  </section>
+
+</main>
+
+<!-- ===== Cart Drawer ===== -->
+<div id="cartOverlay" class="overlay"></div>
+<aside id="cartDrawer" class="cart-drawer">
+  <div class="cart-header">
+    <h3>🛒 سلة الطلبات</h3>
+    <button id="closeCart" class="close-btn">✕</button>
+  </div>
+  <div id="cartItems" class="cart-items"></div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>الإجمالي</span>
+      <span id="cartTotal">0</span> <span>ج.م</span>
+    </div>
+    <button id="sendOrderBtn" class="cta-btn">إرسال الطلب عبر واتساب</button>
+  </div>
+</aside>
+
+<!-- ===== Install Prompt ===== -->
+<div id="installPrompt" class="install-prompt hidden">
+  <p>ثبّت تطبيق حنون على شاشتك الرئيسية</p>
+  <div class="install-actions">
+    <button id="installNowBtn" class="btn-primary">تثبيت الآن</button>
+    <button id="installLaterBtn" class="btn-secondary">لاحقاً</button>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    
+    <div class="footer-col">
+      <h4>تواصل معنا</h4>
+      <p>📍 سيدي بشر بحري - شارع محمد نجيب<br>(بجوار مطعم حوشينو)</p>
+      <p>📞 <a href="tel:01011475047">01011475047</a></p>
+    </div>
+
+    <div class="footer-col footer-brand-col">
+      <div class="footer-brand">حنون</div>
+      <div class="footer-brand-en">HANON</div>
+      <p class="footer-tag">More Than Just Clothes</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>تابعنا على</h4>
+      <div class="footer-social">
+        <a href="#" id="footerFacebook" target="_blank" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+        <a href="#" id="footerWhatsapp" target="_blank" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 HANON - جميع الحقوق محفوظة</p>
+    <a href="https://mydigital-id.github.io" target="_blank" class="fingerprint-link" aria-label="MyDigital-ID">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"/>
+        <path d="M14 13.12c0 2.38 0 6.38-1 8.88"/>
+        <path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"/>
+        <path d="M2 12a10 10 0 0 1 18-6"/>
+        <path d="M2 16h.01"/>
+        <path d="M21.8 16c.2-2 .131-5.354 0-6"/>
+        <path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"/>
+        <path d="M8.65 22c.21-.66.45-1.32.57-2"/>
+        <path d="M9 6.8a6 6 0 0 1 9 5.2v2"/>
+      </svg>
+    </a>
+  </div>
+</footer>
+
+<script src="site-data-loader.js"></script>
+<script src="script.js"></script>
+
+<!-- ===== Service Worker ===== -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./service-worker.js')
+        .then((registration) => {
+          console.log('✅ SW registered:', registration.scope);
+        })
+        .catch((err) => console.warn('⚠️ SW failed:', err));
+    });
+  }
+</script>
+</body>
+</html>
