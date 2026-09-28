@@ -338,7 +338,11 @@ function initCenterSlider(wrap, slider, total, onItemClick) {
       loop: useLoop,
       loopAdditionalSlides: 2,
       initialSlide: Math.min(1, total - 1),
-      speed: 500,
+      speed: 300,            // سرعة الانتقال (أقل = أسرع)
+      touchRatio: 2,         // الصور تتحرك ضعف حركة الإصبع (يعوّض التقارب بين الصور)
+      longSwipesRatio: 0.15, // يكفي سحب قصير ليقلّب للصورة التالية
+      longSwipesMs: 200,
+      threshold: 3,          // يبدأ السحب فوراً بدون مقاومة في أول الحركة
       resistanceRatio: 0.6,
       coverflowEffect: {
         rotate: 15,        // ميل خفيف فقط (المهم هو تغيير الحجم)
