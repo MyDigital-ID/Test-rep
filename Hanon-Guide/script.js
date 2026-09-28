@@ -159,6 +159,7 @@ function renderCategories() {
   const wrap = document.getElementById("catsSlider").parentElement;
   const slider = document.getElementById("catsSlider");
   if (!slider) return;
+  destroySlider(wrap);
   
   if (!wrap.classList.contains("slider-wrap")) {
     wrap.classList.add("slider-wrap");
@@ -199,6 +200,7 @@ function renderFeatured() {
   const wrap = document.getElementById("featuredSlider").parentElement;
   const slider = document.getElementById("featuredSlider");
   if (!slider) return;
+  destroySlider(wrap);
   
   if (!wrap.classList.contains("slider-wrap")) {
     wrap.classList.add("slider-wrap");
@@ -245,200 +247,124 @@ function addDots(wrap, total) {
 }
 
 // ============================================================
-// تهيئة السلايدر Center Mode (Infinite Loop - بدون Auto Play)
+// تحميل مكتبة Swiper تلقائياً (بدون الحاجة لتعديل index.html)
+// ============================================================
+const SWIPER_CSS = "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css";
+const SWIPER_JS  = "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js";
+let swiperLoadPromise = null;
+
+function loadSwiperLib() {
+  if (window.Swiper) return Promise.resolve();
+  if (swiperLoadPromise) return swiperLoadPromise;
+
+  const cssReady = new Promise((resolve) => {
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = SWIPER_CSS;
+    link.onload = resolve;
+    link.onerror = resolve; // لا نعطل الباقي لو فشل الـ CSS
+    document.head.appendChild(link);
+  });
+
+  const jsReady = new Promise((resolve, reject) => {
+    const s = document.createElement("script");
+    s.src = SWIPER_JS;
+    s.onload = resolve;
+    s.onerror = () => reject(new Error("فشل تحميل Swiper"));
+    document.head.appendChild(s);
+  });
+
+  swiperLoadPromise = Promise.all([cssReady, jsReady]).catch((err) => {
+    swiperLoadPromise = null;
+    throw err;
+  });
+  return swiperLoadPromise;
+}
+
+// يجب استدعاؤها قبل تفريغ السلايدر (innerHTML = "") حتى تنظف Swiper نفسها
+function destroySlider(wrap) {
+  if (wrap && wrap._swiper) {
+    try { wrap._swiper.destroy(true, true); } catch (e) { /* ignore */ }
+    wrap._swiper = null;
+  }
+}
+
+// ============================================================
+// السلايدر 3D Coverflow (Swiper.js) - صورة كبيرة في المنتصف
+// وأجزاء من الصور الجانبية مائلة خلفها، وتقليب في نفس الإطار
 // ============================================================
 function initCenterSlider(wrap, slider, total, onItemClick) {
   if (total === 0) return;
 
-  const CLONES = 2;
-  const originalItems = Array.from(slider.querySelectorAll(".slider-item"));
-  if (originalItems.length === 0) return;
+  const items = Array.from(slider.querySelectorAll(".slider-item"));
+  if (items.length === 0) return;
 
-  slider.innerHTML = "";
-  slider.classList.add("slider-track");
+  destroySlider(wrap);
+  const token = (wrap._sliderToken = (wrap._sliderToken || 0) + 1);
 
-  function makeClone(i) {
-    const clone = originalItems[i].cloneNode(true);
-    clone.dataset.clone = "1";
-    clone.dataset.origIdx = i;
-    return clone;
-  }
+  items.forEach((item, i) => { item.dataset.origIdx = i; });
 
-  // كلونات البداية
-  for (let i = total - CLONES; i < total; i++) {
-    if (i >= 0) slider.appendChild(makeClone(i));
-  }
-
-  // العناصر الأصلية
-  originalItems.forEach((item, i) => {
-    item.dataset.clone = "0";
-    item.dataset.origIdx = i;
-    slider.appendChild(item);
-  });
-
-  // كلونات النهاية
-  for (let i = 0; i < CLONES; i++) {
-    slider.appendChild(makeClone(i));
-  }
-
-  const allItems = Array.from(slider.querySelectorAll(".slider-item"));
-  const REAL_START = CLONES;
-
-  // نبدأ من الصورة رقم 2
-  let currentIdx = REAL_START + 1;
-  let isAnimating = false;
-  let stepPx = 0; // المسافة الفعلية (بالبكسل) بين مركزي عنصرين متجاورين
-
-  function getRealIdx(paddedIdx) {
-    return ((paddedIdx - REAL_START) % total + total) % total;
-  }
-
-  // نقيس المسافة من شاشة العرض الفعلية بدل offsetLeft، فتعمل بشكل سليم
-  // سواء كانت الصفحة RTL أو LTR ومهما كانت نسب العرض المئوية للعناصر
-  function measureStep() {
-    if (allItems.length < 2) {
-      stepPx = allItems[0] ? allItems[0].getBoundingClientRect().width : 0;
+  // الضغط: الصورة الجانبية تتوسّط أولاً، والصورة المتوسطة تفتح القسم
+  if (slider._clickHandler) slider.removeEventListener("click", slider._clickHandler);
+  slider._clickHandler = (e) => {
+    const slide = e.target.closest(".slider-item");
+    if (!slide) return;
+    const idx = parseInt(slide.dataset.origIdx, 10);
+    const sw = wrap._swiper;
+    if (sw && !slide.classList.contains("swiper-slide-active")) {
+      if (sw.params.loop) sw.slideToLoop(idx); else sw.slideTo(idx);
       return;
     }
-    const r0 = allItems[0].getBoundingClientRect();
-    const r1 = allItems[1].getBoundingClientRect();
-    stepPx = r1.left - r0.left;
-  }
+    if (onItemClick) onItemClick(idx);
+  };
+  slider.addEventListener("click", slider._clickHandler);
 
-  function applyTransform(animate) {
-    slider.style.transition = animate
-      ? "transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
-      : "none";
-    slider.style.transform = `translateX(${-(currentIdx * stepPx)}px)`;
-  }
+  loadSwiperLib().then(() => {
+    // ربما أُعيد الرسم أثناء التحميل
+    if (wrap._sliderToken !== token || !slider.isConnected) return;
 
-  function setActiveClasses() {
-    allItems.forEach((item, i) => {
-      item.classList.toggle("active", i === currentIdx);
+    wrap.classList.add("swiper");
+    slider.classList.remove("slider-track");
+    slider.classList.add("swiper-wrapper");
+    items.forEach((item) => item.classList.add("swiper-slide"));
+
+    const useLoop = total >= 3;
+
+    const swiper = new Swiper(wrap, {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      loop: useLoop,
+      loopAdditionalSlides: 2,
+      initialSlide: Math.min(1, total - 1),
+      speed: 500,
+      resistanceRatio: 0.6,
+      coverflowEffect: {
+        rotate: 45,
+        stretch: -10,
+        depth: 140,
+        modifier: 1,
+        slideShadows: true
+      }
     });
-    const realIdx = getRealIdx(currentIdx);
+    wrap._swiper = swiper;
+
+    // النقاط
     const dots = wrap.querySelectorAll(".slider-dots .dot");
-    dots.forEach((dot, i) => dot.classList.toggle("active", i === realIdx));
-  }
-
-  function moveTo(idx, animate) {
-    currentIdx = idx;
-    setActiveClasses();
-    applyTransform(animate);
-  }
-
-  // بعد انتهاء الحركة، لو وصلنا لمنطقة الكلونات نقفز فوراً (بدون أنيميشن)
-  // للصورة الأصلية المقابلة، فيبدو الأمر و كأن الشريط لا ينتهي أبداً
-  function snapIfNeeded() {
-    if (currentIdx >= REAL_START + total) {
-      currentIdx -= total;
-      applyTransform(false);
-    } else if (currentIdx < REAL_START) {
-      currentIdx += total;
-      applyTransform(false);
+    function syncDots() {
+      dots.forEach((dot, i) => dot.classList.toggle("active", i === swiper.realIndex));
     }
-  }
-
-  function goNext() {
-    if (isAnimating) return;
-    isAnimating = true;
-    moveTo(currentIdx + 1, true);
-    setTimeout(() => {
-      snapIfNeeded();
-      isAnimating = false;
-    }, 520);
-  }
-
-  function goPrev() {
-    if (isAnimating) return;
-    isAnimating = true;
-    moveTo(currentIdx - 1, true);
-    setTimeout(() => {
-      snapIfNeeded();
-      isAnimating = false;
-    }, 520);
-  }
-
-  function goToReal(realIdx) {
-    if (isAnimating) return;
-    isAnimating = true;
-    moveTo(REAL_START + realIdx, true);
-    setTimeout(() => { isAnimating = false; }, 520);
-  }
-
-  // إعادة القياس عند تغيير حجم الشاشة (مثلاً تدوير الجوال)
-  function refresh() {
-    measureStep();
-    applyTransform(false);
-  }
-  window.addEventListener("resize", refresh);
-
-  // القياس و الوضع الابتدائي بعد أول رسم فعلي للعناصر (بدون تأخيرات وهمية)
-  requestAnimationFrame(() => {
-    measureStep();
-    moveTo(currentIdx, false);
-  });
-
-  // النقاط
-  const dots = wrap.querySelectorAll(".slider-dots .dot");
-  dots.forEach((dot, i) => {
-    dot.addEventListener("click", () => goToReal(i));
-  });
-
-  // السحب الموحّد (تاتش + ماوس) بنفس المنطق لكلا الحالتين
-  let dragging = false;
-  let startX = 0;
-  let dragOffset = 0;
-
-  function dragStart(x) {
-    if (isAnimating) return;
-    dragging = true;
-    startX = x;
-    dragOffset = 0;
-    slider.style.transition = "none";
-  }
-
-  function dragMove(x) {
-    if (!dragging) return;
-    dragOffset = x - startX;
-    slider.style.transform = `translateX(${-(currentIdx * stepPx) + dragOffset}px)`;
-  }
-
-  function dragEnd() {
-    if (!dragging) return;
-    dragging = false;
-
-    const threshold = Math.max(30, Math.abs(stepPx) * 0.15);
-    if (dragOffset < -threshold) {
-      goNext();
-    } else if (dragOffset > threshold) {
-      goPrev();
-    } else {
-      applyTransform(true);
-    }
-  }
-
-  wrap.addEventListener("touchstart", (e) => dragStart(e.touches[0].clientX), { passive: true });
-  wrap.addEventListener("touchmove", (e) => dragMove(e.touches[0].clientX), { passive: true });
-  wrap.addEventListener("touchend", dragEnd, { passive: true });
-
-  wrap.addEventListener("mousedown", (e) => {
-    e.preventDefault();
-    dragStart(e.clientX);
-  });
-  wrap.addEventListener("mousemove", (e) => dragMove(e.clientX));
-  // نراقب الإفلات على مستوى الصفحة كلها، حتى لو أفلت المستخدم الماوس
-  // خارج إطار السلايدر (وهذا كان يسبب "تعليق" السحب في النسخة القديمة)
-  window.addEventListener("mouseup", dragEnd);
-  wrap.addEventListener("mouseleave", () => { if (dragging) dragEnd(); });
-
-  // الضغط على العنصر لفتحه (فقط لو لم يكن هناك سحب فعلي)
-  allItems.forEach((item) => {
-    item.addEventListener("click", () => {
-      if (Math.abs(dragOffset) > 5) return;
-      const origIdx = parseInt(item.dataset.origIdx, 10);
-      if (onItemClick) onItemClick(origIdx);
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        if (useLoop) swiper.slideToLoop(i); else swiper.slideTo(i);
+      });
     });
+    swiper.on("slideChange", syncDots);
+    syncDots();
+  }).catch((err) => {
+    console.warn("تعذر تحميل Swiper، سيتم عرض شريط بسيط:", err);
+    slider.classList.add("slider-fallback-track");
   });
 }
 

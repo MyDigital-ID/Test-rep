@@ -526,30 +526,31 @@ main {
   width: 100%;
   overflow: hidden;
   padding: 10px 0;
-  mask-image: linear-gradient(to right, 
-    transparent 0%, 
-    #000 8%, 
-    #000 92%, 
-    transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, 
-    transparent 0%, 
-    #000 8%, 
-    #000 92%, 
-    transparent 100%);
 }
 
+/* بعد تفعيل Swiper: مساحة رأسية كافية لتأثير الدوران ثلاثي الأبعاد */
+.slider-wrap.swiper {
+  padding: 22px 0 6px;
+}
+
+/* قبل تحميل Swiper (أو لو فشل التحميل) */
 .slider-track {
   display: flex;
-  gap: 0;
-  padding: 10px 0;
-  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  will-change: transform;
   align-items: center;
+  padding: 10px 0;
 }
 
-.slider-item {
+.slider-fallback-track {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 10px 14px;
+}
+
+/* selector مزدوج ليتغلب على أنماط Swiper الافتراضية (width/height/transition) */
+.slider-wrap .slider-item {
   flex: 0 0 auto;
-  width: 65%;
+  width: 62%;
   max-width: 260px;
   height: 240px;
   border-radius: 16px;
@@ -558,18 +559,16 @@ main {
   border: 3px solid var(--gold);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.5s;
   background: var(--marble-cream);
-  margin: 0 -25px;
-  z-index: 1;
-  transform: scale(0.82);
+  padding: 0;
+  transition-property: transform, box-shadow;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.slider-item.active {
-  z-index: 3;
+.slider-wrap .slider-item.swiper-slide-active {
   box-shadow: 0 15px 40px rgba(245, 179, 1, 0.55);
-   transform: scale(1); 
 }
+
 .slider-item img {
   width: 100%;
   height: 100%;
@@ -620,7 +619,7 @@ main {
 }
 
 @media (max-width: 500px) {
-  .slider-item {
+  .slider-wrap .slider-item {
     width: 75%;
     height: 200px;
   }
@@ -1276,7 +1275,7 @@ main {
   .brand-en { font-size: 0.65rem; letter-spacing: 2.5px; }
   
   .slider-title { font-size: 1.05rem; }
-  .slider-item { width: 75%; height: 200px; }
+  .slider-wrap .slider-item { width: 75%; height: 200px; }
   .slider-item .slider-label { font-size: 0.85rem; }
   
   .category-title { font-size: 1.6rem; }
@@ -1301,7 +1300,7 @@ main {
   .brand-logo { font-size: 1.5rem; }
   .brand-en { font-size: 0.6rem; }
   
-  .slider-item { width: 78%; height: 175px; }
+  .slider-wrap .slider-item { width: 78%; height: 175px; }
   
   .category-row .cat-img { width: 80px; height: 80px; }
   .category-row .cat-name { font-size: 0.9rem; }
