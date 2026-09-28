@@ -44,7 +44,7 @@ window.addEventListener('storeDataReady', () => {
   applyConfig();
   renderCategories();
   renderFeatured();
-  renderCategoriesList();
+  renderOffersSlider();
 });
 
 // ============================================================
@@ -96,6 +96,17 @@ function applyConfig() {
   if (footPhones) {
     const phones = Array.isArray(cfg.phones) ? cfg.phones : [];
     footPhones.innerHTML = phones.map(p => `<a href="tel:${p}" dir="ltr">${p}</a>`).join(" &nbsp;|&nbsp; ");
+  }
+
+  // رابط الموقع في القائمة الجانبية
+  const locLink = document.getElementById("locationLink");
+  if (locLink) {
+    if (cfg.mapUrl) {
+      locLink.href = cfg.mapUrl;
+      locLink.classList.remove("hidden");
+    } else {
+      locLink.classList.add("hidden");
+    }
   }
 
   applyHeroImage();
@@ -393,60 +404,55 @@ function initCenterSlider(wrap, slider, total, onItemClick) {
 }
 
 // ============================================================
-// تفاصيل الأقسام بشكل طولي: كل قسم له عنوان + صف منتجات
+// قسم "عروض وخصومات": كاروسيل Coverflow لأيقونات كل الأقسام،
+// نفس تأثير الصور المميزة — الضغط على الصورة المتوسطة يفتح القسم
 // ============================================================
-function renderCategoriesList() {
-  const list = document.getElementById("categoriesList");
-  if (!list) return;
-  list.innerHTML = "";
+function renderOffersSlider() {
+  const slider = document.getElementById("offersSlider");
+  if (!slider) return;
+  const wrap = slider.parentElement;
+  destroySlider(wrap);
+
+  if (!wrap.classList.contains("slider-wrap")) {
+    wrap.classList.add("slider-wrap");
+  }
+
+  slider.innerHTML = "";
 
   const cats = (STORE_DATA.categories || []).filter(c => c.visible !== false);
 
+  if (cats.length === 0) {
+    slider.innerHTML = '<p class="empty-note">لا توجد أقسام حالياً</p>';
+    return;
+  }
+
   cats.forEach(cat => {
-    const products = cat.products || [];
-    const block = document.createElement("section");
-    block.className = "cat-block";
-    block.id = "cat-" + cat.id;
+    const img = cat.homeImg || (cat.products && cat.products[0] && cat.products[0].images[0]) || "";
+    const hasOffer = (cat.products || []).some(p => (p.sizes || []).some(s => isOfferActive(s)));
 
-    block.innerHTML = `
-      <div class="section-head">
-        <h2 class="section-title">${cat.icon || ""} ${cat.name_ar}
-          <small class="section-sub">${products.length} منتج</small>
-        </h2>
-        <button type="button" class="see-all">عرض الكل
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg>
-        </button>
-      </div>
-      <div class="row-track"></div>
+    const item = document.createElement("div");
+    item.className = "slider-item offer-slide";
+    item.innerHTML = `
+      ${img ? `<img src="${img}" alt="${cat.name_ar}" loading="lazy">` : ""}
+      <span class="cat-card-shade"></span>
+      ${hasOffer ? '<span class="offer-badge">عرض خاص</span>' : ""}
+      <span class="cat-card-text">
+        <span class="cat-card-ar">${cat.icon || ""} ${cat.name_ar}</span>
+        <span class="cat-card-en">${cat.name_en || ""}</span>
+      </span>
     `;
-
-    const track = block.querySelector(".row-track");
-
-    if (products.length === 0) {
-      track.innerHTML = '<p class="empty-note">لا توجد منتجات في هذا القسم حالياً</p>';
-    } else {
-      products.slice(0, 10).forEach(prod => {
-        const img = prod.images && prod.images[0] ? prod.images[0] : "";
-        const prices = (prod.sizes || []).map(s => Number(s.price)).filter(n => !isNaN(n) && n > 0);
-        const from = prices.length ? Math.min(...prices) : null;
-
-        const mini = document.createElement("button");
-        mini.type = "button";
-        mini.className = "mini-card";
-        mini.innerHTML = `
-          <span class="mini-img">${img ? `<img src="${img}" alt="${prod.name_ar}" loading="lazy" onerror="this.style.opacity=0.3">` : "👕"}</span>
-          <span class="mini-name">${prod.name_ar}</span>
-          <span class="mini-price">${from !== null ? `${prices.length > 1 ? "من " : ""}${from} ج.م` : ""}</span>
-          <span class="mini-btn">اختر المقاس</span>
-        `;
-        mini.addEventListener("click", () => openCategory(cat.id));
-        track.appendChild(mini);
-      });
-    }
-
-    block.querySelector(".see-all").addEventListener("click", () => openCategory(cat.id));
-    list.appendChild(block);
+    slider.appendChild(item);
   });
+
+  addDots(wrap, cats.length);
+  initCenterSlider(wrap, slider, cats.length, (idx) => openCategory(cats[idx].id));
+}
+
+// هل مقاس معين عليه عرض فعّال (سعر عرض أقل من السعر الأصلي)؟
+function isOfferActive(size) {
+  const price = Number(size.price) || 0;
+  const offer = Number(size.offerPrice) || 0;
+  return offer > 0 && offer < price;
 }
 
 // ============================================================
@@ -496,18 +502,26 @@ function buildProductCard(prod) {
   card.className = "product-card";
   
   const img = prod.images && prod.images[0] ? prod.images[0] : "";
-  
-  const sizesHtml = (prod.sizes || []).map(s => `
-    <button class="pc-size-btn" data-size="${s.label}" data-price="${s.price}">
+  const cardHasOffer = (prod.sizes || []).some(s => isOfferActive(s));
+
+  const sizesHtml = (prod.sizes || []).map(s => {
+    const onOffer = isOfferActive(s);
+    const finalPrice = onOffer ? Number(s.offerPrice) : Number(s.price) || 0;
+    return `
+    <button class="pc-size-btn${onOffer ? " has-offer" : ""}" data-size="${s.label}" data-price="${finalPrice}">
       <span class="pc-size-label">${s.label}</span>
-      <span class="pc-size-price">${s.price} ج.م</span>
+      <span class="pc-size-price">
+        ${onOffer ? `<s class="pc-old-price">${s.price} ج.م</s> <b class="pc-offer-price">${finalPrice} ج.م</b>` : `${finalPrice} ج.م`}
+      </span>
     </button>
-  `).join("");
+  `;
+  }).join("");
   
   card.innerHTML = `
     <div class="pc-img-box">
       ${img ? `<img class="pc-img" src="${img}" alt="${prod.name_ar}" loading="lazy" onerror="this.style.opacity=0.3">` : '<div class="pc-img" style="background:#1c1c1e;display:flex;align-items:center;justify-content:center;font-size:3rem;">👕</div>'}
     </div>
+    ${cardHasOffer ? '<span class="offer-badge card-offer-badge">عرض خاص</span>' : ""}
     <h3 class="pc-name">${prod.name_ar}</h3>
     ${prod.desc_ar ? `<p class="pc-desc">${prod.desc_ar}</p>` : '<p class="pc-desc"></p>'}
     <div class="pc-selected-info hidden" id="selInfo_${prod.id}">
@@ -775,5 +789,5 @@ applySocialLinks();
 applyConfig();
 renderCategories();
 renderFeatured();
-renderCategoriesList();
+renderOffersSlider();
 renderCart();

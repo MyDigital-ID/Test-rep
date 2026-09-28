@@ -7,10 +7,12 @@
     "about_ar": "نقدم لكم أحدث الموديلات من بيوت الأزياء العالمية بأجود وأرقى الخامات التي تناسب جميع الأذواق والأعمار.",
     "about_en": "We offer the latest fashion from international brands with the finest materials.",
     "whatsappNumber": "201011475047",
-    "phones": ["01011475047"],
+    "phones": [
+      "01011475047"
+    ],
     "address_ar": "Online Store",
     "address_en": "Online Store",
-    "mapUrl": "",
+    "mapUrl": "https://www.google.com/maps?q=31.257007,29.983036",
     "rights_ar": "جميع الحقوق محفوظة لـ حنون"
   },
   "social": {
@@ -40,14 +42,40 @@
           "name_en": "OFF Oversize T-Shirt",
           "desc_ar": "تيشيرت أوفر سايز بخامة قطنية ثقيلة - طبعة OFF",
           "desc_en": "Oversize heavyweight cotton t-shirt - OFF print",
-          "images": ["https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "S", "price": 350 },
-            { "label": "M", "price": 350 },
-            { "label": "L", "price": 370 },
-            { "label": "XL", "price": 390 },
-            { "label": "XXL", "price": 420 },
-            { "label": "XXXL", "price": 450 }
+            {
+              "label": "S",
+              "price": 350,
+              "offerPrice": 298
+            },
+            {
+              "label": "M",
+              "price": 350,
+              "offerPrice": 298
+            },
+            {
+              "label": "L",
+              "price": 370,
+              "offerPrice": 314
+            },
+            {
+              "label": "XL",
+              "price": 390,
+              "offerPrice": 332
+            },
+            {
+              "label": "XXL",
+              "price": 420,
+              "offerPrice": 357
+            },
+            {
+              "label": "XXXL",
+              "price": 450,
+              "offerPrice": 382
+            }
           ]
         },
         {
@@ -56,14 +84,34 @@
           "name_en": "OFF Burnt Brown T-Shirt",
           "desc_ar": "تيشيرت بلون بني محروق - طبعة OFF بتأثير مميز",
           "desc_en": "Burnt brown t-shirt - OFF print",
-          "images": ["https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "S", "price": 350 },
-            { "label": "M", "price": 350 },
-            { "label": "L", "price": 370 },
-            { "label": "XL", "price": 390 },
-            { "label": "XXL", "price": 420 },
-            { "label": "XXXL", "price": 450 }
+            {
+              "label": "S",
+              "price": 350
+            },
+            {
+              "label": "M",
+              "price": 350
+            },
+            {
+              "label": "L",
+              "price": 370
+            },
+            {
+              "label": "XL",
+              "price": 390
+            },
+            {
+              "label": "XXL",
+              "price": 420
+            },
+            {
+              "label": "XXXL",
+              "price": 450
+            }
           ]
         },
         {
@@ -72,13 +120,30 @@
           "name_en": "Pull&Bear Beige T-Shirt",
           "desc_ar": "تيشيرت Pull&Bear بخامة قطنية عالية الجودة",
           "desc_en": "Pull&Bear premium cotton t-shirt",
-          "images": ["https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "M", "price": 380 },
-            { "label": "L", "price": 380 },
-            { "label": "XL", "price": 400 },
-            { "label": "XXL", "price": 430 },
-            { "label": "XXXL", "price": 460 }
+            {
+              "label": "M",
+              "price": 380
+            },
+            {
+              "label": "L",
+              "price": 380
+            },
+            {
+              "label": "XL",
+              "price": 400
+            },
+            {
+              "label": "XXL",
+              "price": 430
+            },
+            {
+              "label": "XXXL",
+              "price": 460
+            }
           ]
         },
         {
@@ -87,13 +152,30 @@
           "name_en": "Givenchy Sky Blue T-Shirt",
           "desc_ar": "تيشيرت Givenchy بتصميم عصري - لون سماوي",
           "desc_en": "Givenchy modern design t-shirt - sky blue",
-          "images": ["https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "S", "price": 400 },
-            { "label": "M", "price": 400 },
-            { "label": "L", "price": 420 },
-            { "label": "XL", "price": 450 },
-            { "label": "XXL", "price": 480 }
+            {
+              "label": "S",
+              "price": 400
+            },
+            {
+              "label": "M",
+              "price": 400
+            },
+            {
+              "label": "L",
+              "price": 420
+            },
+            {
+              "label": "XL",
+              "price": 450
+            },
+            {
+              "label": "XXL",
+              "price": 480
+            }
           ]
         },
         {
@@ -102,13 +184,30 @@
           "name_en": "Balenciaga Black T-Shirt",
           "desc_ar": "تيشيرت Balenciaga بتصميم فاخر",
           "desc_en": "Balenciaga luxury design t-shirt",
-          "images": ["https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "M", "price": 420 },
-            { "label": "L", "price": 450 },
-            { "label": "XL", "price": 480 },
-            { "label": "XXL", "price": 520 },
-            { "label": "XXXL", "price": 560 }
+            {
+              "label": "M",
+              "price": 420
+            },
+            {
+              "label": "L",
+              "price": 450
+            },
+            {
+              "label": "XL",
+              "price": 480
+            },
+            {
+              "label": "XXL",
+              "price": 520
+            },
+            {
+              "label": "XXXL",
+              "price": 560
+            }
           ]
         },
         {
@@ -117,13 +216,30 @@
           "name_en": "ART.28 T-Shirt",
           "desc_ar": "تيشيرت ART.28 بتصميم فني مميز",
           "desc_en": "ART.28 artistic design t-shirt",
-          "images": ["https://images.unsplash.com/photo-1564859228273-274232fdb516?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1564859228273-274232fdb516?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "S", "price": 380 },
-            { "label": "M", "price": 380 },
-            { "label": "L", "price": 400 },
-            { "label": "XL", "price": 430 },
-            { "label": "XXL", "price": 460 }
+            {
+              "label": "S",
+              "price": 380
+            },
+            {
+              "label": "M",
+              "price": 380
+            },
+            {
+              "label": "L",
+              "price": 400
+            },
+            {
+              "label": "XL",
+              "price": 430
+            },
+            {
+              "label": "XXL",
+              "price": 460
+            }
           ]
         }
       ]
@@ -142,14 +258,34 @@
           "name_en": "Classic White Shirt",
           "desc_ar": "قميص قطن 100% بتصميم كلاسيكي أنيق",
           "desc_en": "100% cotton classic elegant shirt",
-          "images": ["https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "S", "price": 450 },
-            { "label": "M", "price": 450 },
-            { "label": "L", "price": 480 },
-            { "label": "XL", "price": 510 },
-            { "label": "XXL", "price": 550 },
-            { "label": "XXXL", "price": 590 }
+            {
+              "label": "S",
+              "price": 450
+            },
+            {
+              "label": "M",
+              "price": 450
+            },
+            {
+              "label": "L",
+              "price": 480
+            },
+            {
+              "label": "XL",
+              "price": 510
+            },
+            {
+              "label": "XXL",
+              "price": 550
+            },
+            {
+              "label": "XXXL",
+              "price": 590
+            }
           ]
         },
         {
@@ -158,13 +294,30 @@
           "name_en": "Blue Casual Shirt",
           "desc_ar": "قميص كاجوال بخامة قطنية مريحة",
           "desc_en": "Comfortable cotton casual shirt",
-          "images": ["https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "M", "price": 480 },
-            { "label": "L", "price": 500 },
-            { "label": "XL", "price": 530 },
-            { "label": "XXL", "price": 560 },
-            { "label": "XXXL", "price": 600 }
+            {
+              "label": "M",
+              "price": 480
+            },
+            {
+              "label": "L",
+              "price": 500
+            },
+            {
+              "label": "XL",
+              "price": 530
+            },
+            {
+              "label": "XXL",
+              "price": 560
+            },
+            {
+              "label": "XXXL",
+              "price": 600
+            }
           ]
         },
         {
@@ -173,13 +326,30 @@
           "name_en": "Striped Formal Shirt",
           "desc_ar": "قميص مقلم مناسب للمناسبات الرسمية",
           "desc_en": "Striped shirt for formal occasions",
-          "images": ["https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "S", "price": 500 },
-            { "label": "M", "price": 500 },
-            { "label": "L", "price": 530 },
-            { "label": "XL", "price": 560 },
-            { "label": "XXL", "price": 600 }
+            {
+              "label": "S",
+              "price": 500
+            },
+            {
+              "label": "M",
+              "price": 500
+            },
+            {
+              "label": "L",
+              "price": 530
+            },
+            {
+              "label": "XL",
+              "price": 560
+            },
+            {
+              "label": "XXL",
+              "price": 600
+            }
           ]
         }
       ]
@@ -198,14 +368,34 @@
           "name_en": "The North Face Black Hoodie",
           "desc_ar": "هودي The North Face بتصميم كامو - خامة ثقيلة دافئة",
           "desc_en": "The North Face camo design hoodie - heavy warm fabric",
-          "images": ["https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "S", "price": 850 },
-            { "label": "M", "price": 850 },
-            { "label": "L", "price": 900 },
-            { "label": "XL", "price": 950 },
-            { "label": "XXL", "price": 1000 },
-            { "label": "XXXL", "price": 1100 }
+            {
+              "label": "S",
+              "price": 850
+            },
+            {
+              "label": "M",
+              "price": 850
+            },
+            {
+              "label": "L",
+              "price": 900
+            },
+            {
+              "label": "XL",
+              "price": 950
+            },
+            {
+              "label": "XXL",
+              "price": 1000
+            },
+            {
+              "label": "XXXL",
+              "price": 1100
+            }
           ]
         },
         {
@@ -214,13 +404,30 @@
           "name_en": "Balenciaga Camo Hoodie",
           "desc_ar": "هودي Balenciaga بتصميم كامو فاخر",
           "desc_en": "Balenciaga luxury camo hoodie",
-          "images": ["https://images.unsplash.com/photo-1578681994506-b8f463449011?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1578681994506-b8f463449011?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "M", "price": 950 },
-            { "label": "L", "price": 1000 },
-            { "label": "XL", "price": 1050 },
-            { "label": "XXL", "price": 1150 },
-            { "label": "XXXL", "price": 1250 }
+            {
+              "label": "M",
+              "price": 950
+            },
+            {
+              "label": "L",
+              "price": 1000
+            },
+            {
+              "label": "XL",
+              "price": 1050
+            },
+            {
+              "label": "XXL",
+              "price": 1150
+            },
+            {
+              "label": "XXXL",
+              "price": 1250
+            }
           ]
         },
         {
@@ -229,13 +436,30 @@
           "name_en": "Diesel White Hoodie",
           "desc_ar": "هودي Diesel بخامة قطنية فاخرة",
           "desc_en": "Diesel premium cotton hoodie",
-          "images": ["https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "S", "price": 900 },
-            { "label": "M", "price": 900 },
-            { "label": "L", "price": 950 },
-            { "label": "XL", "price": 1000 },
-            { "label": "XXL", "price": 1100 }
+            {
+              "label": "S",
+              "price": 900
+            },
+            {
+              "label": "M",
+              "price": 900
+            },
+            {
+              "label": "L",
+              "price": 950
+            },
+            {
+              "label": "XL",
+              "price": 1000
+            },
+            {
+              "label": "XXL",
+              "price": 1100
+            }
           ]
         },
         {
@@ -244,12 +468,26 @@
           "name_en": "Diesel Beige Hoodie",
           "desc_ar": "هودي Diesel بلون بيج فاخر",
           "desc_en": "Diesel luxury beige hoodie",
-          "images": ["https://images.unsplash.com/photo-1614499524207-cd5e30ff03d6?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1614499524207-cd5e30ff03d6?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "M", "price": 900 },
-            { "label": "L", "price": 950 },
-            { "label": "XL", "price": 1000 },
-            { "label": "XXL", "price": 1100 }
+            {
+              "label": "M",
+              "price": 900
+            },
+            {
+              "label": "L",
+              "price": 950
+            },
+            {
+              "label": "XL",
+              "price": 1000
+            },
+            {
+              "label": "XXL",
+              "price": 1100
+            }
           ]
         },
         {
@@ -258,13 +496,30 @@
           "name_en": "Burberry White Hoodie",
           "desc_ar": "هودي Burberry بتصميم فاخر - خامة صوف",
           "desc_en": "Burberry luxury hoodie - wool fabric",
-          "images": ["https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "S", "price": 1200 },
-            { "label": "M", "price": 1200 },
-            { "label": "L", "price": 1300 },
-            { "label": "XL", "price": 1400 },
-            { "label": "XXL", "price": 1500 }
+            {
+              "label": "S",
+              "price": 1200
+            },
+            {
+              "label": "M",
+              "price": 1200
+            },
+            {
+              "label": "L",
+              "price": 1300
+            },
+            {
+              "label": "XL",
+              "price": 1400
+            },
+            {
+              "label": "XXL",
+              "price": 1500
+            }
           ]
         },
         {
@@ -273,12 +528,26 @@
           "name_en": "Burberry Gray Hoodie",
           "desc_ar": "هودي Burberry بلون رمادي فاخر",
           "desc_en": "Burberry luxury gray hoodie",
-          "images": ["https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "M", "price": 1200 },
-            { "label": "L", "price": 1300 },
-            { "label": "XL", "price": 1400 },
-            { "label": "XXL", "price": 1500 }
+            {
+              "label": "M",
+              "price": 1200
+            },
+            {
+              "label": "L",
+              "price": 1300
+            },
+            {
+              "label": "XL",
+              "price": 1400
+            },
+            {
+              "label": "XXL",
+              "price": 1500
+            }
           ]
         },
         {
@@ -287,13 +556,30 @@
           "name_en": "Burberry Black Hoodie",
           "desc_ar": "هودي Burberry بلون أسود فاخر",
           "desc_en": "Burberry luxury black hoodie",
-          "images": ["https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "M", "price": 1200 },
-            { "label": "L", "price": 1300 },
-            { "label": "XL", "price": 1400 },
-            { "label": "XXL", "price": 1500 },
-            { "label": "XXXL", "price": 1650 }
+            {
+              "label": "M",
+              "price": 1200
+            },
+            {
+              "label": "L",
+              "price": 1300
+            },
+            {
+              "label": "XL",
+              "price": 1400
+            },
+            {
+              "label": "XXL",
+              "price": 1500
+            },
+            {
+              "label": "XXXL",
+              "price": 1650
+            }
           ]
         }
       ]
@@ -312,14 +598,34 @@
           "name_en": "American Eagle White Sweatshirt",
           "desc_ar": "بلوفر American Eagle بخامة وافل مميزة",
           "desc_en": "American Eagle waffle fabric sweatshirt",
-          "images": ["https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "S", "price": 550 },
-            { "label": "M", "price": 550 },
-            { "label": "L", "price": 580 },
-            { "label": "XL", "price": 620 },
-            { "label": "XXL", "price": 660 },
-            { "label": "XXXL", "price": 700 }
+            {
+              "label": "S",
+              "price": 550
+            },
+            {
+              "label": "M",
+              "price": 550
+            },
+            {
+              "label": "L",
+              "price": 580
+            },
+            {
+              "label": "XL",
+              "price": 620
+            },
+            {
+              "label": "XXL",
+              "price": 660
+            },
+            {
+              "label": "XXXL",
+              "price": 700
+            }
           ]
         },
         {
@@ -328,12 +634,26 @@
           "name_en": "American Eagle Beige Sweatshirt",
           "desc_ar": "بلوفر American Eagle بلون بيج فاخر",
           "desc_en": "American Eagle luxury beige sweatshirt",
-          "images": ["https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "M", "price": 550 },
-            { "label": "L", "price": 580 },
-            { "label": "XL", "price": 620 },
-            { "label": "XXL", "price": 660 }
+            {
+              "label": "M",
+              "price": 550
+            },
+            {
+              "label": "L",
+              "price": 580
+            },
+            {
+              "label": "XL",
+              "price": 620
+            },
+            {
+              "label": "XXL",
+              "price": 660
+            }
           ]
         },
         {
@@ -342,14 +662,34 @@
           "name_en": "American Eagle Black Sweatshirt",
           "desc_ar": "بلوفر American Eagle بلون أسود أنيق",
           "desc_en": "American Eagle elegant black sweatshirt",
-          "images": ["https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "S", "price": 550 },
-            { "label": "M", "price": 550 },
-            { "label": "L", "price": 580 },
-            { "label": "XL", "price": 620 },
-            { "label": "XXL", "price": 660 },
-            { "label": "XXXL", "price": 700 }
+            {
+              "label": "S",
+              "price": 550
+            },
+            {
+              "label": "M",
+              "price": 550
+            },
+            {
+              "label": "L",
+              "price": 580
+            },
+            {
+              "label": "XL",
+              "price": 620
+            },
+            {
+              "label": "XXL",
+              "price": 660
+            },
+            {
+              "label": "XXXL",
+              "price": 700
+            }
           ]
         },
         {
@@ -358,12 +698,26 @@
           "name_en": "Pullman Brown Sweater",
           "desc_ar": "بلوفر Pullman بخامة صوف ناعمة",
           "desc_en": "Pullman soft wool sweater",
-          "images": ["https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "M", "price": 650 },
-            { "label": "L", "price": 680 },
-            { "label": "XL", "price": 720 },
-            { "label": "XXL", "price": 770 }
+            {
+              "label": "M",
+              "price": 650
+            },
+            {
+              "label": "L",
+              "price": 680
+            },
+            {
+              "label": "XL",
+              "price": 720
+            },
+            {
+              "label": "XXL",
+              "price": 770
+            }
           ]
         },
         {
@@ -372,13 +726,30 @@
           "name_en": "Pullman Black Sweater",
           "desc_ar": "بلوفر Pullman بلون أسود فاخر",
           "desc_en": "Pullman luxury black sweater",
-          "images": ["https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "S", "price": 650 },
-            { "label": "M", "price": 650 },
-            { "label": "L", "price": 680 },
-            { "label": "XL", "price": 720 },
-            { "label": "XXL", "price": 770 }
+            {
+              "label": "S",
+              "price": 650
+            },
+            {
+              "label": "M",
+              "price": 650
+            },
+            {
+              "label": "L",
+              "price": 680
+            },
+            {
+              "label": "XL",
+              "price": 720
+            },
+            {
+              "label": "XXL",
+              "price": 770
+            }
           ]
         },
         {
@@ -387,12 +758,26 @@
           "name_en": "Pullman Green Sweater",
           "desc_ar": "بلوفر Pullman بلون أخضر زيتي",
           "desc_en": "Pullman olive green sweater",
-          "images": ["https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "M", "price": 680 },
-            { "label": "L", "price": 700 },
-            { "label": "XL", "price": 750 },
-            { "label": "XXL", "price": 800 }
+            {
+              "label": "M",
+              "price": 680
+            },
+            {
+              "label": "L",
+              "price": 700
+            },
+            {
+              "label": "XL",
+              "price": 750
+            },
+            {
+              "label": "XXL",
+              "price": 800
+            }
           ]
         }
       ]
@@ -411,14 +796,34 @@
           "name_en": "Classic Blue Jeans",
           "desc_ar": "بنطلون جينز كلاسيك بقصة مستقيمة",
           "desc_en": "Classic straight-cut blue jeans",
-          "images": ["https://images.unsplash.com/photo-1542272604-787c3835535d?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1542272604-787c3835535d?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "S", "price": 650 },
-            { "label": "M", "price": 650 },
-            { "label": "L", "price": 680 },
-            { "label": "XL", "price": 720 },
-            { "label": "XXL", "price": 770 },
-            { "label": "XXXL", "price": 820 }
+            {
+              "label": "S",
+              "price": 650
+            },
+            {
+              "label": "M",
+              "price": 650
+            },
+            {
+              "label": "L",
+              "price": 680
+            },
+            {
+              "label": "XL",
+              "price": 720
+            },
+            {
+              "label": "XXL",
+              "price": 770
+            },
+            {
+              "label": "XXXL",
+              "price": 820
+            }
           ]
         },
         {
@@ -427,12 +832,26 @@
           "name_en": "Modern Black Jeans",
           "desc_ar": "جينز أسود بقصة مودرن عصرية",
           "desc_en": "Modern black jeans",
-          "images": ["https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "M", "price": 650 },
-            { "label": "L", "price": 680 },
-            { "label": "XL", "price": 720 },
-            { "label": "XXL", "price": 770 }
+            {
+              "label": "M",
+              "price": 650
+            },
+            {
+              "label": "L",
+              "price": 680
+            },
+            {
+              "label": "XL",
+              "price": 720
+            },
+            {
+              "label": "XXL",
+              "price": 770
+            }
           ]
         },
         {
@@ -441,17 +860,30 @@
           "name_en": "Ripped Jeans",
           "desc_ar": "جينز بتصميم ممزق عصري",
           "desc_en": "Modern ripped design jeans",
-          "images": ["https://images.unsplash.com/photo-1582552938357-32b906df40cb?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1582552938357-32b906df40cb?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "S", "price": 700 },
-            { "label": "M", "price": 700 },
-            { "label": "L", "price": 750 },
-            { "label": "XL", "price": 800 }
+            {
+              "label": "S",
+              "price": 700
+            },
+            {
+              "label": "M",
+              "price": 700
+            },
+            {
+              "label": "L",
+              "price": 750
+            },
+            {
+              "label": "XL",
+              "price": 800
+            }
           ]
         }
       ]
     },
-      
     {
       "id": "pants",
       "icon": "👖",
@@ -466,14 +898,34 @@
           "name_en": "Adidas Gray Pants",
           "desc_ar": "بنطال Adidas رياضي بخامة قطنية مريحة",
           "desc_en": "Adidas comfortable cotton pants",
-          "images": ["https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "S", "price": 550 },
-            { "label": "M", "price": 550 },
-            { "label": "L", "price": 580 },
-            { "label": "XL", "price": 620 },
-            { "label": "XXL", "price": 660 },
-            { "label": "XXXL", "price": 720 }
+            {
+              "label": "S",
+              "price": 550
+            },
+            {
+              "label": "M",
+              "price": 550
+            },
+            {
+              "label": "L",
+              "price": 580
+            },
+            {
+              "label": "XL",
+              "price": 620
+            },
+            {
+              "label": "XXL",
+              "price": 660
+            },
+            {
+              "label": "XXXL",
+              "price": 720
+            }
           ]
         },
         {
@@ -482,12 +934,26 @@
           "name_en": "Adidas Green Pants",
           "desc_ar": "بنطال Adidas بلون أخضر زيتي",
           "desc_en": "Adidas olive green pants",
-          "images": ["https://images.unsplash.com/photo-1509551388413-e18d0ac5d495?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1509551388413-e18d0ac5d495?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "M", "price": 550 },
-            { "label": "L", "price": 580 },
-            { "label": "XL", "price": 620 },
-            { "label": "XXL", "price": 660 }
+            {
+              "label": "M",
+              "price": 550
+            },
+            {
+              "label": "L",
+              "price": 580
+            },
+            {
+              "label": "XL",
+              "price": 620
+            },
+            {
+              "label": "XXL",
+              "price": 660
+            }
           ]
         }
       ]
@@ -506,14 +972,34 @@
           "name_en": "Black Tracksuit Set",
           "desc_ar": "طقم ترينج رياضي كامل بخامة قطنية عالية الجودة",
           "desc_en": "Full tracksuit set premium cotton",
-          "images": ["https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "S", "price": 750 },
-            { "label": "M", "price": 750 },
-            { "label": "L", "price": 800 },
-            { "label": "XL", "price": 850 },
-            { "label": "XXL", "price": 900 },
-            { "label": "XXXL", "price": 980 }
+            {
+              "label": "S",
+              "price": 750
+            },
+            {
+              "label": "M",
+              "price": 750
+            },
+            {
+              "label": "L",
+              "price": 800
+            },
+            {
+              "label": "XL",
+              "price": 850
+            },
+            {
+              "label": "XXL",
+              "price": 900
+            },
+            {
+              "label": "XXXL",
+              "price": 980
+            }
           ]
         },
         {
@@ -522,12 +1008,26 @@
           "name_en": "Gray Tracksuit Set",
           "desc_ar": "طقم ترينج رمادي عصري",
           "desc_en": "Modern gray tracksuit set",
-          "images": ["https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "M", "price": 750 },
-            { "label": "L", "price": 800 },
-            { "label": "XL", "price": 850 },
-            { "label": "XXL", "price": 900 }
+            {
+              "label": "M",
+              "price": 750
+            },
+            {
+              "label": "L",
+              "price": 800
+            },
+            {
+              "label": "XL",
+              "price": 850
+            },
+            {
+              "label": "XXL",
+              "price": 900
+            }
           ]
         }
       ]
@@ -546,13 +1046,30 @@
           "name_en": "Cotton Boxer (3 Pack)",
           "desc_ar": "طقم بوكسرات قطنية مريحة - 3 قطع",
           "desc_en": "Comfortable cotton boxers - 3 pieces",
-          "images": ["https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "S", "price": 250 },
-            { "label": "M", "price": 250 },
-            { "label": "L", "price": 270 },
-            { "label": "XL", "price": 290 },
-            { "label": "XXL", "price": 320 }
+            {
+              "label": "S",
+              "price": 250
+            },
+            {
+              "label": "M",
+              "price": 250
+            },
+            {
+              "label": "L",
+              "price": 270
+            },
+            {
+              "label": "XL",
+              "price": 290
+            },
+            {
+              "label": "XXL",
+              "price": 320
+            }
           ]
         },
         {
@@ -561,12 +1078,26 @@
           "name_en": "Premium Cotton Boxer (5 Pack)",
           "desc_ar": "طقم بوكسرات فاخرة - 5 قطع",
           "desc_en": "Premium cotton boxers - 5 pieces",
-          "images": ["https://images.unsplash.com/photo-1582966772680-860e372bb558?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1582966772680-860e372bb558?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "M", "price": 380 },
-            { "label": "L", "price": 400 },
-            { "label": "XL", "price": 430 },
-            { "label": "XXL", "price": 460 }
+            {
+              "label": "M",
+              "price": 380
+            },
+            {
+              "label": "L",
+              "price": 400
+            },
+            {
+              "label": "XL",
+              "price": 430
+            },
+            {
+              "label": "XXL",
+              "price": 460
+            }
           ]
         }
       ]
@@ -585,14 +1116,34 @@
           "name_en": "T-Shirt + Pants Outfit Set",
           "desc_ar": "طقم خروج كامل - تيشيرت + بنطال بخامة عالية",
           "desc_en": "Full outfit set - t-shirt + pants premium",
-          "images": ["https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "S", "price": 850 },
-            { "label": "M", "price": 850 },
-            { "label": "L", "price": 900 },
-            { "label": "XL", "price": 950 },
-            { "label": "XXL", "price": 1000 },
-            { "label": "XXXL", "price": 1100 }
+            {
+              "label": "S",
+              "price": 850
+            },
+            {
+              "label": "M",
+              "price": 850
+            },
+            {
+              "label": "L",
+              "price": 900
+            },
+            {
+              "label": "XL",
+              "price": 950
+            },
+            {
+              "label": "XXL",
+              "price": 1000
+            },
+            {
+              "label": "XXXL",
+              "price": 1100
+            }
           ]
         },
         {
@@ -601,12 +1152,26 @@
           "name_en": "Sweatshirt + Pants Set",
           "desc_ar": "طقم خروج أنيق - بلوفر + بنطال",
           "desc_en": "Elegant outfit set - sweatshirt + pants",
-          "images": ["https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "M", "price": 950 },
-            { "label": "L", "price": 1000 },
-            { "label": "XL", "price": 1050 },
-            { "label": "XXL", "price": 1100 }
+            {
+              "label": "M",
+              "price": 950
+            },
+            {
+              "label": "L",
+              "price": 1000
+            },
+            {
+              "label": "XL",
+              "price": 1050
+            },
+            {
+              "label": "XXL",
+              "price": 1100
+            }
           ]
         }
       ]
@@ -625,14 +1190,34 @@
           "name_en": "EA7 Blue Sneakers",
           "desc_ar": "كوتشي EA7 Emporio Armani أزرق - خامة عالية الجودة",
           "desc_en": "EA7 Emporio Armani blue sneakers - premium quality",
-          "images": ["https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "40", "price": 1200 },
-            { "label": "41", "price": 1200 },
-            { "label": "42", "price": 1250 },
-            { "label": "43", "price": 1300 },
-            { "label": "44", "price": 1350 },
-            { "label": "45", "price": 1400 }
+            {
+              "label": "40",
+              "price": 1200
+            },
+            {
+              "label": "41",
+              "price": 1200
+            },
+            {
+              "label": "42",
+              "price": 1250
+            },
+            {
+              "label": "43",
+              "price": 1300
+            },
+            {
+              "label": "44",
+              "price": 1350
+            },
+            {
+              "label": "45",
+              "price": 1400
+            }
           ]
         },
         {
@@ -641,14 +1226,34 @@
           "name_en": "EA7 Black Sneakers",
           "desc_ar": "كوتشي EA7 Emporio Armani أسود",
           "desc_en": "EA7 Emporio Armani black sneakers",
-          "images": ["https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "40", "price": 1200 },
-            { "label": "41", "price": 1200 },
-            { "label": "42", "price": 1250 },
-            { "label": "43", "price": 1300 },
-            { "label": "44", "price": 1350 },
-            { "label": "45", "price": 1400 }
+            {
+              "label": "40",
+              "price": 1200
+            },
+            {
+              "label": "41",
+              "price": 1200
+            },
+            {
+              "label": "42",
+              "price": 1250
+            },
+            {
+              "label": "43",
+              "price": 1300
+            },
+            {
+              "label": "44",
+              "price": 1350
+            },
+            {
+              "label": "45",
+              "price": 1400
+            }
           ]
         },
         {
@@ -657,13 +1262,30 @@
           "name_en": "EA7 Gray Sneakers",
           "desc_ar": "كوتشي EA7 Emporio Armani رمادي",
           "desc_en": "EA7 Emporio Armani gray sneakers",
-          "images": ["https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "40", "price": 1200 },
-            { "label": "41", "price": 1200 },
-            { "label": "42", "price": 1250 },
-            { "label": "43", "price": 1300 },
-            { "label": "44", "price": 1350 }
+            {
+              "label": "40",
+              "price": 1200
+            },
+            {
+              "label": "41",
+              "price": 1200
+            },
+            {
+              "label": "42",
+              "price": 1250
+            },
+            {
+              "label": "43",
+              "price": 1300
+            },
+            {
+              "label": "44",
+              "price": 1350
+            }
           ]
         },
         {
@@ -672,14 +1294,34 @@
           "name_en": "Nike Black/White Sneakers",
           "desc_ar": "كوتشي Nike بتصميم رياضي عصري",
           "desc_en": "Nike modern sports sneakers",
-          "images": ["https://images.unsplash.com/photo-1552346154-21d32810aba3?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "40", "price": 1300 },
-            { "label": "41", "price": 1300 },
-            { "label": "42", "price": 1350 },
-            { "label": "43", "price": 1400 },
-            { "label": "44", "price": 1450 },
-            { "label": "45", "price": 1500 }
+            {
+              "label": "40",
+              "price": 1300
+            },
+            {
+              "label": "41",
+              "price": 1300
+            },
+            {
+              "label": "42",
+              "price": 1350
+            },
+            {
+              "label": "43",
+              "price": 1400
+            },
+            {
+              "label": "44",
+              "price": 1450
+            },
+            {
+              "label": "45",
+              "price": 1500
+            }
           ]
         },
         {
@@ -688,17 +1330,37 @@
           "name_en": "Supreme × Nike White Sneakers",
           "desc_ar": "كوتشي Supreme × Nike بتصميم حصري",
           "desc_en": "Supreme × Nike exclusive design sneakers",
-          "images": ["https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=800&q=80"],
+          "images": [
+            "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=800&q=80"
+          ],
           "sizes": [
-            { "label": "40", "price": 1500 },
-            { "label": "41", "price": 1500 },
-            { "label": "42", "price": 1600 },
-            { "label": "43", "price": 1650 },
-            { "label": "44", "price": 1700 },
-            { "label": "45", "price": 1800 }
+            {
+              "label": "40",
+              "price": 1500
+            },
+            {
+              "label": "41",
+              "price": 1500
+            },
+            {
+              "label": "42",
+              "price": 1600
+            },
+            {
+              "label": "43",
+              "price": 1650
+            },
+            {
+              "label": "44",
+              "price": 1700
+            },
+            {
+              "label": "45",
+              "price": 1800
+            }
           ]
         }
       ]
     }
-   ]
- }
+  ]
+}

@@ -782,6 +782,49 @@ main {
 }
 
 /* ============================================================
+   Offers badge (category cards, offers slider, product cards)
+============================================================ */
+.offer-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--danger);
+  color: #fff;
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 4px 10px;
+  border-radius: 999px;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+}
+
+.product-card { position: relative; }
+
+.card-offer-badge { top: 8px; right: 8px; }
+
+.offer-slide { position: relative; }
+
+/* أسعار العروض داخل كارت المنتج */
+.pc-size-btn.has-offer {
+  border-color: var(--danger);
+}
+
+.pc-old-price {
+  color: var(--muted);
+  font-weight: 500;
+  text-decoration: line-through;
+}
+
+.pc-offer-price {
+  color: var(--danger);
+  font-weight: 900;
+}
+
+.pc-size-btn.selected .pc-old-price,
+.pc-size-btn.selected .pc-offer-price { color: #fff; }
+
+/* ============================================================
    Category view + products
 ============================================================ */
 .back-btn {
@@ -918,6 +961,11 @@ main {
   font-size: 0.7rem;
   font-weight: 700;
   color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  line-height: 1.3;
 }
 
 .product-card .pc-size-btn.selected .pc-size-price { color: #fff; }

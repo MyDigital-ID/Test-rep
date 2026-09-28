@@ -336,7 +336,8 @@ const CONFIG_FIELDS = [
   ["tagline_ar", "التاجلاين (عربي)"],
   ["about_ar", "نبذة عن المتجر (عربي)", true],
   ["whatsappNumber", "رقم واتساب الطلب (بالصيغة الدولية بدون +)"],
-  ["facebook", "رابط صفحة الفيسبوك"]
+  ["facebook", "رابط صفحة الفيسبوك"],
+  ["mapUrl", "رابط الموقع على خرائط جوجل (Google Maps)"]
 ];
 
 function renderConfig() {
@@ -803,7 +804,7 @@ function buildSizesSection(prod, rerender, cat) {
   
   const hint = document.createElement("p");
   hint.style.cssText = "font-size:0.8rem;color:var(--text-muted);margin-bottom:8px;font-weight:700";
-  hint.textContent = "اضغط على المقاس لإضافته — وحدد سعر مختلف لكل مقاس";
+  hint.textContent = "اضغط على المقاس لإضافته وحدد سعره — واملأ خانة سعر العرض فقط لو في خصم على المقاس ده";
   wrap.appendChild(hint);
   
   // المقاسات المختارة مع أسعارها
@@ -838,7 +839,19 @@ function buildSizesSection(prod, rerender, cat) {
       const currency = document.createElement("span");
       currency.style.cssText = "font-weight:900;color:var(--text-muted)";
       currency.textContent = "ج.م";
-      
+
+      const offerInput = document.createElement("input");
+      offerInput.type = "number";
+      offerInput.className = "sz-price-input";
+      offerInput.style.cssText = "border-color:var(--gold, #f26a1b);";
+      offerInput.value = sz.offerPrice || "";
+      offerInput.placeholder = "سعر العرض (اختياري)";
+      offerInput.title = "اتركه فارغاً لإلغاء العرض على هذا المقاس";
+      offerInput.oninput = () => {
+        const v = parseFloat(offerInput.value);
+        prod.sizes[i].offerPrice = (!isNaN(v) && v > 0) ? v : 0;
+      };
+
       const del = document.createElement("button");
       del.className = "sz-del";
       del.textContent = "✕";
@@ -850,6 +863,7 @@ function buildSizesSection(prod, rerender, cat) {
       row.appendChild(lblSz);
       row.appendChild(priceInput);
       row.appendChild(currency);
+      row.appendChild(offerInput);
       row.appendChild(del);
       selectedWrap.appendChild(row);
     });
