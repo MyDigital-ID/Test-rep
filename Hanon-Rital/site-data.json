@@ -50,36 +50,12 @@
             "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "S",
-              "price": 350,
-              "offerPrice": 298
-            },
-            {
-              "label": "M",
-              "price": 350,
-              "offerPrice": 298
-            },
-            {
-              "label": "L",
-              "price": 370,
-              "offerPrice": 314
-            },
-            {
-              "label": "XL",
-              "price": 390,
-              "offerPrice": 332
-            },
-            {
-              "label": "XXL",
-              "price": 420,
-              "offerPrice": 357
-            },
-            {
-              "label": "XXXL",
-              "price": 450,
-              "offerPrice": 382
-            }
+            { "label": "S", "price": 350, "offerPrice": 298 },
+            { "label": "M", "price": 350, "offerPrice": 298 },
+            { "label": "L", "price": 370, "offerPrice": 314 },
+            { "label": "XL", "price": 390, "offerPrice": 332 },
+            { "label": "XXL", "price": 420, "offerPrice": 357 },
+            { "label": "XXXL", "price": 450, "offerPrice": 382 }
           ]
         },
         {
@@ -92,30 +68,12 @@
             "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "S",
-              "price": 350
-            },
-            {
-              "label": "M",
-              "price": 350
-            },
-            {
-              "label": "L",
-              "price": 370
-            },
-            {
-              "label": "XL",
-              "price": 390
-            },
-            {
-              "label": "XXL",
-              "price": 420
-            },
-            {
-              "label": "XXXL",
-              "price": 450
-            }
+            { "label": "S", "price": 350 },
+            { "label": "M", "price": 350 },
+            { "label": "L", "price": 370 },
+            { "label": "XL", "price": 390 },
+            { "label": "XXL", "price": 420 },
+            { "label": "XXXL", "price": 450 }
           ]
         },
         {
@@ -128,26 +86,11 @@
             "https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "M",
-              "price": 380
-            },
-            {
-              "label": "L",
-              "price": 380
-            },
-            {
-              "label": "XL",
-              "price": 400
-            },
-            {
-              "label": "XXL",
-              "price": 430
-            },
-            {
-              "label": "XXXL",
-              "price": 460
-            }
+            { "label": "M", "price": 380 },
+            { "label": "L", "price": 380 },
+            { "label": "XL", "price": 400 },
+            { "label": "XXL", "price": 430 },
+            { "label": "XXXL", "price": 460 }
           ]
         },
         {
@@ -160,26 +103,11 @@
             "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "S",
-              "price": 400
-            },
-            {
-              "label": "M",
-              "price": 400
-            },
-            {
-              "label": "L",
-              "price": 420
-            },
-            {
-              "label": "XL",
-              "price": 450
-            },
-            {
-              "label": "XXL",
-              "price": 480
-            }
+            { "label": "S", "price": 400 },
+            { "label": "M", "price": 400 },
+            { "label": "L", "price": 420 },
+            { "label": "XL", "price": 450 },
+            { "label": "XXL", "price": 480 }
           ]
         },
         {
@@ -192,26 +120,11 @@
             "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "M",
-              "price": 420
-            },
-            {
-              "label": "L",
-              "price": 450
-            },
-            {
-              "label": "XL",
-              "price": 480
-            },
-            {
-              "label": "XXL",
-              "price": 520
-            },
-            {
-              "label": "XXXL",
-              "price": 560
-            }
+            { "label": "M", "price": 420 },
+            { "label": "L", "price": 450 },
+            { "label": "XL", "price": 480 },
+            { "label": "XXL", "price": 520 },
+            { "label": "XXXL", "price": 560 }
           ]
         },
         {
@@ -224,26 +137,11 @@
             "https://images.unsplash.com/photo-1564859228273-274232fdb516?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "S",
-              "price": 380
-            },
-            {
-              "label": "M",
-              "price": 380
-            },
-            {
-              "label": "L",
-              "price": 400
-            },
-            {
-              "label": "XL",
-              "price": 430
-            },
-            {
-              "label": "XXL",
-              "price": 460
-            }
+            { "label": "S", "price": 380 },
+            { "label": "M", "price": 380 },
+            { "label": "L", "price": 400 },
+            { "label": "XL", "price": 430 },
+            { "label": "XXL", "price": 460 }
           ]
         }
       ]
@@ -266,30 +164,12 @@
             "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "S",
-              "price": 450
-            },
-            {
-              "label": "M",
-              "price": 450
-            },
-            {
-              "label": "L",
-              "price": 480
-            },
-            {
-              "label": "XL",
-              "price": 510
-            },
-            {
-              "label": "XXL",
-              "price": 550
-            },
-            {
-              "label": "XXXL",
-              "price": 590
-            }
+            { "label": "S", "price": 450 },
+            { "label": "M", "price": 450 },
+            { "label": "L", "price": 480 },
+            { "label": "XL", "price": 510 },
+            { "label": "XXL", "price": 550 },
+            { "label": "XXXL", "price": 590 }
           ]
         },
         {
@@ -302,26 +182,11 @@
             "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "M",
-              "price": 480
-            },
-            {
-              "label": "L",
-              "price": 500
-            },
-            {
-              "label": "XL",
-              "price": 530
-            },
-            {
-              "label": "XXL",
-              "price": 560
-            },
-            {
-              "label": "XXXL",
-              "price": 600
-            }
+            { "label": "M", "price": 480 },
+            { "label": "L", "price": 500 },
+            { "label": "XL", "price": 530 },
+            { "label": "XXL", "price": 560 },
+            { "label": "XXXL", "price": 600 }
           ]
         },
         {
@@ -334,26 +199,11 @@
             "https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "S",
-              "price": 500
-            },
-            {
-              "label": "M",
-              "price": 500
-            },
-            {
-              "label": "L",
-              "price": 530
-            },
-            {
-              "label": "XL",
-              "price": 560
-            },
-            {
-              "label": "XXL",
-              "price": 600
-            }
+            { "label": "S", "price": 500 },
+            { "label": "M", "price": 500 },
+            { "label": "L", "price": 530 },
+            { "label": "XL", "price": 560 },
+            { "label": "XXL", "price": 600 }
           ]
         }
       ]
@@ -376,30 +226,12 @@
             "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "S",
-              "price": 850
-            },
-            {
-              "label": "M",
-              "price": 850
-            },
-            {
-              "label": "L",
-              "price": 900
-            },
-            {
-              "label": "XL",
-              "price": 950
-            },
-            {
-              "label": "XXL",
-              "price": 1000
-            },
-            {
-              "label": "XXXL",
-              "price": 1100
-            }
+            { "label": "S", "price": 850 },
+            { "label": "M", "price": 850 },
+            { "label": "L", "price": 900 },
+            { "label": "XL", "price": 950 },
+            { "label": "XXL", "price": 1000 },
+            { "label": "XXXL", "price": 1100 }
           ]
         },
         {
@@ -412,26 +244,11 @@
             "https://images.unsplash.com/photo-1578681994506-b8f463449011?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "M",
-              "price": 950
-            },
-            {
-              "label": "L",
-              "price": 1000
-            },
-            {
-              "label": "XL",
-              "price": 1050
-            },
-            {
-              "label": "XXL",
-              "price": 1150
-            },
-            {
-              "label": "XXXL",
-              "price": 1250
-            }
+            { "label": "M", "price": 950 },
+            { "label": "L", "price": 1000 },
+            { "label": "XL", "price": 1050 },
+            { "label": "XXL", "price": 1150 },
+            { "label": "XXXL", "price": 1250 }
           ]
         },
         {
@@ -444,26 +261,11 @@
             "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "S",
-              "price": 900
-            },
-            {
-              "label": "M",
-              "price": 900
-            },
-            {
-              "label": "L",
-              "price": 950
-            },
-            {
-              "label": "XL",
-              "price": 1000
-            },
-            {
-              "label": "XXL",
-              "price": 1100
-            }
+            { "label": "S", "price": 900 },
+            { "label": "M", "price": 900 },
+            { "label": "L", "price": 950 },
+            { "label": "XL", "price": 1000 },
+            { "label": "XXL", "price": 1100 }
           ]
         },
         {
@@ -476,22 +278,10 @@
             "https://images.unsplash.com/photo-1614499524207-cd5e30ff03d6?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "M",
-              "price": 900
-            },
-            {
-              "label": "L",
-              "price": 950
-            },
-            {
-              "label": "XL",
-              "price": 1000
-            },
-            {
-              "label": "XXL",
-              "price": 1100
-            }
+            { "label": "M", "price": 900 },
+            { "label": "L", "price": 950 },
+            { "label": "XL", "price": 1000 },
+            { "label": "XXL", "price": 1100 }
           ]
         },
         {
@@ -504,26 +294,11 @@
             "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "S",
-              "price": 1200
-            },
-            {
-              "label": "M",
-              "price": 1200
-            },
-            {
-              "label": "L",
-              "price": 1300
-            },
-            {
-              "label": "XL",
-              "price": 1400
-            },
-            {
-              "label": "XXL",
-              "price": 1500
-            }
+            { "label": "S", "price": 1200 },
+            { "label": "M", "price": 1200 },
+            { "label": "L", "price": 1300 },
+            { "label": "XL", "price": 1400 },
+            { "label": "XXL", "price": 1500 }
           ]
         },
         {
@@ -536,22 +311,10 @@
             "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "M",
-              "price": 1200
-            },
-            {
-              "label": "L",
-              "price": 1300
-            },
-            {
-              "label": "XL",
-              "price": 1400
-            },
-            {
-              "label": "XXL",
-              "price": 1500
-            }
+            { "label": "M", "price": 1200 },
+            { "label": "L", "price": 1300 },
+            { "label": "XL", "price": 1400 },
+            { "label": "XXL", "price": 1500 }
           ]
         },
         {
@@ -564,26 +327,11 @@
             "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "M",
-              "price": 1200
-            },
-            {
-              "label": "L",
-              "price": 1300
-            },
-            {
-              "label": "XL",
-              "price": 1400
-            },
-            {
-              "label": "XXL",
-              "price": 1500
-            },
-            {
-              "label": "XXXL",
-              "price": 1650
-            }
+            { "label": "M", "price": 1200 },
+            { "label": "L", "price": 1300 },
+            { "label": "XL", "price": 1400 },
+            { "label": "XXL", "price": 1500 },
+            { "label": "XXXL", "price": 1650 }
           ]
         }
       ]
@@ -606,30 +354,12 @@
             "https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "S",
-              "price": 550
-            },
-            {
-              "label": "M",
-              "price": 550
-            },
-            {
-              "label": "L",
-              "price": 580
-            },
-            {
-              "label": "XL",
-              "price": 620
-            },
-            {
-              "label": "XXL",
-              "price": 660
-            },
-            {
-              "label": "XXXL",
-              "price": 700
-            }
+            { "label": "S", "price": 550 },
+            { "label": "M", "price": 550 },
+            { "label": "L", "price": 580 },
+            { "label": "XL", "price": 620 },
+            { "label": "XXL", "price": 660 },
+            { "label": "XXXL", "price": 700 }
           ]
         },
         {
@@ -642,22 +372,10 @@
             "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "M",
-              "price": 550
-            },
-            {
-              "label": "L",
-              "price": 580
-            },
-            {
-              "label": "XL",
-              "price": 620
-            },
-            {
-              "label": "XXL",
-              "price": 660
-            }
+            { "label": "M", "price": 550 },
+            { "label": "L", "price": 580 },
+            { "label": "XL", "price": 620 },
+            { "label": "XXL", "price": 660 }
           ]
         },
         {
@@ -670,30 +388,12 @@
             "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "S",
-              "price": 550
-            },
-            {
-              "label": "M",
-              "price": 550
-            },
-            {
-              "label": "L",
-              "price": 580
-            },
-            {
-              "label": "XL",
-              "price": 620
-            },
-            {
-              "label": "XXL",
-              "price": 660
-            },
-            {
-              "label": "XXXL",
-              "price": 700
-            }
+            { "label": "S", "price": 550 },
+            { "label": "M", "price": 550 },
+            { "label": "L", "price": 580 },
+            { "label": "XL", "price": 620 },
+            { "label": "XXL", "price": 660 },
+            { "label": "XXXL", "price": 700 }
           ]
         },
         {
@@ -706,22 +406,10 @@
             "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "M",
-              "price": 650
-            },
-            {
-              "label": "L",
-              "price": 680
-            },
-            {
-              "label": "XL",
-              "price": 720
-            },
-            {
-              "label": "XXL",
-              "price": 770
-            }
+            { "label": "M", "price": 650 },
+            { "label": "L", "price": 680 },
+            { "label": "XL", "price": 720 },
+            { "label": "XXL", "price": 770 }
           ]
         },
         {
@@ -734,26 +422,11 @@
             "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "S",
-              "price": 650
-            },
-            {
-              "label": "M",
-              "price": 650
-            },
-            {
-              "label": "L",
-              "price": 680
-            },
-            {
-              "label": "XL",
-              "price": 720
-            },
-            {
-              "label": "XXL",
-              "price": 770
-            }
+            { "label": "S", "price": 650 },
+            { "label": "M", "price": 650 },
+            { "label": "L", "price": 680 },
+            { "label": "XL", "price": 720 },
+            { "label": "XXL", "price": 770 }
           ]
         },
         {
@@ -766,22 +439,10 @@
             "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "M",
-              "price": 680
-            },
-            {
-              "label": "L",
-              "price": 700
-            },
-            {
-              "label": "XL",
-              "price": 750
-            },
-            {
-              "label": "XXL",
-              "price": 800
-            }
+            { "label": "M", "price": 680 },
+            { "label": "L", "price": 700 },
+            { "label": "XL", "price": 750 },
+            { "label": "XXL", "price": 800 }
           ]
         }
       ]
@@ -804,30 +465,12 @@
             "https://images.unsplash.com/photo-1542272604-787c3835535d?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "S",
-              "price": 650
-            },
-            {
-              "label": "M",
-              "price": 650
-            },
-            {
-              "label": "L",
-              "price": 680
-            },
-            {
-              "label": "XL",
-              "price": 720
-            },
-            {
-              "label": "XXL",
-              "price": 770
-            },
-            {
-              "label": "XXXL",
-              "price": 820
-            }
+            { "label": "S", "price": 650 },
+            { "label": "M", "price": 650 },
+            { "label": "L", "price": 680 },
+            { "label": "XL", "price": 720 },
+            { "label": "XXL", "price": 770 },
+            { "label": "XXXL", "price": 820 }
           ]
         },
         {
@@ -840,22 +483,10 @@
             "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "M",
-              "price": 650
-            },
-            {
-              "label": "L",
-              "price": 680
-            },
-            {
-              "label": "XL",
-              "price": 720
-            },
-            {
-              "label": "XXL",
-              "price": 770
-            }
+            { "label": "M", "price": 650 },
+            { "label": "L", "price": 680 },
+            { "label": "XL", "price": 720 },
+            { "label": "XXL", "price": 770 }
           ]
         },
         {
@@ -868,26 +499,13 @@
             "https://images.unsplash.com/photo-1582552938357-32b906df40cb?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "S",
-              "price": 700
-            },
-            {
-              "label": "M",
-              "price": 700
-            },
-            {
-              "label": "L",
-              "price": 750
-            },
-            {
-              "label": "XL",
-              "price": 800
-            }
+            { "label": "S", "price": 700 },
+            { "label": "M", "price": 700 },
+            { "label": "L", "price": 750 },
+            { "label": "XL", "price": 800 }
           ]
         }
       ]
-    }
     },
     {
       "id": "pants",
@@ -907,30 +525,12 @@
             "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "S",
-              "price": 550
-            },
-            {
-              "label": "M",
-              "price": 550
-            },
-            {
-              "label": "L",
-              "price": 580
-            },
-            {
-              "label": "XL",
-              "price": 620
-            },
-            {
-              "label": "XXL",
-              "price": 660
-            },
-            {
-              "label": "XXXL",
-              "price": 720
-            }
+            { "label": "S", "price": 550 },
+            { "label": "M", "price": 550 },
+            { "label": "L", "price": 580 },
+            { "label": "XL", "price": 620 },
+            { "label": "XXL", "price": 660 },
+            { "label": "XXXL", "price": 720 }
           ]
         },
         {
@@ -943,22 +543,10 @@
             "https://images.unsplash.com/photo-1509551388413-e18d0ac5d495?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "M",
-              "price": 550
-            },
-            {
-              "label": "L",
-              "price": 580
-            },
-            {
-              "label": "XL",
-              "price": 620
-            },
-            {
-              "label": "XXL",
-              "price": 660
-            }
+            { "label": "M", "price": 550 },
+            { "label": "L", "price": 580 },
+            { "label": "XL", "price": 620 },
+            { "label": "XXL", "price": 660 }
           ]
         }
       ]
@@ -981,30 +569,12 @@
             "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "S",
-              "price": 750
-            },
-            {
-              "label": "M",
-              "price": 750
-            },
-            {
-              "label": "L",
-              "price": 800
-            },
-            {
-              "label": "XL",
-              "price": 850
-            },
-            {
-              "label": "XXL",
-              "price": 900
-            },
-            {
-              "label": "XXXL",
-              "price": 980
-            }
+            { "label": "S", "price": 750 },
+            { "label": "M", "price": 750 },
+            { "label": "L", "price": 800 },
+            { "label": "XL", "price": 850 },
+            { "label": "XXL", "price": 900 },
+            { "label": "XXXL", "price": 980 }
           ]
         },
         {
@@ -1017,22 +587,10 @@
             "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "M",
-              "price": 750
-            },
-            {
-              "label": "L",
-              "price": 800
-            },
-            {
-              "label": "XL",
-              "price": 850
-            },
-            {
-              "label": "XXL",
-              "price": 900
-            }
+            { "label": "M", "price": 750 },
+            { "label": "L", "price": 800 },
+            { "label": "XL", "price": 850 },
+            { "label": "XXL", "price": 900 }
           ]
         }
       ]
@@ -1055,26 +613,11 @@
             "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "S",
-              "price": 250
-            },
-            {
-              "label": "M",
-              "price": 250
-            },
-            {
-              "label": "L",
-              "price": 270
-            },
-            {
-              "label": "XL",
-              "price": 290
-            },
-            {
-              "label": "XXL",
-              "price": 320
-            }
+            { "label": "S", "price": 250 },
+            { "label": "M", "price": 250 },
+            { "label": "L", "price": 270 },
+            { "label": "XL", "price": 290 },
+            { "label": "XXL", "price": 320 }
           ]
         },
         {
@@ -1087,22 +630,10 @@
             "https://images.unsplash.com/photo-1582966772680-860e372bb558?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "M",
-              "price": 380
-            },
-            {
-              "label": "L",
-              "price": 400
-            },
-            {
-              "label": "XL",
-              "price": 430
-            },
-            {
-              "label": "XXL",
-              "price": 460
-            }
+            { "label": "M", "price": 380 },
+            { "label": "L", "price": 400 },
+            { "label": "XL", "price": 430 },
+            { "label": "XXL", "price": 460 }
           ]
         }
       ]
@@ -1125,30 +656,12 @@
             "https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "S",
-              "price": 850
-            },
-            {
-              "label": "M",
-              "price": 850
-            },
-            {
-              "label": "L",
-              "price": 900
-            },
-            {
-              "label": "XL",
-              "price": 950
-            },
-            {
-              "label": "XXL",
-              "price": 1000
-            },
-            {
-              "label": "XXXL",
-              "price": 1100
-            }
+            { "label": "S", "price": 850 },
+            { "label": "M", "price": 850 },
+            { "label": "L", "price": 900 },
+            { "label": "XL", "price": 950 },
+            { "label": "XXL", "price": 1000 },
+            { "label": "XXXL", "price": 1100 }
           ]
         },
         {
@@ -1161,22 +674,10 @@
             "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "M",
-              "price": 950
-            },
-            {
-              "label": "L",
-              "price": 1000
-            },
-            {
-              "label": "XL",
-              "price": 1050
-            },
-            {
-              "label": "XXL",
-              "price": 1100
-            }
+            { "label": "M", "price": 950 },
+            { "label": "L", "price": 1000 },
+            { "label": "XL", "price": 1050 },
+            { "label": "XXL", "price": 1100 }
           ]
         }
       ]
@@ -1199,30 +700,12 @@
             "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "40",
-              "price": 1200
-            },
-            {
-              "label": "41",
-              "price": 1200
-            },
-            {
-              "label": "42",
-              "price": 1250
-            },
-            {
-              "label": "43",
-              "price": 1300
-            },
-            {
-              "label": "44",
-              "price": 1350
-            },
-            {
-              "label": "45",
-              "price": 1400
-            }
+            { "label": "40", "price": 1200 },
+            { "label": "41", "price": 1200 },
+            { "label": "42", "price": 1250 },
+            { "label": "43", "price": 1300 },
+            { "label": "44", "price": 1350 },
+            { "label": "45", "price": 1400 }
           ]
         },
         {
@@ -1235,30 +718,12 @@
             "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "40",
-              "price": 1200
-            },
-            {
-              "label": "41",
-              "price": 1200
-            },
-            {
-              "label": "42",
-              "price": 1250
-            },
-            {
-              "label": "43",
-              "price": 1300
-            },
-            {
-              "label": "44",
-              "price": 1350
-            },
-            {
-              "label": "45",
-              "price": 1400
-            }
+            { "label": "40", "price": 1200 },
+            { "label": "41", "price": 1200 },
+            { "label": "42", "price": 1250 },
+            { "label": "43", "price": 1300 },
+            { "label": "44", "price": 1350 },
+            { "label": "45", "price": 1400 }
           ]
         },
         {
@@ -1271,26 +736,11 @@
             "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "40",
-              "price": 1200
-            },
-            {
-              "label": "41",
-              "price": 1200
-            },
-            {
-              "label": "42",
-              "price": 1250
-            },
-            {
-              "label": "43",
-              "price": 1300
-            },
-            {
-              "label": "44",
-              "price": 1350
-            }
+            { "label": "40", "price": 1200 },
+            { "label": "41", "price": 1200 },
+            { "label": "42", "price": 1250 },
+            { "label": "43", "price": 1300 },
+            { "label": "44", "price": 1350 }
           ]
         },
         {
@@ -1303,30 +753,12 @@
             "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "40",
-              "price": 1300
-            },
-            {
-              "label": "41",
-              "price": 1300
-            },
-            {
-              "label": "42",
-              "price": 1350
-            },
-            {
-              "label": "43",
-              "price": 1400
-            },
-            {
-              "label": "44",
-              "price": 1450
-            },
-            {
-              "label": "45",
-              "price": 1500
-            }
+            { "label": "40", "price": 1300 },
+            { "label": "41", "price": 1300 },
+            { "label": "42", "price": 1350 },
+            { "label": "43", "price": 1400 },
+            { "label": "44", "price": 1450 },
+            { "label": "45", "price": 1500 }
           ]
         },
         {
@@ -1339,30 +771,12 @@
             "https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=800&q=80"
           ],
           "sizes": [
-            {
-              "label": "40",
-              "price": 1500
-            },
-            {
-              "label": "41",
-              "price": 1500
-            },
-            {
-              "label": "42",
-              "price": 1600
-            },
-            {
-              "label": "43",
-              "price": 1650
-            },
-            {
-              "label": "44",
-              "price": 1700
-            },
-            {
-              "label": "45",
-              "price": 1800
-            }
+            { "label": "40", "price": 1500 },
+            { "label": "41", "price": 1500 },
+            { "label": "42", "price": 1600 },
+            { "label": "43", "price": 1650 },
+            { "label": "44", "price": 1700 },
+            { "label": "45", "price": 1800 }
           ]
         }
       ]
