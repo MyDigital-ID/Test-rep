@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="theme-color" content="#1A120B">
+<title>لوحة تحكم الموبيليات العصريه</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700;900&display=block" rel="stylesheet">
+<style>
+:root{
+  --bg:#1A120B; --bg-2:#241811; --bg-3:#2E1F15; --card:#26190F;
+  --copper:#C89B5E; --copper-hi:#E0B875; --copper-deep:#A07840;
+  --text:#F5EDE0; --text-muted:#B8A488; --border:#3D2A1A;
+  --danger:#C0392B; --success:#27AE60; --warning:#E67E22; --radius:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-tap-highlight-color:transparent;}
+button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:transparent;}
+input,select,textarea{font-family:inherit;color:var(--text);background:var(--bg-3);border:1.5px solid var(--border);border-radius:8px;padding:10px 12px;width:100%;font-size:0.95rem;}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--copper);}
+textarea{resize:vertical;min-height:70px;}
+label{display:block;font-size:0.85rem;color:var(--text-muted);margin-bottom:6px;font-weight:700;}
+.hidden{display:none!important;}
+
+/* ============ شاشة الدخول ============ */
+#loginScreen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;background:#D4C5B0;}
+.login-box{background:#FFF;border:2px solid #E0B875;border-radius:20px;padding:30px 24px;max-width:440px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.3);}
+.login-box h1{font-family:'Cairo';color:#E0B875;text-align:center;margin-bottom:6px;font-size:1.8rem;font-weight:900;}
+.login-box p.sub{text-align:center;color:#666;font-size:1rem;margin-bottom:24px;font-weight:600;}
+.login-box .field{margin-bottom:12px;}
+.login-box input{background:#F5F5F5;border:2px solid #E0E0E0;border-radius:12px;padding:14px 16px;color:#333;font-size:0.95rem;font-weight:600;}
+.login-box input:focus{border-color:#E0B875;background:#FFF;}
+.login-box input::placeholder{color:#999;}
+.login-box button#loginBtn{width:100%;background:#E0B875;color:#fff;padding:16px;border-radius:12px;font-weight:900;font-size:1.05rem;margin-top:8px;transition:all 0.2s;}
+.login-box button#loginBtn:hover{background:#C89B5E;transform:translateY(-2px);box-shadow:0 8px 25px rgba(224,184,117,0.5);}
+.login-box button#loginBtn:disabled{opacity:0.6;cursor:not-allowed;}
+.login-err{color:#C0392B;font-size:0.85rem;text-align:center;margin-top:10px;min-height:20px;font-weight:700;}
+.login-note{margin-top:18px;font-size:0.78rem;color:#777;text-align:center;line-height:1.7;}
+
+/* ============ الهيدر ============ */
+.admin-header{background:var(--bg-2);border-bottom:2px solid var(--copper);padding:12px 16px;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;}
+.admin-header h2{font-family:'Cairo';color:var(--copper-hi);font-size:1.15rem;}
+.admin-header .actions{display:flex;gap:8px;flex-wrap:wrap;}
+.btn{padding:9px 16px;border-radius:8px;font-weight:700;font-size:0.88rem;display:inline-flex;align-items:center;gap:6px;transition:all 0.2s;}
+.btn-primary{background:linear-gradient(135deg,var(--copper),var(--copper-deep));color:#fff;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(200,155,94,0.4);}
+.btn-secondary{background:var(--bg-3);border:1.5px solid var(--border);color:var(--text);}
+.btn-secondary:hover{border-color:var(--copper);}
+.btn-danger{background:var(--danger);color:#fff;padding:8px 12px;border-radius:8px;font-weight:700;font-size:0.82rem;}
+.btn-danger:hover{background:#A02A1E;}
+.btn-success{background:var(--success);color:#fff;}
+.btn-warning{background:var(--warning);color:#fff;}
+.btn-sm{padding:6px 10px;font-size:0.8rem;}
+.btn:disabled{opacity:0.5;cursor:not-allowed;}
+
+/* ============ الحاوية الرئيسية ============ */
+.admin-container{max-width:1100px;margin:0 auto;padding:20px;padding-bottom:100px;}
+.breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:20px;flex-wrap:wrap;font-size:0.9rem;color:var(--text-muted);}
+.breadcrumb button{color:var(--copper-hi);text-decoration:underline;background:none;border:none;padding:0;font-family:inherit;font-size:inherit;cursor:pointer;}
+.breadcrumb .sep{color:var(--border);}
+.breadcrumb .current{color:var(--text);font-weight:700;}
+
+/* ============ Quick actions ============ */
+.quick-actions{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;}
+
+/* ============ شبكة العناصر ============ */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;}
+.item-card{background:var(--card);border:2px solid var(--border);border-radius:var(--radius);padding:14px;display:flex;flex-direction:column;gap:10px;transition:border-color 0.2s;}
+.item-card:hover{border-color:var(--copper);}
+.item-card .img-preview{width:100%;height:130px;background:var(--bg-3);border-radius:8px;object-fit:cover;display:block;}
+.item-card .title{font-family:'Cairo';font-weight:900;font-size:1rem;color:var(--text);}
+.item-card .subtitle{font-size:0.82rem;color:var(--text-muted);line-height:1.5;}
+.item-card .row-actions{display:flex;gap:6px;margin-top:auto;flex-wrap:wrap;}
+.item-card .row-actions .btn{flex:1;justify-content:center;}
+.hidden-tag{background:var(--danger);color:#fff;font-size:0.7rem;padding:2px 8px;border-radius:4px;display:inline-block;margin-right:4px;}
+
+/* ============ الألوان ============ */
+.color-block{background:var(--bg-3);border:1.5px solid var(--border);border-radius:var(--radius);padding:14px;margin-bottom:14px;}
+.color-head{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap;}
+.color-head .big-dot{width:40px;height:40px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.5);flex-shrink:0;}
+.color-head .name{font-family:'Cairo';font-weight:900;font-size:1rem;flex:1;}
+.color-head .actions{display:flex;gap:6px;}
+.images-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;}
+.image-item{background:var(--card);border:1.5px solid var(--border);border-radius:10px;overflow:hidden;position:relative;}
+.image-item img{width:100%;height:110px;object-fit:cover;display:block;background:var(--bg-3);}
+.image-item .label{font-size:0.78rem;padding:6px 8px;color:var(--text-muted);background:var(--bg-2);text-align:center;font-weight:700;word-break:break-word;}
+.image-item .del{position:absolute;top:6px;left:6px;background:var(--danger);color:#fff;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.85rem;padding:0;}
+.img-add-btn{background:var(--bg-2);border:2px dashed var(--copper);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:150px;cursor:pointer;color:var(--copper-hi);font-size:1.8rem;gap:6px;transition:all 0.2s;}
+.img-add-btn:hover{background:rgba(200,155,94,0.1);}
+.img-add-btn small{font-size:0.8rem;font-weight:700;}
+.pending-tag{position:absolute;bottom:4px;right:4px;background:var(--warning);color:#fff;font-size:0.65rem;padding:2px 6px;border-radius:6px;font-weight:900;}
+
+/* ============ Modal ============ */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:2000;display:flex;align-items:flex-start;justify-content:center;padding:16px;overflow-y:auto;}
+.modal{background:var(--bg-2);border:2px solid var(--copper);border-radius:16px;padding:22px;max-width:520px;width:100%;margin:auto;}
+.modal h3{font-family:'Cairo';color:var(--copper-hi);margin-bottom:18px;font-size:1.15rem;}
+.modal .field{margin-bottom:14px;}
+.modal .row-2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.modal .actions{display:flex;gap:10px;margin-top:20px;}
+.modal .actions .btn{flex:1;justify-content:center;}
+.modal .actions .btn-primary{flex:2;}
+.modal .checkbox-row{display:flex;align-items:center;gap:8px;margin-top:6px;}
+.modal .checkbox-row input{width:auto;}
+.modal .checkbox-row label{margin:0;cursor:pointer;}
+
+/* ============ شريط الحفظ ============ */
+.save-bar{position:fixed;bottom:16px;left:16px;right:16px;max-width:500px;margin:0 auto;background:var(--bg-2);border:2px solid var(--copper);border-radius:12px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;box-shadow:0 10px 30px rgba(0,0,0,0.7);z-index:1000;}
+.save-bar .info{font-size:0.85rem;color:var(--text-muted);font-weight:700;}
+.save-bar .info.dirty{color:var(--warning);}
+
+/* ============ Loading Overlay ============ */
+.loading-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:3000;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;opacity:0;pointer-events:none;transition:opacity 0.25s;}
+.loading-overlay.show{opacity:1;pointer-events:all;}
+.spinner{width:50px;height:50px;border:4px solid rgba(200,155,94,0.2);border-top-color:var(--copper);border-radius:50%;animation:spin 0.9s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.loading-text{color:var(--copper-hi);font-weight:700;font-size:1rem;text-align:center;padding:0 20px;}
+
+/* ============ Status Message ============ */
+.status-msg{position:fixed;top:20px;left:50%;transform:translateX(-50%);padding:12px 24px;border-radius:10px;font-weight:700;z-index:4000;opacity:0;pointer-events:none;transition:opacity 0.3s, transform 0.3s;max-width:90vw;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,0.5);}
+.status-msg.show{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0);}
+.status-msg.ok{background:var(--success);color:#fff;}
+.status-msg.err{background:var(--danger);color:#fff;}
+.status-msg.warn{background:var(--warning);color:#fff;}
+
+/* ============ Empty ============ */
+.empty{padding:40px 20px;text-align:center;color:var(--text-muted);font-size:0.95rem;}
+.empty .icon{font-size:3rem;display:block;margin-bottom:10px;}
+
+/* ============ Response ============ */
+@media(max-width:600px){
+  .grid{grid-template-columns:1fr;}
+  .admin-header h2{font-size:1rem;}
+  .btn{padding:8px 12px;font-size:0.82rem;}
+  .admin-container{padding:14px;padding-bottom:100px;}
+  .modal .row-2{grid-template-columns:1fr;}
+  .images-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));}
+}
+::-webkit-scrollbar{width:8px;height:8px;}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px;}
+::-webkit-scrollbar-thumb:hover{background:var(--copper);}
+</style>
+</head>
+<body>
+
+<!-- ====== Login Screen ====== -->
+<div id="loginScreen">
+  <div class="login-box">
+    <h1>الموبيليات العصريه</h1>
+    <p class="sub">لوحة تحكم المتجر</p>
+    <div class="field"><input type="text" id="ghUser" placeholder="اسم المستخدم على GitHub" autocomplete="username"></div>
+    <div class="field"><input type="text" id="ghRepo" placeholder="اسم المستودع (Repository)" autocomplete="off"></div>
+    <div class="field"><input type="text" id="ghFolder" placeholder="اسم الفولدر داخل الريبو (اتركه فاضي لو مفيش)" autocomplete="off"></div>
+    <div class="field"><input type="password" id="ghToken" placeholder="🔑 أدخل رمز الدخول (GitHub Token)" autocomplete="current-password"></div>
+    <button id="loginBtn">🔓 دخول</button>
+    <div class="login-err" id="loginErr"></div>
+    <p class="login-note">أول 3 خانات بتحدد مكان الريبو. التوكن هيتحفظ في المتصفح ده بس.</p>
+  </div>
+</div>
+
+<!-- ====== Admin Screen ====== -->
+<div id="adminScreen" class="hidden">
+  <header class="admin-header">
+    <h2>🛠️ لوحة التحكم</h2>
+    <div class="actions">
+      <button class="btn btn-secondary btn-sm" id="reloadBtn">🔄 تحديث</button>
+      <button class="btn btn-secondary btn-sm" id="viewSiteBtn">🌐 عرض الموقع</button>
+      <button class="btn btn-secondary btn-sm" id="logoutBtn">🚪 خروج</button>
+    </div>
+  </header>
+  <div class="admin-container">
+    <div class="breadcrumb" id="breadcrumb"></div>
+    <div id="tabContent"></div>
+  </div>
+  <div class="save-bar hidden" id="saveBar">
+    <span class="info" id="saveInfo">✅ كل حاجة محفوظة</span>
+    <button class="btn btn-primary" id="saveBtn">💾 حفظ ونشر</button>
+  </div>
+</div>
+
+<!-- ====== Modal ====== -->
+<div id="modalContainer"></div>
+
+<!-- ====== Loading ====== -->
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="spinner"></div>
+  <div class="loading-text" id="loadingText">جاري التحميل...</div>
+</div>
+
+<!-- ====== Status ====== -->
+<div class="status-msg" id="statusMsg"></div>
+
+<script src="admin.js"></script>
+</body>
+</html>
